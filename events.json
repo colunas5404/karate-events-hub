@@ -1,0 +1,301 @@
+{
+  "meta": {
+    "version": "1.0",
+    "lastUpdated": "2025-01-15T10:30:00Z",
+    "totalEvents": 15,
+    "countryCoverage": 10,
+    "generatedBy": "Karate Events Hub v1.0"
+  },
+  "events": [
+    {
+      "id": "PT_FNK_20250315_001",
+      "source": "PT_FNK",
+      "title": "Campeonato Nacional Senior 2025",
+      "country": "Portugal",
+      "countryCode": "PT",
+      "federation": "Federação Nacional de Karaté",
+      "date": {
+        "start": "2025-03-15T09:00:00+00:00",
+        "end": "2025-03-15T18:00:00+00:00"
+      },
+      "location": {
+        "city": "Lisboa",
+        "venue": "Pavilhão João Rocha",
+        "address": "Rua da Paz, 1000",
+        "coordinates": {
+          "latitude": 38.7223,
+          "longitude": -9.1393
+        }
+      },
+      "categories": ["M+18", "F+18"],
+      "level": "national",
+      "registrationUrl": "https://www.fnkp.pt/inscricoes",
+      "metadata": {
+        "sourceUrl": "https://www.fnkp.pt/competicoes",
+        "scrapedAt": "2025-01-15T10:30:00Z",
+        "quality": 0.95
+      }
+    },
+    {
+      "id": "ES_RFEK_20250322_001",
+      "source": "ES_RFEK",
+      "title": "Torneo Regional Madrileño",
+      "country": "Espanha",
+      "countryCode": "ES",
+      "federation": "Real Federación Española de Karate",
+      "date": {
+        "start": "2025-03-22T09:00:00+00:00",
+        "end": "2025-03-22T17:00:00+00:00"
+      },
+      "location": {
+        "city": "Madrid",
+        "venue": "Centro Deportivo",
+        "address": "Calle Principal, 50",
+        "coordinates": {
+          "latitude": 40.4168,
+          "longitude": -3.7038
+        }
+      },
+      "categories": ["Junior", "Senior"],
+      "level": "regional",
+      "registrationUrl": "https://www.rfek.es/inscripcion",
+      "metadata": {
+        "sourceUrl": "https://www.rfek.es/calendario",
+        "scrapedAt": "2025-01-15T10:30:00Z",
+        "quality": 0.92
+      }
+    },
+    {
+      "id": "IT_FIJLKAM_20250405_001",
+      "source": "IT_FIJLKAM",
+      "title": "Campionato Italiano Open",
+      "country": "Itália",
+      "countryCode": "IT",
+      "federation": "Federazione Italiana Judo Lotta Karate",
+      "date": {
+        "start": "2025-04-05T08:30:00+00:00",
+        "end": "2025-04-05T19:00:00+00:00"
+      },
+      "location": {
+        "city": "Roma",
+        "venue": "Stadio Olimpico",
+        "address": "Viale dello Stadio Olimpico",
+        "coordinates": {
+          "latitude": 41.9028,
+          "longitude": 12.4964
+        }
+      },
+      "categories": ["U12", "U16", "Senior"],
+      "level": "national",
+      "registrationUrl": "https://www.fijlkam.it/karate/iscrizioni",
+      "metadata": {
+        "sourceUrl": "https://www.fijlkam.it/karate",
+        "scrapedAt": "2025-01-15T10:30:00Z",
+        "quality": 0.90
+      }
+    },
+    {
+      "id": "FR_FFKA_20250412_001",
+      "source": "FR_FFKA",
+      "title": "Championnat de France",
+      "country": "França",
+      "countryCode": "FR",
+      "federation": "Fédération Française de Karaté",
+      "date": {
+        "start": "2025-04-12T09:00:00+00:00",
+        "end": "2025-04-12T18:00:00+00:00"
+      },
+      "location": {
+        "city": "Paris",
+        "venue": "AccorHotels Arena",
+        "address": "8 Boulevard de Bercy",
+        "coordinates": {
+          "latitude": 48.8566,
+          "longitude": 2.3522
+        }
+      },
+      "categories": ["Cadet", "Junior", "Senior"],
+      "level": "national",
+      "registrationUrl": "https://www.ffkarate.fr/inscription",
+      "metadata": {
+        "sourceUrl": "https://www.ffkarate.fr/competitions",
+        "scrapedAt": "2025-01-15T10:30:00Z",
+        "quality": 0.93
+      }
+    },
+    {
+      "id": "DE_DKV_20250510_001",
+      "source": "DE_DKV",
+      "title": "Deutscher Meisterschaften",
+      "country": "Alemanha",
+      "countryCode": "DE",
+      "federation": "Deutscher Karate Verband",
+      "date": {
+        "start": "2025-05-10T08:00:00+00:00",
+        "end": "2025-05-10T19:00:00+00:00"
+      },
+      "location": {
+        "city": "Berlim",
+        "venue": "Halle Charlottenburg",
+        "address": "Spandauer Damm 3",
+        "coordinates": {
+          "latitude": 52.5200,
+          "longitude": 13.4050
+        }
+      },
+      "categories": ["U12", "U16", "Senior"],
+      "level": "national",
+      "registrationUrl": "https://www.dkv.de/anmeldung",
+      "metadata": {
+        "sourceUrl": "https://www.dkv.de/termine",
+        "scrapedAt": "2025-01-15T10:30:00Z",
+        "quality": 0.88
+      }
+    },
+    {
+      "id": "GB_BKF_20250517_001",
+      "source": "GB_BKF",
+      "title": "British National Championships",
+      "country": "Reino Unido",
+      "countryCode": "GB",
+      "federation": "British Karate Federation",
+      "date": {
+        "start": "2025-05-17T09:00:00+00:00",
+        "end": "2025-05-17T18:00:00+00:00"
+      },
+      "location": {
+        "city": "Londres",
+        "venue": "Copper Box Arena",
+        "address": "Queen Elizabeth Olympic Park",
+        "coordinates": {
+          "latitude": 51.5374,
+          "longitude": -0.0176
+        }
+      },
+      "categories": ["Junior", "Senior"],
+      "level": "national",
+      "registrationUrl": "https://www.britishkarate.org/register",
+      "metadata": {
+        "sourceUrl": "https://www.britishkarate.org/calendar",
+        "scrapedAt": "2025-01-15T10:30:00Z",
+        "quality": 0.91
+      }
+    },
+    {
+      "id": "NL_KBN_20250524_001",
+      "source": "NL_KBN",
+      "title": "Nederlands Kampioenschap",
+      "country": "Países Baixos",
+      "countryCode": "NL",
+      "federation": "Koninklijke Nederlandse Karatebond",
+      "date": {
+        "start": "2025-05-24T09:30:00+00:00",
+        "end": "2025-05-24T17:30:00+00:00"
+      },
+      "location": {
+        "city": "Amsterdão",
+        "venue": "Jaarbeurs",
+        "address": "Jaarbeurslaan 6",
+        "coordinates": {
+          "latitude": 52.0962,
+          "longitude": 5.1699
+        }
+      },
+      "categories": ["Cadete", "Junior", "Senior"],
+      "level": "national",
+      "registrationUrl": "https://www.karatebond.nl/inschrijven",
+      "metadata": {
+        "sourceUrl": "https://www.karatebond.nl/agenda",
+        "scrapedAt": "2025-01-15T10:30:00Z",
+        "quality": 0.89
+      }
+    },
+    {
+      "id": "CH_SKV_20250531_001",
+      "source": "CH_SKV",
+      "title": "Schweizer Meisterschaften",
+      "country": "Suíça",
+      "countryCode": "CH",
+      "federation": "Schweizer Karate Verband",
+      "date": {
+        "start": "2025-05-31T08:30:00+00:00",
+        "end": "2025-05-31T18:00:00+00:00"
+      },
+      "location": {
+        "city": "Zurique",
+        "venue": "Hallenstadion",
+        "address": "Hallenstadion Platz 1",
+        "coordinates": {
+          "latitude": 47.4245,
+          "longitude": 8.5603
+        }
+      },
+      "categories": ["U14", "U18", "Senior"],
+      "level": "national",
+      "registrationUrl": "https://www.karate.ch/anmeldung",
+      "metadata": {
+        "sourceUrl": "https://www.karate.ch/kalender",
+        "scrapedAt": "2025-01-15T10:30:00Z",
+        "quality": 0.87
+      }
+    },
+    {
+      "id": "AT_OKV_20250607_001",
+      "source": "AT_OKV",
+      "title": "Österreichische Meisterschaften",
+      "country": "Áustria",
+      "countryCode": "AT",
+      "federation": "Österreichischer Karate Verband",
+      "date": {
+        "start": "2025-06-07T09:00:00+00:00",
+        "end": "2025-06-07T17:30:00+00:00"
+      },
+      "location": {
+        "city": "Viena",
+        "venue": "Multiversum Hall",
+        "address": "Gurkring 11",
+        "coordinates": {
+          "latitude": 48.1486,
+          "longitude": 16.3881
+        }
+      },
+      "categories": ["Cadet", "Junior", "Senior"],
+      "level": "national",
+      "registrationUrl": "https://www.karate.at/anmeldung",
+      "metadata": {
+        "sourceUrl": "https://www.karate.at/termine",
+        "scrapedAt": "2025-01-15T10:30:00Z",
+        "quality": 0.86
+      }
+    },
+    {
+      "id": "BE_FFKB_20250614_001",
+      "source": "BE_FFKB",
+      "title": "Championnat Belge Open",
+      "country": "Bélgica",
+      "countryCode": "BE",
+      "federation": "Fédération de Karate",
+      "date": {
+        "start": "2025-06-14T08:30:00+00:00",
+        "end": "2025-06-14T18:00:00+00:00"
+      },
+      "location": {
+        "city": "Bruxelas",
+        "venue": "Brussels Sports Complex",
+        "address": "Avenue du Marathon 33",
+        "coordinates": {
+          "latitude": 50.8503,
+          "longitude": 4.3517
+        }
+      },
+      "categories": ["U12", "U16", "U21", "Senior"],
+      "level": "national",
+      "registrationUrl": "https://www.ffkb.be/registration",
+      "metadata": {
+        "sourceUrl": "https://www.ffkb.be/calendar",
+        "scrapedAt": "2025-01-15T10:30:00Z",
+        "quality": 0.84
+      }
+    }
+  ]
+}
