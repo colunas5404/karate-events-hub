@@ -2,313 +2,274 @@
 <html lang="pt-PT">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Karate Events - Calendário de Provas e Competições</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Karate Events — Calendário Europeu de Provas</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
         :root {
-            --primary: #c0195a;
-            --secondary: #1a237e;
-            --accent: #ff6f00;
-            --light: #f5f5f5;
-            --border: #e0e0e0;
-            --text: #212121;
-            --text-light: #757575;
+            --primary:#c0195a; --secondary:#1a237e; --accent:#ff6f00;
+            --light:#f5f5f5; --border:#e0e0e0; --text:#212121; --muted:#757575;
         }
-        body { font-family: 'Segoe UI', sans-serif; background: #f0f2f5; color: var(--text); }
+        body { font-family:'Segoe UI',sans-serif; background:#f0f2f5; color:var(--text); }
 
+        /* ── HEADER ── */
         header {
-            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
-            color: white; padding: 1.5rem 2rem;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-            position: sticky; top: 0; z-index: 100;
+            background:linear-gradient(135deg,var(--secondary),var(--primary));
+            color:white; padding:1rem 1.25rem;
+            box-shadow:0 4px 12px rgba(0,0,0,0.2);
+            position:sticky; top:0; z-index:200;
         }
-        .header-content {
-            max-width: 1200px; margin: 0 auto;
-            display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;
-        }
-        .logo { display: flex; align-items: center; gap: 0.75rem; font-size: 1.6rem; font-weight: 700; }
-        .logo i { color: var(--accent); font-size: 2rem; }
-        .stats { display: flex; gap: 2rem; font-size: 0.9rem; }
-        .stat { display: flex; align-items: center; gap: 0.5rem; }
-        .stat-value { font-weight: 700; font-size: 1.1rem; color: var(--accent); }
+        .hdr { max-width:1200px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; gap:0.75rem; }
+        .logo { display:flex; align-items:center; gap:0.5rem; font-size:1.25rem; font-weight:700; }
+        .logo i { color:var(--accent); font-size:1.5rem; }
+        .hdr-stats { display:flex; gap:1rem; font-size:0.8rem; }
+        .hdr-stat { display:flex; align-items:center; gap:0.3rem; }
+        .hdr-num { font-weight:700; font-size:1rem; color:var(--accent); }
 
-        .container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+        /* ── CONTAINER ── */
+        .wrap { max-width:1200px; margin:0 auto; padding:1rem; }
 
-        .search-bar {
-            background: white; padding: 1.5rem; border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08); margin-bottom: 1.5rem;
-            display: flex; gap: 1rem; flex-wrap: wrap; align-items: flex-end;
+        /* ── FILTROS ── */
+        .filters {
+            background:white; border-radius:12px;
+            box-shadow:0 2px 8px rgba(0,0,0,0.08);
+            padding:1rem; margin-bottom:1rem;
+            display:grid; gap:0.75rem;
+            grid-template-columns:1fr 1fr;
         }
-        .search-group { display: flex; flex-direction: column; gap: 0.4rem; flex: 1; min-width: 160px; }
-        .search-group label { font-weight: 600; font-size: 0.85rem; color: var(--secondary); }
-        .search-group input, .search-group select {
-            padding: 0.65rem 1rem; border: 2px solid var(--border);
-            border-radius: 6px; font-size: 0.95rem; transition: border-color 0.2s;
+        .filters input, .filters select {
+            padding:0.7rem 0.9rem; border:2px solid var(--border);
+            border-radius:8px; font-size:0.95rem; width:100%;
+            background:white; -webkit-appearance:none;
         }
-        .search-group input:focus, .search-group select:focus { outline: none; border-color: var(--primary); }
-        .btn-search {
-            padding: 0.65rem 1.5rem;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer;
-        }
-        .btn-search:hover { opacity: 0.9; transform: translateY(-1px); }
-        .btn-clear {
-            padding: 0.65rem 1.5rem; background: white; color: var(--text-light);
-            border: 2px solid var(--border); border-radius: 6px; font-weight: 600; cursor: pointer;
-        }
-        .btn-clear:hover { border-color: var(--primary); color: var(--primary); }
+        .filters input:focus, .filters select:focus { outline:none; border-color:var(--primary); }
+        .filter-search { grid-column:1/-1; }
+        .filter-btns { grid-column:1/-1; display:flex; gap:0.5rem; }
+        .btn { padding:0.7rem 1.25rem; border:none; border-radius:8px; font-weight:700;
+               cursor:pointer; font-size:0.9rem; display:flex; align-items:center; gap:0.4rem; transition:all 0.2s; }
+        .btn-primary { background:linear-gradient(135deg,var(--primary),var(--accent)); color:white; flex:1; justify-content:center; }
+        .btn-primary:active { opacity:0.85; }
+        .btn-ghost { background:var(--light); color:var(--muted); border:2px solid var(--border); flex:1; justify-content:center; }
+        .btn-ghost:active { background:var(--border); }
 
-        .tabs {
-            display: flex; gap: 0.5rem; margin-bottom: 1.5rem;
-            background: white; padding: 0.5rem; border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.06); width: fit-content;
-        }
-        .tab {
-            padding: 0.6rem 1.5rem; background: none; border: none;
-            border-radius: 8px; color: var(--text-light); font-weight: 600; cursor: pointer; transition: all 0.2s;
-        }
-        .tab.active { background: linear-gradient(135deg, var(--primary), var(--accent)); color: white; }
-        .tab:hover:not(.active) { background: var(--light); }
+        /* ── TABS ── */
+        .tabs { display:flex; background:white; border-radius:10px; padding:0.4rem;
+                box-shadow:0 2px 8px rgba(0,0,0,0.06); margin-bottom:1rem; gap:0.3rem; }
+        .tab { flex:1; padding:0.65rem 0.5rem; background:none; border:none; border-radius:8px;
+               color:var(--muted); font-weight:600; cursor:pointer; font-size:0.85rem;
+               display:flex; align-items:center; justify-content:center; gap:0.3rem; transition:all 0.2s; }
+        .tab.active { background:linear-gradient(135deg,var(--primary),var(--accent)); color:white; }
+        .tab:active { opacity:0.85; }
 
-        .view { display: none; }
-        .view.active { display: block; }
+        /* ── VIEWS ── */
+        .view { display:none; }
+        .view.active { display:block; }
 
-        /* CARDS */
-        .events-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 1.5rem;
-        }
-        .event-card {
-            background: white; border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            overflow: hidden; transition: all 0.3s; display: flex; flex-direction: column;
-        }
-        .event-card:hover { transform: translateY(-6px); box-shadow: 0 10px 24px rgba(192,25,90,0.18); }
-        .card-top {
-            background: linear-gradient(135deg, var(--secondary), var(--primary));
-            color: white; padding: 1.25rem 1.5rem;
-            display: flex; justify-content: space-between; align-items: flex-start;
-        }
-        .card-date-big { font-size: 2.5rem; font-weight: 800; line-height: 1; }
-        .card-month { font-size: 0.85rem; opacity: 0.8; text-transform: uppercase; letter-spacing: 1px; }
-        .card-badge {
-            background: var(--accent); padding: 0.3rem 0.8rem;
-            border-radius: 20px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
-        }
-        .card-body { padding: 1.25rem 1.5rem; flex-grow: 1; display: flex; flex-direction: column; gap: 0.75rem; }
-        .card-title { font-size: 1.1rem; font-weight: 700; color: var(--secondary); line-height: 1.3; }
-        .card-info { display: flex; align-items: center; gap: 0.6rem; font-size: 0.9rem; color: var(--text-light); }
-        .card-info i { color: var(--primary); width: 16px; }
-        .card-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: auto; }
-        .card-tag {
-            background: #f0f0f0; color: var(--secondary);
-            padding: 0.25rem 0.65rem; border-radius: 10px; font-size: 0.78rem; font-weight: 600;
-        }
-        .card-footer { border-top: 1px solid var(--border); padding: 1rem 1.5rem; display: flex; gap: 0.75rem; }
-        .btn-detail {
-            flex: 1; padding: 0.65rem;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer;
-        }
-        .btn-detail:hover { opacity: 0.9; }
-        .btn-fed {
-            flex: 1; padding: 0.65rem; background: white; color: var(--primary);
-            border: 2px solid var(--primary); border-radius: 6px; font-weight: 600;
-            cursor: pointer; text-decoration: none; text-align: center;
-        }
-        .btn-fed:hover { background: var(--primary); color: white; }
+        /* ── CARDS ── */
+        .cards { display:grid; gap:1rem; grid-template-columns:1fr; }
+        @media(min-width:640px){ .cards { grid-template-columns:1fr 1fr; } }
+        @media(min-width:1024px){ .cards { grid-template-columns:1fr 1fr 1fr; } }
 
-        /* CALENDÁRIO */
-        .calendar-wrapper { background: white; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); padding: 1.5rem; }
-        .cal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; }
-        .cal-title { font-size: 1.4rem; font-weight: 700; color: var(--secondary); }
-        .cal-nav { display: flex; gap: 0.5rem; }
-        .cal-nav button {
-            padding: 0.5rem 1rem; border: 2px solid var(--border);
-            background: white; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.2s;
-        }
-        .cal-nav button:hover { border-color: var(--primary); color: var(--primary); }
-        .cal-weekdays { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; margin-bottom: 4px; }
-        .cal-weekday {
-            text-align: center; font-weight: 700; font-size: 0.85rem;
-            color: var(--secondary); padding: 0.5rem; background: #f0f2f5; border-radius: 6px;
-        }
-        .cal-days { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; }
-        .cal-day { border: 2px solid var(--border); border-radius: 8px; padding: 0.5rem; min-height: 90px; transition: all 0.2s; background: white; }
-        .cal-day:hover { border-color: var(--primary); box-shadow: 0 4px 12px rgba(192,25,90,0.1); }
-        .cal-day.other-month { background: #f9f9f9; opacity: 0.45; }
-        .cal-day.today { border-color: var(--accent); border-width: 2px; background: #fff8f0; }
-        .cal-day-num { font-weight: 700; font-size: 0.95rem; color: var(--text); margin-bottom: 4px; }
-        .cal-day.today .cal-day-num { color: var(--accent); }
-        .cal-event {
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            color: white; padding: 2px 6px; border-radius: 4px;
-            font-size: 0.68rem; font-weight: 600;
-            white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-            margin-bottom: 2px; cursor: pointer;
-        }
-        .cal-event:hover { opacity: 0.85; }
-        .cal-event.international { background: linear-gradient(135deg, #7b1fa2, #c0195a); }
-        .cal-event.regional { background: linear-gradient(135deg, #1565c0, #0097a7); }
+        .card { background:white; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.08);
+                overflow:hidden; display:flex; flex-direction:column; cursor:pointer;
+                transition:transform 0.15s, box-shadow 0.15s; }
+        .card:active { transform:scale(0.98); }
 
-        /* MODAL */
-        .modal {
-            display: none; position: fixed; inset: 0;
-            background: rgba(0,0,0,0.65); z-index: 1000;
-            align-items: center; justify-content: center; padding: 1rem;
-        }
-        .modal.active { display: flex; }
-        .modal-box {
-            background: white; border-radius: 14px;
-            max-width: 620px; width: 100%; max-height: 90vh; overflow-y: auto;
-        }
-        .modal-head {
-            background: linear-gradient(135deg, var(--secondary), var(--primary));
-            color: white; padding: 1.75rem;
-            display: flex; justify-content: space-between; align-items: flex-start;
-            border-radius: 14px 14px 0 0; position: sticky; top: 0; z-index: 10;
-        }
-        .modal-head-title { font-size: 1.3rem; font-weight: 700; padding-right: 1rem; }
-        .modal-head-fed { font-size: 0.9rem; opacity: 0.8; margin-top: 0.4rem; }
-        .modal-close {
-            background: rgba(255,255,255,0.2); border: none; color: white;
-            width: 36px; height: 36px; border-radius: 50%; font-size: 1.3rem;
-            cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
-        }
-        .modal-close:hover { background: rgba(255,255,255,0.35); }
-        .modal-body { padding: 1.75rem; }
-        .modal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-bottom: 1.5rem; }
-        .modal-item {}
-        .modal-label { font-size: 0.78rem; font-weight: 700; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.3rem; }
-        .modal-value { font-size: 0.95rem; color: var(--text); }
-        .modal-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0.5rem 0 1.5rem; }
+        .card-top { background:linear-gradient(135deg,var(--secondary),var(--primary));
+                    color:white; padding:1rem 1.25rem; display:flex; justify-content:space-between; align-items:flex-start; }
+        .card-date { }
+        .card-day { font-size:2rem; font-weight:800; line-height:1; }
+        .card-month { font-size:0.8rem; opacity:0.85; text-transform:uppercase; letter-spacing:1px; }
+        .card-badge { background:var(--accent); padding:0.25rem 0.65rem; border-radius:20px;
+                      font-size:0.7rem; font-weight:700; text-transform:uppercase; white-space:nowrap; }
 
-        /* MAPA */
-        .map-section { margin-top: 1.5rem; }
-        .map-section h4 { font-size: 0.85rem; font-weight: 700; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.75rem; }
-        #eventMap { height: 260px; border-radius: 10px; border: 2px solid var(--border); z-index: 1; }
+        .card-body { padding:1rem 1.25rem; flex:1; display:flex; flex-direction:column; gap:0.6rem; }
+        .card-title { font-size:1rem; font-weight:700; color:var(--secondary); line-height:1.3; }
+        .card-row { display:flex; align-items:center; gap:0.5rem; font-size:0.85rem; color:var(--muted); }
+        .card-row i { color:var(--primary); width:14px; text-align:center; }
+        .card-tags { display:flex; flex-wrap:wrap; gap:0.35rem; margin-top:auto; padding-top:0.5rem; }
+        .tag { background:#f0f2f5; color:var(--secondary); padding:0.2rem 0.55rem; border-radius:8px; font-size:0.75rem; font-weight:600; }
+        .tag-type { background:#fce4ec; color:var(--primary); }
 
-        .map-actions { display: flex; gap: 0.75rem; margin-top: 0.75rem; }
-        .btn-gmaps {
-            flex: 1; display: flex; align-items: center; justify-content: center; gap: 0.5rem;
-            padding: 0.7rem; background: #4285f4; color: white;
-            text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 0.9rem;
+        .card-footer { border-top:1px solid var(--border); padding:0.75rem 1.25rem; display:flex; gap:0.5rem; }
+        .btn-detail { flex:1; padding:0.6rem; background:linear-gradient(135deg,var(--primary),var(--accent));
+                      color:white; border:none; border-radius:8px; font-weight:700; font-size:0.85rem; cursor:pointer; }
+        .btn-detail:active { opacity:0.85; }
+        .btn-fed { flex:1; padding:0.6rem; background:white; color:var(--primary);
+                   border:2px solid var(--primary); border-radius:8px; font-weight:700;
+                   font-size:0.85rem; text-decoration:none; text-align:center; display:flex;
+                   align-items:center; justify-content:center; gap:0.3rem; }
+        .btn-fed:active { background:var(--primary); color:white; }
+
+        /* ── CALENDÁRIO ── */
+        .cal-wrap { background:white; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.08); padding:1rem; }
+        .cal-hdr { display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem; gap:0.5rem; }
+        .cal-title { font-size:1.1rem; font-weight:700; color:var(--secondary); }
+        .cal-nav { display:flex; gap:0.4rem; }
+        .cal-nav button { padding:0.5rem 0.85rem; border:2px solid var(--border); background:white;
+                          border-radius:8px; font-weight:700; cursor:pointer; font-size:0.85rem; }
+        .cal-nav button:active { background:var(--light); }
+        .cal-grid { display:grid; grid-template-columns:repeat(7,1fr); gap:2px; }
+        .cal-wday { text-align:center; font-weight:700; font-size:0.72rem; color:var(--secondary);
+                    padding:0.4rem 0; background:#f0f2f5; border-radius:4px; }
+        .cal-day { border:1.5px solid var(--border); border-radius:8px; padding:0.35rem;
+                   min-height:70px; background:white; cursor:pointer; transition:border-color 0.15s; }
+        .cal-day:active { background:var(--light); }
+        .cal-day.other { background:#fafafa; opacity:0.4; }
+        .cal-day.today { border-color:var(--accent); border-width:2px; background:#fff8f0; }
+        .cal-num { font-weight:700; font-size:0.85rem; margin-bottom:2px; }
+        .cal-day.today .cal-num { color:var(--accent); }
+        .cal-ev { background:linear-gradient(135deg,var(--primary),var(--accent)); color:white;
+                  padding:1px 4px; border-radius:3px; font-size:0.6rem; font-weight:600;
+                  white-space:nowrap; overflow:hidden; text-overflow:ellipsis; margin-bottom:1px; cursor:pointer; }
+        .cal-ev.international { background:linear-gradient(135deg,#6a1b9a,#c0195a); }
+        .cal-ev.regional { background:linear-gradient(135deg,#1565c0,#0097a7); }
+
+        /* ── MAPA ── */
+        #map { height:60vh; min-height:350px; border-radius:12px;
+               box-shadow:0 2px 8px rgba(0,0,0,0.08); }
+
+        /* ── MODAL ── */
+        .modal { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.65);
+                 z-index:1000; align-items:flex-end; justify-content:center; padding:0; }
+        .modal.active { display:flex; }
+        .modal-box { background:white; border-radius:16px 16px 0 0; width:100%; max-height:90vh;
+                     overflow-y:auto; animation:slideUp 0.25s ease; }
+        @media(min-width:640px){
+            .modal { align-items:center; padding:1rem; }
+            .modal-box { border-radius:16px; max-width:560px; max-height:85vh; }
         }
-        .btn-gmaps:hover { background: #3367d6; }
-        .btn-waze {
-            flex: 1; display: flex; align-items: center; justify-content: center; gap: 0.5rem;
-            padding: 0.7rem; background: #00c1ff; color: white;
-            text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 0.9rem;
-        }
-        .btn-waze:hover { background: #00a8df; }
+        @keyframes slideUp { from{transform:translateY(100%)} to{transform:translateY(0)} }
 
-        .modal-link {
-            display: flex; align-items: center; justify-content: center; gap: 0.5rem;
-            padding: 0.85rem; margin-top: 1rem;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            color: white; text-decoration: none; border-radius: 8px; font-weight: 700;
-        }
-        .modal-link:hover { opacity: 0.9; }
+        .modal-hdr { background:linear-gradient(135deg,var(--secondary),var(--primary)); color:white;
+                     padding:1.25rem; display:flex; justify-content:space-between; align-items:flex-start;
+                     border-radius:16px 16px 0 0; position:sticky; top:0; z-index:10; }
+        @media(min-width:640px){ .modal-hdr { border-radius:16px 16px 0 0; } }
+        .modal-title { font-size:1.1rem; font-weight:700; padding-right:1rem; line-height:1.3; }
+        .modal-fed { font-size:0.82rem; opacity:0.8; margin-top:0.3rem; }
+        .modal-close { background:rgba(255,255,255,0.2); border:none; color:white;
+                       width:34px; height:34px; border-radius:50%; font-size:1.2rem;
+                       cursor:pointer; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+        .modal-close:active { background:rgba(255,255,255,0.35); }
+        .modal-body { padding:1.25rem; }
+        .modal-grid { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-bottom:1.25rem; }
+        .mi-label { font-size:0.72rem; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:0.2rem; }
+        .mi-value { font-size:0.9rem; color:var(--text); }
 
-        .empty { grid-column: 1/-1; text-align: center; padding: 3rem; color: var(--text-light); }
-        .empty i { font-size: 2.5rem; opacity: 0.3; margin-bottom: 1rem; display: block; }
+        #evMap { height:220px; border-radius:10px; border:2px solid var(--border); margin:1rem 0; }
+        .map-btns { display:grid; grid-template-columns:1fr 1fr; gap:0.5rem; }
+        .btn-maps { display:flex; align-items:center; justify-content:center; gap:0.4rem;
+                    padding:0.7rem; background:#4285f4; color:white; text-decoration:none;
+                    border-radius:8px; font-weight:700; font-size:0.85rem; }
+        .btn-waze { display:flex; align-items:center; justify-content:center; gap:0.4rem;
+                    padding:0.7rem; background:#00c1ff; color:white; text-decoration:none;
+                    border-radius:8px; font-weight:700; font-size:0.85rem; }
+        .btn-maps:active, .btn-waze:active { opacity:0.85; }
+        .btn-website { display:flex; align-items:center; justify-content:center; gap:0.4rem;
+                       padding:0.85rem; margin-top:0.75rem;
+                       background:linear-gradient(135deg,var(--primary),var(--accent));
+                       color:white; text-decoration:none; border-radius:10px; font-weight:700; }
+        .btn-website:active { opacity:0.85; }
 
-        footer { background: var(--secondary); color: white; text-align: center; padding: 1.5rem; margin-top: 2rem; font-size: 0.9rem; }
+        /* ── EMPTY ── */
+        .empty { text-align:center; padding:3rem 1.5rem; color:var(--muted); }
+        .empty i { font-size:2.5rem; opacity:0.3; margin-bottom:1rem; display:block; }
 
-        @media (max-width: 768px) {
-            .header-content { flex-direction: column; }
-            .stats { width: 100%; justify-content: space-around; }
-            .search-bar { flex-direction: column; }
-            .events-grid { grid-template-columns: 1fr; }
-            .cal-day { min-height: 60px; padding: 0.3rem; }
-            .cal-day-num { font-size: 0.8rem; }
-            .cal-event { font-size: 0.6rem; }
-            .modal-grid { grid-template-columns: 1fr; }
-            #eventMap { height: 200px; }
-            .map-actions { flex-direction: column; }
-        }
+        /* ── FOOTER ── */
+        footer { background:var(--secondary); color:white; text-align:center;
+                 padding:1.25rem; margin-top:1.5rem; font-size:0.82rem; }
+        footer a { color:rgba(255,255,255,0.7); text-decoration:none; margin-left:0.5rem; }
     </style>
 </head>
 <body>
 
 <header>
-    <div class="header-content">
+    <div class="hdr">
         <div class="logo">
             <i class="fas fa-crown"></i>
-            <span>Karate Events</span></div><a href="admin.html" style="padding:0.4rem 1rem;background:rgba(255,255,255,0.15);color:white;border:1px solid rgba(255,255,255,0.3);border-radius:6px;text-decoration:none;font-size:0.85rem;font-weight:600;"><i class="fas fa-shield-alt"></i> Admin
+            <span>Karate Events</span>
         </div>
-        <div class="stats">
-            <div class="stat"><i class="fas fa-calendar-check"></i> <span class="stat-value" id="evCount">0</span> Provas</div>
-            <div class="stat"><i class="fas fa-globe"></i> <span class="stat-value" id="ctCount">0</span> Países</div>
-            <div class="stat"><i class="fas fa-building"></i> <span class="stat-value" id="fedCount">0</span> Federações</div>
+        <div class="hdr-stats">
+            <div class="hdr-stat"><i class="fas fa-calendar-check"></i> <span class="hdr-num" id="evCount">0</span></div>
+            <div class="hdr-stat"><i class="fas fa-globe"></i> <span class="hdr-num" id="ctCount">0</span></div>
         </div>
     </div>
 </header>
 
-<div class="container">
-    <div class="search-bar">
-        <div class="search-group">
-            <label><i class="fas fa-globe"></i> País</label>
-            <select id="fCountry"><option value="">Todos os países</option></select>
+<div class="wrap">
+
+    <!-- FILTROS -->
+    <div class="filters">
+        <div>
+            <select id="fCountry"><option value="">🌍 Todos os países</option></select>
         </div>
-        <div class="search-group">
-            <label><i class="fas fa-filter"></i> Tipo</label>
-            <select id="fLevel">
-                <option value="">Todos os tipos</option>
-                <option value="national">Nacional</option>
-                <option value="regional">Regional</option>
-                <option value="international">Internacional</option>
-            </select>
+        <div>
+            <select id="fType"><option value="">📋 Todos os tipos</option></select>
         </div>
-        <div class="search-group">
-            <label><i class="fas fa-search"></i> Procurar</label>
-            <input type="text" id="fSearch" placeholder="Nome da prova...">
+        <div class="filter-search">
+            <input type="text" id="fSearch" placeholder="🔍 Procurar prova..." autocomplete="off">
         </div>
-        <button class="btn-search" onclick="applyFilters()"><i class="fas fa-search"></i> Filtrar</button>
-        <button class="btn-clear" onclick="clearFilters()"><i class="fas fa-redo"></i> Limpar</button>
+        <div class="filter-btns">
+            <button class="btn btn-primary" onclick="applyFilters()"><i class="fas fa-search"></i> Filtrar</button>
+            <button class="btn btn-ghost" onclick="clearFilters()"><i class="fas fa-redo"></i> Limpar</button>
+        </div>
     </div>
 
+    <!-- TABS -->
     <div class="tabs">
-        <button class="tab active" onclick="switchView('events', this)"><i class="fas fa-list"></i> Lista de Provas</button>
-        <button class="tab" onclick="switchView('calendar', this)"><i class="fas fa-calendar"></i> Calendário</button>
+        <button class="tab active" id="tab-list" onclick="switchView('list',this)">
+            <i class="fas fa-list"></i> Lista
+        </button>
+        <button class="tab" id="tab-calendar" onclick="switchView('calendar',this)">
+            <i class="fas fa-calendar"></i> Calendário
+        </button>
+        <button class="tab" id="tab-map" onclick="switchView('map',this)">
+            <i class="fas fa-map-marker-alt"></i> Mapa
+        </button>
     </div>
 
-    <div class="view active" id="view-events">
-        <div class="events-grid" id="eventsGrid"></div>
+    <!-- LISTA -->
+    <div class="view active" id="view-list">
+        <div class="cards" id="cardGrid"></div>
     </div>
 
+    <!-- CALENDÁRIO -->
     <div class="view" id="view-calendar">
-        <div class="calendar-wrapper">
-            <div class="cal-header">
+        <div class="cal-wrap">
+            <div class="cal-hdr">
                 <h2 class="cal-title" id="calTitle"></h2>
                 <div class="cal-nav">
-                    <button onclick="prevMonth()"><i class="fas fa-chevron-left"></i> Anterior</button>
+                    <button onclick="prevMonth()"><i class="fas fa-chevron-left"></i></button>
                     <button onclick="goToday()">Hoje</button>
-                    <button onclick="nextMonth()">Próximo <i class="fas fa-chevron-right"></i></button>
+                    <button onclick="nextMonth()"><i class="fas fa-chevron-right"></i></button>
                 </div>
             </div>
-            <div class="cal-weekdays">
-                <div class="cal-weekday">Dom</div><div class="cal-weekday">Seg</div>
-                <div class="cal-weekday">Ter</div><div class="cal-weekday">Qua</div>
-                <div class="cal-weekday">Qui</div><div class="cal-weekday">Sex</div>
-                <div class="cal-weekday">Sab</div>
+            <div class="cal-grid">
+                <div class="cal-wday">Dom</div><div class="cal-wday">Seg</div>
+                <div class="cal-wday">Ter</div><div class="cal-wday">Qua</div>
+                <div class="cal-wday">Qui</div><div class="cal-wday">Sex</div>
+                <div class="cal-wday">Sab</div>
             </div>
-            <div class="cal-days" id="calDays"></div>
+            <div class="cal-grid" id="calDays" style="margin-top:2px;"></div>
         </div>
     </div>
+
+    <!-- MAPA -->
+    <div class="view" id="view-map">
+        <div id="map"></div>
+    </div>
+
 </div>
 
-<!-- Modal com Mapa -->
+<!-- MODAL -->
 <div class="modal" id="modal">
     <div class="modal-box">
-        <div class="modal-head">
+        <div class="modal-hdr">
             <div>
-                <div class="modal-head-title" id="mTitle"></div>
-                <div class="modal-head-fed" id="mFed"></div>
+                <div class="modal-title" id="mTitle"></div>
+                <div class="modal-fed" id="mFed"></div>
             </div>
             <button class="modal-close" onclick="closeModal()">×</button>
         </div>
@@ -317,270 +278,243 @@
 </div>
 
 <footer>
-    <strong>Karate Events Hub</strong> — Calendário Europeu de Provas e Competições de Karaté 🥋
+    🥋 <strong>Karate Events Hub</strong> — Calendário Europeu de Provas
+    <a href="admin.html"><i class="fas fa-shield-alt"></i> Admin</a>
 </footer>
-
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <script>
-let allEvents = [], filtered = [], feds = {};
-let calDate = new Date(); calDate.setDate(1);
-let eventMap = null;
+let all=[], filtered=[], feds={};
+let calDate=new Date(); calDate.setDate(1);
+let mapL=null, evMap=null;
 
-document.addEventListener('DOMContentLoaded', async () => {
-    await loadData();
-    populateCountries();
-    renderList();
+const FEDS = {
+    PT_FNK:{name:"Federação Nacional de Karaté - Portugal",website:"https://www.fnkp.pt"},
+    ES_RFEK:{name:"Real Federación Española de Karate",website:"https://www.rfek.es"},
+    IT_FIJLKAM:{name:"Federazione Italiana Judo Lotta Karate",website:"https://www.fijlkam.it"},
+    FR_FFKA:{name:"Fédération Française de Karaté",website:"https://www.ffkarate.fr"},
+    WKF:{name:"World Karate Federation",website:"https://www.wkf.net"}
+};
+
+document.addEventListener('DOMContentLoaded', async ()=>{
+    await load();
+    buildFilters();
+    renderCards();
     renderCalendar();
 });
 
-async function loadData() {
-    try {
-        const [er, fr] = await Promise.all([fetch('events.json'), fetch('federations.json')]);
-        const ed = await er.json();
-        const fd = await fr.json();
-        allEvents = ed.events || [];
-        filtered = [...allEvents];
-        fd.federations.forEach(f => feds[f.id] = f);
-        document.getElementById('evCount').textContent = allEvents.length;
-        document.getElementById('ctCount').textContent = new Set(allEvents.map(e => e.country)).size;
-        document.getElementById('fedCount').textContent = new Set(allEvents.map(e => e.source)).size;
-    } catch(e) { console.error('Erro:', e); }
+async function load(){
+    try{
+        const r = await fetch('events.json');
+        const d = await r.json();
+        all = d.events || [];
+        filtered = [...all];
+        document.getElementById('evCount').textContent = all.length;
+        document.getElementById('ctCount').textContent = new Set(all.map(e=>e.country)).size;
+    }catch(e){ console.error(e); }
 }
 
-function populateCountries() {
-    const sel = document.getElementById('fCountry');
-    [...new Set(allEvents.map(e => e.country))].sort().forEach(c => {
-        sel.innerHTML += `<option value="${c}">${c}</option>`;
+function buildFilters(){
+    const cs = document.getElementById('fCountry');
+    [...new Set(all.map(e=>e.country))].sort().forEach(c=>{
+        cs.innerHTML += `<option value="${c}">${c}</option>`;
+    });
+    const ts = document.getElementById('fType');
+    [...new Set(all.map(e=>e.eventType).filter(Boolean))].sort().forEach(t=>{
+        ts.innerHTML += `<option value="${t}">${t}</option>`;
     });
 }
 
-function applyFilters() {
-    const c = document.getElementById('fCountry').value;
-    const l = document.getElementById('fLevel').value;
-    const s = document.getElementById('fSearch').value.toLowerCase();
-    filtered = allEvents.filter(ev =>
-        (!c || ev.country === c) && (!l || ev.level === l) &&
-        (!s || ev.title.toLowerCase().includes(s))
+function applyFilters(){
+    const c=document.getElementById('fCountry').value;
+    const t=document.getElementById('fType').value;
+    const s=document.getElementById('fSearch').value.toLowerCase().trim();
+    filtered=all.filter(e=>
+        (!c||e.country===c)&&
+        (!t||e.eventType===t)&&
+        (!s||e.title.toLowerCase().includes(s)||e.location?.city?.toLowerCase().includes(s))
     );
-    renderList(); renderCalendar();
+    renderCards(); renderCalendar();
+    if(mapL) updateMapMarkers();
 }
 
-function clearFilters() {
-    document.getElementById('fCountry').value = '';
-    document.getElementById('fLevel').value = '';
-    document.getElementById('fSearch').value = '';
-    filtered = [...allEvents];
-    renderList(); renderCalendar();
+function clearFilters(){
+    document.getElementById('fCountry').value='';
+    document.getElementById('fType').value='';
+    document.getElementById('fSearch').value='';
+    filtered=[...all];
+    renderCards(); renderCalendar();
+    if(mapL) updateMapMarkers();
 }
 
-function switchView(name, btn) {
-    document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
-    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-    document.getElementById('view-' + name).classList.add('active');
+function switchView(name, btn){
+    document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
+    document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+    document.getElementById('view-'+name).classList.add('active');
     btn.classList.add('active');
-    if (name === 'calendar') renderCalendar();
+    if(name==='map' && !mapL) initMap();
+    else if(name==='map' && mapL){ mapL.invalidateSize(); updateMapMarkers(); }
 }
 
-function levelLabel(l) {
-    return { national: 'Nacional', regional: 'Regional', international: 'Internacional' }[l] || l;
+function levelLabel(l){
+    return {national:'Nacional',regional:'Regional',international:'Internacional'}[l]||l;
 }
 
-function renderList() {
-    const grid = document.getElementById('eventsGrid');
-    const sorted = [...filtered].sort((a,b) => new Date(a.date.start) - new Date(b.date.start));
-    if (!sorted.length) {
-        grid.innerHTML = `<div class="empty"><i class="fas fa-search"></i><p>Nenhuma prova encontrada. Tenta ajustar os filtros.</p></div>`;
+function renderCards(){
+    const g=document.getElementById('cardGrid');
+    const sorted=[...filtered].sort((a,b)=>new Date(a.date.start)-new Date(b.date.start));
+    if(!sorted.length){
+        g.innerHTML=`<div class="empty" style="grid-column:1/-1"><i class="fas fa-search"></i><p>Nenhuma prova encontrada.<br>Tenta ajustar os filtros.</p></div>`;
         return;
     }
-    grid.innerHTML = sorted.map(ev => {
-        const d = new Date(ev.date.start);
-        const day = d.getDate();
-        const month = d.toLocaleDateString('pt-PT', { month: 'short' }).toUpperCase().replace('.','');
-        const fed = feds[ev.source] || {};
-        const idx = allEvents.indexOf(ev);
-        return `
-        <div class="event-card">
+    g.innerHTML=sorted.map(ev=>{
+        const d=new Date(ev.date.start);
+        const day=d.getDate();
+        const mon=d.toLocaleDateString('pt-PT',{month:'short'}).toUpperCase().replace('.','');
+        const yr=d.getFullYear();
+        const fed=FEDS[ev.source]||{};
+        const idx=all.indexOf(ev);
+        return `<div class="card">
             <div class="card-top">
-                <div>
-                    <div class="card-date-big">${day}</div>
-                    <div class="card-month">${month} ${d.getFullYear()}</div>
+                <div class="card-date">
+                    <div class="card-day">${day}</div>
+                    <div class="card-month">${mon} ${yr}</div>
                 </div>
-                <div class="card-badge">${levelLabel(ev.level)}</div>
+                <span class="card-badge">${levelLabel(ev.level)}</span>
             </div>
             <div class="card-body">
                 <div class="card-title">${ev.title}</div>
-                <div class="card-info"><i class="fas fa-map-marker-alt"></i> ${ev.location.city}${ev.location.venue ? ' · ' + ev.location.venue : ''}</div>
-                <div class="card-info"><i class="fas fa-flag"></i> ${ev.country}</div>
-                <div class="card-info"><i class="fas fa-building"></i> ${ev.federation}</div>
-                ${ev.categories?.length ? `<div class="card-tags">${ev.categories.map(c=>`<span class="card-tag">${c}</span>`).join('')}</div>` : ''}
+                <div class="card-row"><i class="fas fa-map-marker-alt"></i>${ev.location.city}${ev.location.venue&&ev.location.venue!=='A confirmar'?' · '+ev.location.venue:''}</div>
+                <div class="card-row"><i class="fas fa-flag"></i>${ev.country}</div>
+                <div class="card-row"><i class="fas fa-building"></i>${ev.federation}</div>
+                <div class="card-tags">
+                    ${ev.eventType?`<span class="tag tag-type">${ev.eventType}</span>`:''}
+                    ${(ev.categories||[]).slice(0,3).map(c=>`<span class="tag">${c}</span>`).join('')}
+                </div>
             </div>
             <div class="card-footer">
                 <button class="btn-detail" onclick="showModal(${idx})"><i class="fas fa-map-marker-alt"></i> Ver & Localizar</button>
-                ${fed.website ? `<a href="${fed.website}" target="_blank" class="btn-fed"><i class="fas fa-external-link-alt"></i> Federação</a>` : ''}
+                ${fed.website?`<a href="${fed.website}" target="_blank" rel="noopener" class="btn-fed"><i class="fas fa-external-link-alt"></i> Federação</a>`:''}
             </div>
         </div>`;
     }).join('');
 }
 
-function showModal(idx) {
-    const ev = allEvents[idx];
-    const fed = feds[ev.source] || {};
-    const d = new Date(ev.date.start);
-    const dateStr = d.toLocaleDateString('pt-PT', { weekday:'long', year:'numeric', month:'long', day:'numeric' });
-    const timeStr = d.toLocaleTimeString('pt-PT', { hour:'2-digit', minute:'2-digit' });
-    const coords = ev.location?.coordinates;
+function showModal(idx){
+    const ev=all[idx];
+    const fed=FEDS[ev.source]||{};
+    const d=new Date(ev.date.start);
+    const dEnd=ev.date.end?new Date(ev.date.end):null;
+    const dateStr=d.toLocaleDateString('pt-PT',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
+    const endStr=dEnd&&dEnd.toDateString()!==d.toDateString()?` → ${dEnd.toLocaleDateString('pt-PT',{day:'numeric',month:'long'})}`:'' ;
+    const coords=ev.location?.coordinates;
+    const mapsUrl=coords?`https://www.google.com/maps/search/?api=1&query=${coords.latitude},${coords.longitude}`:`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(ev.location.city)}`;
+    const wazeUrl=coords?`https://waze.com/ul?ll=${coords.latitude},${coords.longitude}&navigate=yes`:`https://waze.com/ul?q=${encodeURIComponent(ev.location.city)}`;
 
-    document.getElementById('mTitle').textContent = ev.title;
-    document.getElementById('mFed').textContent = `${ev.federation} · ${ev.country}`;
-
-    const mapsUrl = coords
-        ? `https://www.google.com/maps/search/?api=1&query=${coords.latitude},${coords.longitude}`
-        : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(ev.location.venue + ' ' + ev.location.city)}`;
-    const wazeUrl = coords
-        ? `https://waze.com/ul?ll=${coords.latitude},${coords.longitude}&navigate=yes`
-        : `https://waze.com/ul?q=${encodeURIComponent(ev.location.city)}`;
-
-    document.getElementById('mBody').innerHTML = `
+    document.getElementById('mTitle').textContent=ev.title;
+    document.getElementById('mFed').textContent=`${ev.federation} · ${ev.country}`;
+    document.getElementById('mBody').innerHTML=`
         <div class="modal-grid">
-            <div class="modal-item">
-                <div class="modal-label"><i class="fas fa-calendar"></i> Data</div>
-                <div class="modal-value">${dateStr}</div>
-            </div>
-            <div class="modal-item">
-                <div class="modal-label"><i class="fas fa-clock"></i> Hora</div>
-                <div class="modal-value">${timeStr}</div>
-            </div>
-            <div class="modal-item">
-                <div class="modal-label"><i class="fas fa-map-marker-alt"></i> Cidade</div>
-                <div class="modal-value">${ev.location.city}</div>
-            </div>
-            <div class="modal-item">
-                <div class="modal-label"><i class="fas fa-home"></i> Local</div>
-                <div class="modal-value">${ev.location.venue || '—'}</div>
-            </div>
-            <div class="modal-item">
-                <div class="modal-label"><i class="fas fa-trophy"></i> Tipo</div>
-                <div class="modal-value">${levelLabel(ev.level)}</div>
-            </div>
-            <div class="modal-item">
-                <div class="modal-label"><i class="fas fa-list"></i> Categorias</div>
-                <div class="modal-value">${ev.categories?.join(', ') || '—'}</div>
-            </div>
+            <div><div class="mi-label">Data</div><div class="mi-value">${dateStr}${endStr}</div></div>
+            <div><div class="mi-label">Tipo</div><div class="mi-value">${ev.eventType||levelLabel(ev.level)}</div></div>
+            <div><div class="mi-label">Cidade</div><div class="mi-value">${ev.location.city}</div></div>
+            <div><div class="mi-label">Local</div><div class="mi-value">${ev.location.venue&&ev.location.venue!=='A confirmar'?ev.location.venue:'—'}</div></div>
         </div>
-
-        <div class="map-section">
-            <h4><i class="fas fa-map-marked-alt"></i> Localização do Evento</h4>
-            <div id="eventMap"></div>
-            <div class="map-actions">
-                <a href="${mapsUrl}" target="_blank" class="btn-gmaps">
-                    <i class="fas fa-map"></i> Abrir no Google Maps
-                </a>
-                <a href="${wazeUrl}" target="_blank" class="btn-waze">
-                    <i class="fas fa-car"></i> Navegar no Waze
-                </a>
-            </div>
+        ${ev.categories?.length?`<div class="mi-label" style="margin-bottom:0.4rem">Categorias</div><div class="card-tags" style="margin-bottom:1rem">${ev.categories.map(c=>`<span class="tag">${c}</span>`).join('')}</div>`:''}
+        <div class="mi-label" style="margin-bottom:0.5rem"><i class="fas fa-map-marked-alt"></i> Localização</div>
+        <div id="evMap"></div>
+        <div class="map-btns">
+            <a href="${mapsUrl}" target="_blank" rel="noopener" class="btn-maps"><i class="fas fa-map"></i> Google Maps</a>
+            <a href="${wazeUrl}" target="_blank" rel="noopener" class="btn-waze"><i class="fas fa-car"></i> Waze</a>
         </div>
-
-        ${fed.website ? `
-        <a href="${fed.website}" target="_blank" class="modal-link">
-            <i class="fas fa-external-link-alt"></i> Página Oficial da Federação
-        </a>` : ''}
+        ${fed.website?`<a href="${fed.website}" target="_blank" rel="noopener" class="btn-website"><i class="fas fa-external-link-alt"></i> Página Oficial da Federação</a>`:''}
     `;
-
     document.getElementById('modal').classList.add('active');
+    document.body.style.overflow='hidden';
 
-    // Inicializar mapa DEPOIS de o HTML estar no DOM
-    setTimeout(() => {
-        if (eventMap) { eventMap.remove(); eventMap = null; }
-
-        const lat = coords?.latitude || 48.8566;
-        const lng = coords?.longitude || 2.3522;
-
-        eventMap = L.map('eventMap').setView([lat, lng], 14);
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '© OpenStreetMap'
-        }).addTo(eventMap);
-
-        // Marcador personalizado
-        const icon = L.divIcon({
-            html: `<div style="background:linear-gradient(135deg,#c0195a,#ff6f00);width:36px;height:36px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);border:3px solid white;box-shadow:0 2px 8px rgba(0,0,0,0.4);"></div>`,
-            iconSize: [36, 36],
-            iconAnchor: [18, 36],
-            className: ''
-        });
-
-        L.marker([lat, lng], { icon })
-            .addTo(eventMap)
-            .bindPopup(`<strong>${ev.title}</strong><br>${ev.location.venue || ''}<br>${ev.location.city}`, { maxWidth: 220 })
-            .openPopup();
-    }, 100);
+    setTimeout(()=>{
+        if(evMap){evMap.remove();evMap=null;}
+        const lat=coords?.latitude||48.8566, lng=coords?.longitude||2.3522;
+        evMap=L.map('evMap').setView([lat,lng],13);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'© OpenStreetMap'}).addTo(evMap);
+        const icon=L.divIcon({html:`<div style="background:linear-gradient(135deg,#c0195a,#ff6f00);width:32px;height:32px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);border:3px solid white;box-shadow:0 2px 8px rgba(0,0,0,0.4)"></div>`,iconSize:[32,32],iconAnchor:[16,32],className:''});
+        L.marker([lat,lng],{icon}).addTo(evMap).bindPopup(`<strong>${ev.title}</strong><br>${ev.location.city}`).openPopup();
+    },150);
 }
 
-function closeModal() {
-    if (eventMap) { eventMap.remove(); eventMap = null; }
+function closeModal(){
+    if(evMap){evMap.remove();evMap=null;}
     document.getElementById('modal').classList.remove('active');
+    document.body.style.overflow='';
 }
+document.getElementById('modal').addEventListener('click',e=>{if(e.target.id==='modal')closeModal();});
 
-document.getElementById('modal').addEventListener('click', e => {
-    if (e.target.id === 'modal') closeModal();
-});
-
-function renderCalendar() {
-    const year = calDate.getFullYear();
-    const month = calDate.getMonth();
-    document.getElementById('calTitle').textContent =
-        calDate.toLocaleDateString('pt-PT', { month:'long', year:'numeric' })
-            .replace(/^\w/, c => c.toUpperCase());
-
-    const firstDay = new Date(year, month, 1).getDay();
-    const daysInMonth = new Date(year, month + 1, 0).getDate();
-    const prevDays = new Date(year, month, 0).getDate();
-    const today = new Date();
-    const container = document.getElementById('calDays');
-    container.innerHTML = '';
-
-    for (let i = firstDay - 1; i >= 0; i--) {
-        const d = document.createElement('div');
-        d.className = 'cal-day other-month';
-        d.innerHTML = `<div class="cal-day-num">${prevDays - i}</div>`;
-        container.appendChild(d);
+/* ── CALENDÁRIO ── */
+function renderCalendar(){
+    const yr=calDate.getFullYear(), mo=calDate.getMonth();
+    document.getElementById('calTitle').textContent=
+        calDate.toLocaleDateString('pt-PT',{month:'long',year:'numeric'}).replace(/^\w/,c=>c.toUpperCase());
+    const first=new Date(yr,mo,1).getDay();
+    const days=new Date(yr,mo+1,0).getDate();
+    const prev=new Date(yr,mo,0).getDate();
+    const today=new Date();
+    const c=document.getElementById('calDays');
+    c.innerHTML='';
+    for(let i=first-1;i>=0;i--){
+        const d=document.createElement('div');
+        d.className='cal-day other';
+        d.innerHTML=`<div class="cal-num">${prev-i}</div>`;
+        c.appendChild(d);
     }
-
-    for (let day = 1; day <= daysInMonth; day++) {
-        const date = new Date(year, month, day);
-        const d = document.createElement('div');
-        d.className = 'cal-day';
-        if (date.toDateString() === today.toDateString()) d.classList.add('today');
-        d.innerHTML = `<div class="cal-day-num">${day}</div>`;
-
-        filtered.filter(ev => {
-            const ed = new Date(ev.date.start);
-            return ed.getFullYear() === year && ed.getMonth() === month && ed.getDate() === day;
-        }).forEach(ev => {
-            const badge = document.createElement('div');
-            badge.className = `cal-event ${ev.level}`;
-            badge.textContent = ev.title;
-            badge.title = `${ev.title} — ${ev.location.city}`;
-            badge.onclick = () => showModal(allEvents.indexOf(ev));
-            d.appendChild(badge);
+    for(let day=1;day<=days;day++){
+        const d=document.createElement('div');
+        d.className='cal-day';
+        const thisDate=new Date(yr,mo,day);
+        if(thisDate.toDateString()===today.toDateString()) d.classList.add('today');
+        d.innerHTML=`<div class="cal-num">${day}</div>`;
+        filtered.filter(ev=>{
+            const ed=new Date(ev.date.start);
+            return ed.getFullYear()===yr&&ed.getMonth()===mo&&ed.getDate()===day;
+        }).forEach(ev=>{
+            const b=document.createElement('div');
+            b.className=`cal-ev ${ev.level}`;
+            b.textContent=ev.title;
+            b.title=`${ev.title} — ${ev.location.city}`;
+            b.onclick=()=>showModal(all.indexOf(ev));
+            d.appendChild(b);
         });
-
-        container.appendChild(d);
+        c.appendChild(d);
     }
-
-    const remaining = 42 - container.children.length;
-    for (let i = 1; i <= remaining; i++) {
-        const d = document.createElement('div');
-        d.className = 'cal-day other-month';
-        d.innerHTML = `<div class="cal-day-num">${i}</div>`;
-        container.appendChild(d);
+    const rem=42-c.children.length;
+    for(let i=1;i<=rem;i++){
+        const d=document.createElement('div');
+        d.className='cal-day other';
+        d.innerHTML=`<div class="cal-num">${i}</div>`;
+        c.appendChild(d);
     }
 }
+function prevMonth(){calDate.setMonth(calDate.getMonth()-1);renderCalendar();}
+function nextMonth(){calDate.setMonth(calDate.getMonth()+1);renderCalendar();}
+function goToday(){calDate=new Date();calDate.setDate(1);renderCalendar();}
 
-function prevMonth() { calDate.setMonth(calDate.getMonth() - 1); renderCalendar(); }
-function nextMonth() { calDate.setMonth(calDate.getMonth() + 1); renderCalendar(); }
-function goToday() { calDate = new Date(); calDate.setDate(1); renderCalendar(); }
+/* ── MAPA GLOBAL ── */
+function initMap(){
+    mapL=L.map('map').setView([48,10],4);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'© OpenStreetMap'}).addTo(mapL);
+    updateMapMarkers();
+}
+function updateMapMarkers(){
+    if(!mapL) return;
+    mapL.eachLayer(l=>{if(l instanceof L.Marker)mapL.removeLayer(l);});
+    filtered.forEach(ev=>{
+        const c=ev.location?.coordinates;
+        if(!c) return;
+        L.circleMarker([c.latitude,c.longitude],{
+            radius:7,fillColor:ev.level==='international'?'#7b1fa2':ev.level==='regional'?'#1565c0':'#c0195a',
+            color:'white',weight:2,opacity:1,fillOpacity:0.85
+        }).bindPopup(`<strong>${ev.title}</strong><br>${ev.location.city}`).addTo(mapL);
+    });
+}
 </script>
 </body>
 </html>
