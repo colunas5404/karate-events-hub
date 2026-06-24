@@ -66,12 +66,12 @@
       "status": "active"
     },
     {
-      "id": "GB_BKF",
+      "id": "GB_EK",
       "country": "Reino Unido",
       "countryCode": "GB",
-      "name": "British Karate Federation",
-      "website": "https://www.britishkarate.org",
-      "calendarUrl": "https://www.britishkarate.org/calendar",
+      "name": "England Karate",
+      "website": "https://www.englandkarate.com",
+      "calendarUrl": "https://www.englandkarate.com/events",
       "type": "national",
       "wkfAffiliation": true,
       "language": "en",
@@ -118,16 +118,29 @@
       "status": "active"
     },
     {
-      "id": "BE_FFKB",
+      "id": "BE_VEKAF",
       "country": "Bélgica",
       "countryCode": "BE",
-      "name": "Fédération de Karate",
-      "website": "https://www.ffkb.be",
-      "calendarUrl": "https://www.ffkb.be/calendar",
+      "name": "Vlaamse Karate Federatie",
+      "website": "https://www.vekaf.be",
+      "calendarUrl": "https://www.vekaf.be/kalender",
       "type": "national",
       "wkfAffiliation": true,
-      "language": "fr",
+      "language": "nl",
       "timezone": "Europe/Brussels",
+      "status": "active"
+    },
+    {
+      "id": "WKF",
+      "country": "Mundial",
+      "countryCode": "WLD",
+      "name": "World Karate Federation",
+      "website": "https://www.wkf.net",
+      "calendarUrl": "https://www.wkf.net/events",
+      "type": "international",
+      "wkfAffiliation": true,
+      "language": "en",
+      "timezone": "UTC",
       "status": "active"
     }
   ]

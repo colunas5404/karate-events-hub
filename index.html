@@ -6,1023 +6,555 @@
     <title>Karate Events - Calendário de Provas e Competições</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
-            --primary: #d91e63;
+            --primary: #c0195a;
             --secondary: #1a237e;
             --accent: #ff6f00;
             --light: #f5f5f5;
             --border: #e0e0e0;
             --text: #212121;
             --text-light: #757575;
-            --success: #4caf50;
         }
+        body { font-family: 'Segoe UI', sans-serif; background: #f0f2f5; color: var(--text); }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
-            color: var(--text);
-            line-height: 1.6;
-        }
-
-        /* Header */
         header {
             background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
-            color: white;
-            padding: 2rem;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-            position: sticky;
-            top: 0;
-            z-index: 100;
+            color: white; padding: 1.5rem 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            position: sticky; top: 0; z-index: 100;
         }
-
         .header-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 2rem;
+            max-width: 1200px; margin: 0 auto;
+            display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;
         }
+        .logo { display: flex; align-items: center; gap: 0.75rem; font-size: 1.6rem; font-weight: 700; }
+        .logo i { color: var(--accent); font-size: 2rem; }
+        .stats { display: flex; gap: 2rem; font-size: 0.9rem; }
+        .stat { display: flex; align-items: center; gap: 0.5rem; }
+        .stat-value { font-weight: 700; font-size: 1.1rem; color: var(--accent); }
 
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            font-size: 1.75rem;
-            font-weight: 700;
-            letter-spacing: 1px;
-        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
 
-        .logo i {
-            color: var(--accent);
-            font-size: 2.5rem;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-        }
-
-        .stats {
-            display: flex;
-            gap: 2rem;
-            font-size: 0.95rem;
-        }
-
-        .stat {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .stat-value {
-            font-weight: 700;
-            font-size: 1.2rem;
-            color: var(--accent);
-        }
-
-        /* Main */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-
-        /* Search Bar */
+        /* Filtros */
         .search-bar {
-            background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            margin-bottom: 2rem;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            align-items: flex-end;
+            background: white; padding: 1.5rem; border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08); margin-bottom: 1.5rem;
+            display: flex; gap: 1rem; flex-wrap: wrap; align-items: flex-end;
         }
-
-        .search-group {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
+        .search-group { display: flex; flex-direction: column; gap: 0.4rem; flex: 1; min-width: 160px; }
+        .search-group label { font-weight: 600; font-size: 0.85rem; color: var(--secondary); }
+        .search-group input, .search-group select {
+            padding: 0.65rem 1rem; border: 2px solid var(--border);
+            border-radius: 6px; font-size: 0.95rem; transition: border-color 0.2s;
         }
-
-        .search-group label {
-            font-weight: 600;
-            font-size: 0.9rem;
-            color: var(--secondary);
+        .search-group input:focus, .search-group select:focus {
+            outline: none; border-color: var(--primary);
         }
-
-        .search-group input,
-        .search-group select {
-            padding: 0.75rem 1rem;
-            border: 2px solid var(--border);
-            border-radius: 6px;
-            font-size: 1rem;
-            transition: all 0.3s;
-        }
-
-        .search-group input:focus,
-        .search-group select:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(217, 30, 99, 0.1);
-        }
-
         .btn-search {
-            padding: 0.75rem 2rem;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
-            color: white;
-            border: none;
-            border-radius: 6px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
+            padding: 0.65rem 1.5rem;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white; border: none; border-radius: 6px;
+            font-weight: 600; cursor: pointer; transition: all 0.2s;
         }
-
-        .btn-search:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 16px rgba(217, 30, 99, 0.3);
-        }
-
+        .btn-search:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(192,25,90,0.3); }
         .btn-clear {
-            padding: 0.75rem 2rem;
-            background: white;
-            color: var(--text-light);
-            border: 2px solid var(--border);
-            border-radius: 6px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
+            padding: 0.65rem 1.5rem; background: white; color: var(--text-light);
+            border: 2px solid var(--border); border-radius: 6px; font-weight: 600; cursor: pointer;
         }
+        .btn-clear:hover { border-color: var(--primary); color: var(--primary); }
 
-        .btn-clear:hover {
-            border-color: var(--primary);
-            color: var(--primary);
+        /* Tabs */
+        .tabs {
+            display: flex; gap: 0.5rem; margin-bottom: 1.5rem;
+            background: white; padding: 0.5rem; border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06); width: fit-content;
         }
-
-        /* View Tabs */
-        .view-tabs {
-            display: flex;
-            gap: 1rem;
-            margin-bottom: 2rem;
-            border-bottom: 2px solid var(--border);
-            background: white;
-            padding: 1rem;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        .tab {
+            padding: 0.6rem 1.5rem; background: none; border: none;
+            border-radius: 8px; color: var(--text-light); font-weight: 600;
+            cursor: pointer; transition: all 0.2s;
         }
+        .tab.active { background: linear-gradient(135deg, var(--primary), var(--accent)); color: white; }
+        .tab:hover:not(.active) { background: var(--light); }
 
-        .view-tab {
-            padding: 0.75rem 1.5rem;
-            background: none;
-            border: none;
-            border-bottom: 3px solid transparent;
-            color: var(--text-light);
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
+        /* LISTA DE EVENTOS */
+        .view { display: none; }
+        .view.active { display: block; }
 
-        .view-tab:hover {
-            color: var(--primary);
-        }
-
-        .view-tab.active {
-            color: var(--primary);
-            border-bottom-color: var(--primary);
-        }
-
-        /* Content Views */
-        .view-content {
-            display: none;
-        }
-
-        .view-content.active {
-            display: block;
-        }
-
-        /* Calendar View */
-        .calendar-grid {
-            display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-
-        .calendar-header {
-            grid-column: 1 / -1;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1rem;
-        }
-
-        .calendar-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--secondary);
-        }
-
-        .calendar-nav button {
-            padding: 0.5rem 1rem;
-            border: 2px solid var(--border);
-            background: white;
-            border-radius: 6px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .calendar-nav button:hover {
-            border-color: var(--primary);
-            color: var(--primary);
-        }
-
-        .weekday {
-            text-align: center;
-            font-weight: 700;
-            color: var(--secondary);
-            padding: 1rem;
-            background: white;
-            border-radius: 6px;
-            grid-column: span 1;
-        }
-
-        .day {
-            background: white;
-            border: 2px solid var(--border);
-            border-radius: 8px;
-            padding: 1rem;
-            min-height: 100px;
-            cursor: pointer;
-            transition: all 0.3s;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .day:hover {
-            border-color: var(--primary);
-            box-shadow: 0 8px 16px rgba(217, 30, 99, 0.15);
-            transform: translateY(-4px);
-        }
-
-        .day.other-month {
-            background: var(--light);
-            opacity: 0.5;
-        }
-
-        .day.today {
-            background: linear-gradient(135deg, rgba(217, 30, 99, 0.1) 0%, rgba(255, 111, 0, 0.1) 100%);
-            border-color: var(--primary);
-            border-width: 2px;
-        }
-
-        .day-number {
-            font-weight: 700;
-            font-size: 1.1rem;
-            color: var(--secondary);
-            margin-bottom: 0.5rem;
-        }
-
-        .day-event-list {
-            display: flex;
-            flex-direction: column;
-            gap: 0.35rem;
-        }
-
-        .day-event-badge {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
-            color: white;
-            padding: 0.3rem 0.6rem;
-            border-radius: 4px;
-            font-size: 0.75rem;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            font-weight: 600;
-        }
-
-        /* Events List View */
-        .events-container {
+        .events-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+            gap: 1.5rem;
         }
 
         .event-card {
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            transition: all 0.3s;
-            display: flex;
-            flex-direction: column;
+            background: white; border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            overflow: hidden; transition: all 0.3s;
+            display: flex; flex-direction: column;
         }
+        .event-card:hover { transform: translateY(-6px); box-shadow: 0 10px 24px rgba(192,25,90,0.18); }
 
-        .event-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 24px rgba(217, 30, 99, 0.2);
+        .card-top {
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            color: white; padding: 1.25rem 1.5rem;
+            display: flex; justify-content: space-between; align-items: flex-start;
         }
-
-        .event-header {
-            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
-            color: white;
-            padding: 1.5rem;
-            position: relative;
+        .card-date-big { font-size: 2.5rem; font-weight: 800; line-height: 1; }
+        .card-month { font-size: 0.85rem; opacity: 0.8; text-transform: uppercase; letter-spacing: 1px; }
+        .card-badge {
+            background: var(--accent); padding: 0.3rem 0.8rem;
+            border-radius: 20px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
         }
-
-        .event-level {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: var(--accent);
-            padding: 0.35rem 0.75rem;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
+        .card-body { padding: 1.25rem 1.5rem; flex-grow: 1; display: flex; flex-direction: column; gap: 0.75rem; }
+        .card-title { font-size: 1.1rem; font-weight: 700; color: var(--secondary); line-height: 1.3; }
+        .card-info { display: flex; align-items: center; gap: 0.6rem; font-size: 0.9rem; color: var(--text-light); }
+        .card-info i { color: var(--primary); width: 16px; }
+        .card-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: auto; }
+        .card-tag {
+            background: #f0f0f0; color: var(--secondary);
+            padding: 0.25rem 0.65rem; border-radius: 10px; font-size: 0.78rem; font-weight: 600;
         }
-
-        .event-date {
-            font-size: 2rem;
-            font-weight: 700;
-            line-height: 1;
-        }
-
-        .event-month {
-            font-size: 0.85rem;
-            opacity: 0.8;
-            text-transform: uppercase;
-        }
-
-        .event-body {
-            padding: 1.5rem;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .event-title {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--secondary);
-            line-height: 1.3;
-        }
-
-        .event-info {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            color: var(--text-light);
-            font-size: 0.95rem;
-        }
-
-        .event-info i {
-            color: var(--primary);
-            width: 18px;
-        }
-
-        .event-categories {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: auto;
-        }
-
-        .category-tag {
-            background: #f0f0f0;
-            color: var(--secondary);
-            padding: 0.3rem 0.75rem;
-            border-radius: 12px;
-            font-size: 0.8rem;
-            font-weight: 600;
-        }
-
-        .event-footer {
+        .card-footer {
             border-top: 1px solid var(--border);
-            padding: 1rem 1.5rem;
-            display: flex;
-            gap: 0.75rem;
+            padding: 1rem 1.5rem; display: flex; gap: 0.75rem;
         }
-
-        .btn-details {
-            flex: 1;
-            padding: 0.75rem;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
-            color: white;
-            border: none;
-            border-radius: 6px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
+        .btn-detail {
+            flex: 1; padding: 0.65rem;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white; border: none; border-radius: 6px;
+            font-weight: 600; cursor: pointer; transition: all 0.2s;
         }
-
-        .btn-details:hover {
-            transform: scale(1.05);
+        .btn-detail:hover { opacity: 0.9; transform: scale(1.02); }
+        .btn-fed {
+            flex: 1; padding: 0.65rem; background: white; color: var(--primary);
+            border: 2px solid var(--primary); border-radius: 6px;
+            font-weight: 600; cursor: pointer; text-decoration: none;
+            text-align: center; transition: all 0.2s;
         }
+        .btn-fed:hover { background: var(--primary); color: white; }
 
-        .btn-link {
-            flex: 1;
-            padding: 0.75rem;
-            background: white;
-            color: var(--primary);
-            border: 2px solid var(--primary);
-            border-radius: 6px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-            text-decoration: none;
-            text-align: center;
+        /* CALENDÁRIO */
+        .calendar-wrapper {
+            background: white; border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08); padding: 1.5rem;
         }
-
-        .btn-link:hover {
-            background: var(--primary);
-            color: white;
+        .cal-header {
+            display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;
         }
+        .cal-title { font-size: 1.4rem; font-weight: 700; color: var(--secondary); }
+        .cal-nav { display: flex; gap: 0.5rem; }
+        .cal-nav button {
+            padding: 0.5rem 1rem; border: 2px solid var(--border);
+            background: white; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.2s;
+        }
+        .cal-nav button:hover { border-color: var(--primary); color: var(--primary); }
 
-        /* Event Detail Modal */
+        .cal-weekdays {
+            display: grid; grid-template-columns: repeat(7, 1fr);
+            gap: 4px; margin-bottom: 4px;
+        }
+        .cal-weekday {
+            text-align: center; font-weight: 700; font-size: 0.85rem;
+            color: var(--secondary); padding: 0.5rem; background: #f0f2f5; border-radius: 6px;
+        }
+        .cal-days {
+            display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px;
+        }
+        .cal-day {
+            border: 2px solid var(--border); border-radius: 8px;
+            padding: 0.5rem; min-height: 90px;
+            transition: all 0.2s; background: white;
+        }
+        .cal-day:hover { border-color: var(--primary); box-shadow: 0 4px 12px rgba(192,25,90,0.1); }
+        .cal-day.other-month { background: #f9f9f9; opacity: 0.5; }
+        .cal-day.today { border-color: var(--accent); border-width: 2px; background: #fff8f0; }
+        .cal-day-num {
+            font-weight: 700; font-size: 0.95rem; color: var(--text);
+            margin-bottom: 4px;
+        }
+        .cal-day.today .cal-day-num { color: var(--accent); }
+        .cal-event {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white; padding: 2px 6px; border-radius: 4px;
+            font-size: 0.68rem; font-weight: 600;
+            white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+            margin-bottom: 2px; cursor: pointer;
+        }
+        .cal-event:hover { opacity: 0.85; }
+        .cal-event.international { background: linear-gradient(135deg, #7b1fa2, #c0195a); }
+        .cal-event.regional { background: linear-gradient(135deg, #1565c0, #0097a7); }
+
+        /* MODAL */
         .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0,0,0,0.7);
-            z-index: 1000;
-            align-items: center;
-            justify-content: center;
+            display: none; position: fixed; inset: 0;
+            background: rgba(0,0,0,0.65); z-index: 1000;
+            align-items: center; justify-content: center;
         }
-
-        .modal.active {
-            display: flex;
+        .modal.active { display: flex; }
+        .modal-box {
+            background: white; border-radius: 14px;
+            max-width: 560px; width: 92%; max-height: 85vh; overflow-y: auto;
         }
-
-        .modal-content {
-            background: white;
-            border-radius: 12px;
-            max-width: 600px;
-            width: 90%;
-            max-height: 80vh;
-            overflow-y: auto;
-            position: relative;
+        .modal-head {
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            color: white; padding: 1.75rem;
+            display: flex; justify-content: space-between; align-items: flex-start;
+            border-radius: 14px 14px 0 0;
         }
-
-        .modal-header {
-            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
-            color: white;
-            padding: 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: start;
-        }
-
+        .modal-head-title { font-size: 1.3rem; font-weight: 700; padding-right: 1rem; }
+        .modal-head-fed { font-size: 0.9rem; opacity: 0.8; margin-top: 0.4rem; }
         .modal-close {
-            background: none;
-            border: none;
-            color: white;
-            font-size: 2rem;
-            cursor: pointer;
-            padding: 0;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            background: rgba(255,255,255,0.2); border: none; color: white;
+            width: 36px; height: 36px; border-radius: 50%; font-size: 1.3rem;
+            cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
         }
+        .modal-close:hover { background: rgba(255,255,255,0.35); }
+        .modal-body { padding: 1.75rem; }
+        .modal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-bottom: 1.5rem; }
+        .modal-item {}
+        .modal-label { font-size: 0.8rem; font-weight: 700; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.3rem; }
+        .modal-value { font-size: 0.95rem; color: var(--text); }
+        .modal-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 1rem 0; }
+        .modal-link {
+            display: block; text-align: center; padding: 0.85rem;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white; text-decoration: none; border-radius: 8px;
+            font-weight: 700; margin-top: 1.5rem; transition: opacity 0.2s;
+        }
+        .modal-link:hover { opacity: 0.9; }
 
-        .modal-body {
-            padding: 2rem;
-        }
+        .empty { grid-column: 1/-1; text-align: center; padding: 3rem; color: var(--text-light); }
+        .empty i { font-size: 2.5rem; opacity: 0.3; margin-bottom: 1rem; display: block; }
 
-        .modal-info-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin: 1.5rem 0;
-        }
-
-        .modal-info-item {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .modal-info-icon {
-            color: var(--primary);
-            font-size: 1.5rem;
-            width: 30px;
-            flex-shrink: 0;
-        }
-
-        .modal-info-label {
-            font-weight: 700;
-            color: var(--secondary);
-            font-size: 0.9rem;
-            margin-bottom: 0.25rem;
-        }
-
-        .modal-info-text {
-            color: var(--text-light);
-        }
-
-        .empty-state {
-            text-align: center;
-            padding: 3rem;
-            color: var(--text-light);
-        }
-
-        .empty-state i {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            opacity: 0.3;
-        }
-
-        footer {
-            background: var(--secondary);
-            color: white;
-            text-align: center;
-            padding: 2rem;
-            margin-top: 3rem;
-        }
+        footer { background: var(--secondary); color: white; text-align: center; padding: 1.5rem; margin-top: 2rem; font-size: 0.9rem; }
 
         @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .stats {
-                width: 100%;
-                justify-content: space-around;
-            }
-
-            .search-bar {
-                grid-template-columns: 1fr;
-            }
-
-            .events-container {
-                grid-template-columns: 1fr;
-            }
-
-            .calendar-grid {
-                gap: 0.5rem;
-            }
-
-            .day {
-                min-height: 70px;
-                padding: 0.5rem;
-            }
-
-            .day-event-badge {
-                font-size: 0.65rem;
-            }
-
-            .modal-content {
-                width: 95%;
-                max-height: 90vh;
-            }
+            .header-content { flex-direction: column; }
+            .stats { width: 100%; justify-content: space-around; }
+            .search-bar { flex-direction: column; }
+            .events-grid { grid-template-columns: 1fr; }
+            .cal-day { min-height: 60px; padding: 0.3rem; }
+            .cal-day-num { font-size: 0.8rem; }
+            .cal-event { font-size: 0.6rem; }
+            .modal-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="header-content">
-            <div class="logo">
-                <i class="fas fa-crown"></i>
-                <span>Karate Events</span>
-            </div>
-            <div class="stats">
-                <div class="stat">
-                    <i class="fas fa-calendar-check"></i>
-                    <span><span class="stat-value" id="eventCount">0</span> Provas</span>
-                </div>
-                <div class="stat">
-                    <i class="fas fa-globe"></i>
-                    <span><span class="stat-value" id="countryCount">0</span> Países</span>
-                </div>
-                <div class="stat">
-                    <i class="fas fa-building"></i>
-                    <span><span class="stat-value" id="federationCount">0</span> Federações</span>
-                </div>
-            </div>
+
+<header>
+    <div class="header-content">
+        <div class="logo">
+            <i class="fas fa-crown"></i>
+            <span>Karate Events</span>
         </div>
-    </header>
-
-    <!-- Main Content -->
-    <div class="container">
-        <!-- Search Bar -->
-        <div class="search-bar">
-            <div class="search-group">
-                <label><i class="fas fa-globe"></i> País</label>
-                <select id="countryFilter">
-                    <option value="">Todos os países</option>
-                </select>
-            </div>
-            <div class="search-group">
-                <label><i class="fas fa-filter"></i> Tipo de Prova</label>
-                <select id="levelFilter">
-                    <option value="">Todos os tipos</option>
-                    <option value="national">Nacional</option>
-                    <option value="regional">Regional</option>
-                    <option value="international">Internacional</option>
-                </select>
-            </div>
-            <div class="search-group">
-                <label><i class="fas fa-search"></i> Procurar</label>
-                <input type="text" id="searchFilter" placeholder="Campeonato, prova...">
-            </div>
-            <button class="btn-search" onclick="applyFilters()"><i class="fas fa-search"></i> Procurar</button>
-            <button class="btn-clear" onclick="clearFilters()"><i class="fas fa-redo"></i> Limpar</button>
-        </div>
-
-        <!-- View Tabs -->
-        <div class="view-tabs">
-            <button class="view-tab active" onclick="switchView('events')">
-                <i class="fas fa-th-list"></i> Lista de Eventos
-            </button>
-            <button class="view-tab" onclick="switchView('calendar')">
-                <i class="fas fa-calendar"></i> Calendário
-            </button>
-        </div>
-
-        <!-- Events List View -->
-        <div class="view-content active" id="view-events">
-            <div class="events-container" id="eventsContainer">
-                <div class="empty-state">
-                    <i class="fas fa-hourglass-half"></i>
-                    <h3>Carregando eventos...</h3>
-                </div>
-            </div>
-        </div>
-
-        <!-- Calendar View -->
-        <div class="view-content" id="view-calendar">
-            <div class="calendar-grid">
-                <div class="calendar-header">
-                    <h2 class="calendar-title" id="calendarTitle">Janeiro 2025</h2>
-                    <div class="calendar-nav">
-                        <button onclick="previousMonth()"><i class="fas fa-chevron-left"></i> Anterior</button>
-                        <button onclick="goToday()">Hoje</button>
-                        <button onclick="nextMonth()">Próximo <i class="fas fa-chevron-right"></i></button>
-                    </div>
-                </div>
-
-                <div class="weekday">Dom</div>
-                <div class="weekday">Seg</div>
-                <div class="weekday">Ter</div>
-                <div class="weekday">Qua</div>
-                <div class="weekday">Qui</div>
-                <div class="weekday">Sex</div>
-                <div class="weekday">Sab</div>
-
-                <div id="calendar"></div>
-            </div>
+        <div class="stats">
+            <div class="stat"><i class="fas fa-calendar-check"></i> <span class="stat-value" id="evCount">0</span> Provas</div>
+            <div class="stat"><i class="fas fa-globe"></i> <span class="stat-value" id="ctCount">0</span> Países</div>
+            <div class="stat"><i class="fas fa-building"></i> <span class="stat-value" id="fedCount">0</span> Federações</div>
         </div>
     </div>
+</header>
 
-    <!-- Event Detail Modal -->
-    <div class="modal" id="eventModal">
-        <div class="modal-content">
-            <div class="modal-header">
+<div class="container">
+    <!-- Filtros -->
+    <div class="search-bar">
+        <div class="search-group">
+            <label><i class="fas fa-globe"></i> País</label>
+            <select id="fCountry"><option value="">Todos os países</option></select>
+        </div>
+        <div class="search-group">
+            <label><i class="fas fa-filter"></i> Tipo</label>
+            <select id="fLevel">
+                <option value="">Todos os tipos</option>
+                <option value="national">Nacional</option>
+                <option value="regional">Regional</option>
+                <option value="international">Internacional</option>
+            </select>
+        </div>
+        <div class="search-group">
+            <label><i class="fas fa-search"></i> Procurar</label>
+            <input type="text" id="fSearch" placeholder="Nome da prova...">
+        </div>
+        <button class="btn-search" onclick="applyFilters()"><i class="fas fa-search"></i> Filtrar</button>
+        <button class="btn-clear" onclick="clearFilters()"><i class="fas fa-redo"></i> Limpar</button>
+    </div>
+
+    <!-- Tabs -->
+    <div class="tabs">
+        <button class="tab active" onclick="switchView('events', this)"><i class="fas fa-list"></i> Lista de Provas</button>
+        <button class="tab" onclick="switchView('calendar', this)"><i class="fas fa-calendar"></i> Calendário</button>
+    </div>
+
+    <!-- Vista: Lista -->
+    <div class="view active" id="view-events">
+        <div class="events-grid" id="eventsGrid"></div>
+    </div>
+
+    <!-- Vista: Calendário -->
+    <div class="view" id="view-calendar">
+        <div class="calendar-wrapper">
+            <div class="cal-header">
+                <h2 class="cal-title" id="calTitle"></h2>
+                <div class="cal-nav">
+                    <button onclick="prevMonth()"><i class="fas fa-chevron-left"></i> Anterior</button>
+                    <button onclick="goToday()">Hoje</button>
+                    <button onclick="nextMonth()">Próximo <i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+            <div class="cal-weekdays">
+                <div class="cal-weekday">Dom</div>
+                <div class="cal-weekday">Seg</div>
+                <div class="cal-weekday">Ter</div>
+                <div class="cal-weekday">Qua</div>
+                <div class="cal-weekday">Qui</div>
+                <div class="cal-weekday">Sex</div>
+                <div class="cal-weekday">Sab</div>
+            </div>
+            <div class="cal-days" id="calDays"></div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal" id="modal">
+    <div class="modal-box">
+        <div class="modal-head">
+            <div>
+                <div class="modal-head-title" id="mTitle"></div>
+                <div class="modal-head-fed" id="mFed"></div>
+            </div>
+            <button class="modal-close" onclick="closeModal()">×</button>
+        </div>
+        <div class="modal-body" id="mBody"></div>
+    </div>
+</div>
+
+<footer>
+    <strong>Karate Events Hub</strong> — Calendário Europeu de Provas e Competições de Karaté 🥋
+</footer>
+
+<script>
+let allEvents = [], filtered = [], feds = {};
+let calDate = new Date();
+calDate.setDate(1);
+
+document.addEventListener('DOMContentLoaded', async () => {
+    await loadData();
+    populateCountries();
+    renderList();
+    renderCalendar();
+});
+
+async function loadData() {
+    try {
+        const [er, fr] = await Promise.all([fetch('events.json'), fetch('federations.json')]);
+        const ed = await er.json();
+        const fd = await fr.json();
+        allEvents = ed.events || [];
+        filtered = [...allEvents];
+        fd.federations.forEach(f => feds[f.id] = f);
+        document.getElementById('evCount').textContent = allEvents.length;
+        document.getElementById('ctCount').textContent = new Set(allEvents.map(e => e.country)).size;
+        document.getElementById('fedCount').textContent = new Set(allEvents.map(e => e.source)).size;
+    } catch(e) {
+        console.error('Erro:', e);
+    }
+}
+
+function populateCountries() {
+    const sel = document.getElementById('fCountry');
+    [...new Set(allEvents.map(e => e.country))].sort().forEach(c => {
+        sel.innerHTML += `<option value="${c}">${c}</option>`;
+    });
+}
+
+function applyFilters() {
+    const c = document.getElementById('fCountry').value;
+    const l = document.getElementById('fLevel').value;
+    const s = document.getElementById('fSearch').value.toLowerCase();
+    filtered = allEvents.filter(ev =>
+        (!c || ev.country === c) &&
+        (!l || ev.level === l) &&
+        (!s || ev.title.toLowerCase().includes(s))
+    );
+    renderList();
+    renderCalendar();
+}
+
+function clearFilters() {
+    document.getElementById('fCountry').value = '';
+    document.getElementById('fLevel').value = '';
+    document.getElementById('fSearch').value = '';
+    filtered = [...allEvents];
+    renderList();
+    renderCalendar();
+}
+
+function switchView(name, btn) {
+    document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    document.getElementById('view-' + name).classList.add('active');
+    btn.classList.add('active');
+    if (name === 'calendar') renderCalendar();
+}
+
+function levelLabel(l) {
+    return { national: 'Nacional', regional: 'Regional', international: 'Internacional' }[l] || l;
+}
+
+function renderList() {
+    const grid = document.getElementById('eventsGrid');
+    const sorted = [...filtered].sort((a,b) => new Date(a.date.start) - new Date(b.date.start));
+
+    if (!sorted.length) {
+        grid.innerHTML = `<div class="empty"><i class="fas fa-search"></i><p>Nenhuma prova encontrada. Tenta ajustar os filtros.</p></div>`;
+        return;
+    }
+
+    grid.innerHTML = sorted.map((ev, i) => {
+        const d = new Date(ev.date.start);
+        const day = d.getDate();
+        const month = d.toLocaleDateString('pt-PT', { month: 'short' }).toUpperCase().replace('.','');
+        const fed = feds[ev.source] || {};
+        return `
+        <div class="event-card">
+            <div class="card-top">
                 <div>
-                    <h2 id="modalTitle"></h2>
-                    <p id="modalFederation" style="opacity: 0.8; margin-top: 0.5rem;"></p>
+                    <div class="card-date-big">${day}</div>
+                    <div class="card-month">${month} ${d.getFullYear()}</div>
                 </div>
-                <button class="modal-close" onclick="closeModal()">×</button>
+                <div class="card-badge">${levelLabel(ev.level)}</div>
             </div>
-            <div class="modal-body">
-                <div id="modalContent"></div>
+            <div class="card-body">
+                <div class="card-title">${ev.title}</div>
+                <div class="card-info"><i class="fas fa-map-marker-alt"></i> ${ev.location.city}${ev.location.venue ? ', ' + ev.location.venue : ''}</div>
+                <div class="card-info"><i class="fas fa-flag"></i> ${ev.country}</div>
+                <div class="card-info"><i class="fas fa-building"></i> ${ev.federation}</div>
+                ${ev.categories?.length ? `<div class="card-tags">${ev.categories.map(c=>`<span class="card-tag">${c}</span>`).join('')}</div>` : ''}
+            </div>
+            <div class="card-footer">
+                <button class="btn-detail" onclick="showModal(${allEvents.indexOf(ev)})"><i class="fas fa-eye"></i> Ver Detalhes</button>
+                ${fed.website ? `<a href="${fed.website}" target="_blank" class="btn-fed"><i class="fas fa-external-link-alt"></i> Federação</a>` : ''}
+            </div>
+        </div>`;
+    }).join('');
+}
+
+function showModal(idx) {
+    const ev = allEvents[idx];
+    const fed = feds[ev.source] || {};
+    const d = new Date(ev.date.start);
+    const dateStr = d.toLocaleDateString('pt-PT', { weekday:'long', year:'numeric', month:'long', day:'numeric' });
+    const timeStr = d.toLocaleTimeString('pt-PT', { hour:'2-digit', minute:'2-digit' });
+
+    document.getElementById('mTitle').textContent = ev.title;
+    document.getElementById('mFed').textContent = ev.federation;
+    document.getElementById('mBody').innerHTML = `
+        <div class="modal-grid">
+            <div class="modal-item">
+                <div class="modal-label"><i class="fas fa-calendar"></i> Data</div>
+                <div class="modal-value">${dateStr}</div>
+            </div>
+            <div class="modal-item">
+                <div class="modal-label"><i class="fas fa-clock"></i> Hora</div>
+                <div class="modal-value">${timeStr}</div>
+            </div>
+            <div class="modal-item">
+                <div class="modal-label"><i class="fas fa-map-marker-alt"></i> Cidade</div>
+                <div class="modal-value">${ev.location.city}</div>
+            </div>
+            <div class="modal-item">
+                <div class="modal-label"><i class="fas fa-home"></i> Local</div>
+                <div class="modal-value">${ev.location.venue || '—'}</div>
+            </div>
+            <div class="modal-item">
+                <div class="modal-label"><i class="fas fa-flag"></i> País</div>
+                <div class="modal-value">${ev.country}</div>
+            </div>
+            <div class="modal-item">
+                <div class="modal-label"><i class="fas fa-trophy"></i> Tipo</div>
+                <div class="modal-value">${levelLabel(ev.level)}</div>
             </div>
         </div>
-    </div>
+        ${ev.categories?.length ? `
+        <div class="modal-label">Categorias</div>
+        <div class="modal-tags">${ev.categories.map(c=>`<span class="card-tag">${c}</span>`).join('')}</div>` : ''}
+        ${fed.website ? `<a href="${fed.website}" target="_blank" class="modal-link"><i class="fas fa-external-link-alt"></i> Página Oficial da Federação</a>` : ''}
+    `;
+    document.getElementById('modal').classList.add('active');
+}
 
-    <!-- Footer -->
-    <footer>
-        <p><strong>Karate Events Hub</strong> - Calendário Global de Provas e Competições de Karaté</p>
-        <p style="margin-top: 0.5rem; opacity: 0.8; font-size: 0.9rem;">Desenvolvido para a comunidade de karaté europeia 🥋</p>
-    </footer>
+function closeModal() {
+    document.getElementById('modal').classList.remove('active');
+}
 
-    <script>
-        let allEvents = [];
-        let filteredEvents = [];
-        let currentDate = new Date(2025, 0, 1);
-        let federations = {};
+document.getElementById('modal').addEventListener('click', e => {
+    if (e.target.id === 'modal') closeModal();
+});
 
-        document.addEventListener('DOMContentLoaded', async () => {
-            await loadData();
-            populateFilters();
-            renderEvents();
-            renderCalendar();
+function renderCalendar() {
+    const year = calDate.getFullYear();
+    const month = calDate.getMonth();
+    document.getElementById('calTitle').textContent =
+        calDate.toLocaleDateString('pt-PT', { month:'long', year:'numeric' })
+            .replace(/^\w/, c => c.toUpperCase());
+
+    const firstDay = new Date(year, month, 1).getDay();
+    const daysInMonth = new Date(year, month + 1, 0).getDate();
+    const today = new Date();
+    const container = document.getElementById('calDays');
+    container.innerHTML = '';
+
+    // Dias do mês anterior (preenchimento)
+    const prevMonthDays = new Date(year, month, 0).getDate();
+    for (let i = firstDay - 1; i >= 0; i--) {
+        const d = document.createElement('div');
+        d.className = 'cal-day other-month';
+        d.innerHTML = `<div class="cal-day-num">${prevMonthDays - i}</div>`;
+        container.appendChild(d);
+    }
+
+    // Dias deste mês
+    for (let day = 1; day <= daysInMonth; day++) {
+        const date = new Date(year, month, day);
+        const d = document.createElement('div');
+        d.className = 'cal-day';
+        if (date.toDateString() === today.toDateString()) d.classList.add('today');
+
+        const dayEvents = filtered.filter(ev => {
+            const ed = new Date(ev.date.start);
+            return ed.getFullYear() === year && ed.getMonth() === month && ed.getDate() === day;
         });
 
-        async function loadData() {
-            try {
-                const [eventsRes, federationsRes] = await Promise.all([
-                    fetch('events.json'),
-                    fetch('federations.json')
-                ]);
-
-                const eventsData = await eventsRes.json();
-                const federationsData = await federationsRes.json();
-
-                allEvents = eventsData.events || [];
-                filteredEvents = [...allEvents];
-
-                federationsData.federations.forEach(f => {
-                    federations[f.id] = f;
-                });
-
-                updateStats();
-            } catch (error) {
-                console.error('Erro ao carregar dados:', error);
-            }
-        }
-
-        function updateStats() {
-            document.getElementById('eventCount').textContent = allEvents.length;
-            document.getElementById('countryCount').textContent = new Set(allEvents.map(e => e.country)).size;
-            document.getElementById('federationCount').textContent = new Set(allEvents.map(e => e.source)).size;
-        }
-
-        function populateFilters() {
-            const countries = [...new Set(allEvents.map(e => e.country))].sort();
-            const select = document.getElementById('countryFilter');
-
-            countries.forEach(country => {
-                const option = document.createElement('option');
-                option.value = country;
-                option.textContent = country;
-                select.appendChild(option);
-            });
-        }
-
-        function applyFilters() {
-            const country = document.getElementById('countryFilter').value;
-            const level = document.getElementById('levelFilter').value;
-            const search = document.getElementById('searchFilter').value.toLowerCase();
-
-            filteredEvents = allEvents.filter(event => {
-                let matches = true;
-                if (country && event.country !== country) matches = false;
-                if (level && event.level !== level) matches = false;
-                if (search && !event.title.toLowerCase().includes(search)) matches = false;
-                return matches;
-            });
-
-            renderEvents();
-            renderCalendar();
-        }
-
-        function clearFilters() {
-            document.getElementById('countryFilter').value = '';
-            document.getElementById('levelFilter').value = '';
-            document.getElementById('searchFilter').value = '';
-            filteredEvents = [...allEvents];
-            renderEvents();
-            renderCalendar();
-        }
-
-        function renderEvents() {
-            const container = document.getElementById('eventsContainer');
-
-            if (filteredEvents.length === 0) {
-                container.innerHTML = `
-                    <div style="grid-column: 1/-1;">
-                        <div class="empty-state">
-                            <i class="fas fa-search"></i>
-                            <h3>Nenhum evento encontrado</h3>
-                            <p>Tenta ajustar os filtros</p>
-                        </div>
-                    </div>
-                `;
-                return;
-            }
-
-            const sorted = [...filteredEvents].sort((a, b) => 
-                new Date(a.date.start) - new Date(b.date.start)
-            );
-
-            container.innerHTML = sorted.map(event => {
-                const date = new Date(event.date.start);
-                const day = date.getDate();
-                const month = date.toLocaleDateString('pt-PT', { month: 'short' }).toUpperCase();
-
-                return `
-                    <div class="event-card">
-                        <div class="event-header">
-                            <div class="event-level">${event.level}</div>
-                            <div class="event-date">${day}</div>
-                            <div class="event-month">${month}</div>
-                        </div>
-                        <div class="event-body">
-                            <div class="event-title">${event.title}</div>
-                            <div class="event-info">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span>${event.location.city}</span>
-                            </div>
-                            <div class="event-info">
-                                <i class="fas fa-building"></i>
-                                <span>${event.federation}</span>
-                            </div>
-                            ${event.location.venue ? `
-                            <div class="event-info">
-                                <i class="fas fa-home"></i>
-                                <span>${event.location.venue}</span>
-                            </div>
-                            ` : ''}
-                            ${event.categories && event.categories.length > 0 ? `
-                            <div class="event-categories">
-                                ${event.categories.map(cat => `<div class="category-tag">${cat}</div>`).join('')}
-                            </div>
-                            ` : ''}
-                        </div>
-                        <div class="event-footer">
-                            <button class="btn-details" onclick="showModal(${allEvents.indexOf(event)})">
-                                <i class="fas fa-eye"></i> Ver Detalhes
-                            </button>
-                            ${federations[event.source]?.website ? `
-                            <a href="${federations[event.source].website}" target="_blank" class="btn-link">
-                                <i class="fas fa-external-link-alt"></i> Federação
-                            </a>
-                            ` : ''}
-                        </div>
-                    </div>
-                `;
-            }).join('');
-        }
-
-        function showModal(index) {
-            const event = allEvents[index];
-            const federation = federations[event.source] || {};
-
-            const startDate = new Date(event.date.start);
-            const dateStr = startDate.toLocaleDateString('pt-PT', {
-                weekday: 'long',
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric',
-                hour: '2-digit',
-                minute: '2-digit'
-            });
-
-            document.getElementById('modalTitle').textContent = event.title;
-            document.getElementById('modalFederation').textContent = event.federation;
-
-            document.getElementById('modalContent').innerHTML = `
-                <div class="modal-info-grid">
-                    <div class="modal-info-item">
-                        <div class="modal-info-icon"><i class="fas fa-calendar"></i></div>
-                        <div>
-                            <div class="modal-info-label">Data e Hora</div>
-                            <div class="modal-info-text">${dateStr}</div>
-                        </div>
-                    </div>
-                    <div class="modal-info-item">
-                        <div class="modal-info-icon"><i class="fas fa-map-marker-alt"></i></div>
-                        <div>
-                            <div class="modal-info-label">Local</div>
-                            <div class="modal-info-text">${event.location.city}</div>
-                            ${event.location.venue ? `<div style="font-size: 0.9rem; margin-top: 0.25rem;">${event.location.venue}</div>` : ''}
-                        </div>
-                    </div>
-                    <div class="modal-info-item">
-                        <div class="modal-info-icon"><i class="fas fa-flag"></i></div>
-                        <div>
-                            <div class="modal-info-label">País</div>
-                            <div class="modal-info-text">${event.country}</div>
-                        </div>
-                    </div>
-                    <div class="modal-info-item">
-                        <div class="modal-info-icon"><i class="fas fa-chart-bar"></i></div>
-                        <div>
-                            <div class="modal-info-label">Tipo de Prova</div>
-                            <div class="modal-info-text" style="text-transform: capitalize;">${event.level}</div>
-                        </div>
-                    </div>
-                </div>
-
-                ${event.categories && event.categories.length > 0 ? `
-                <div style="margin: 1.5rem 0;">
-                    <div class="modal-info-label">Categorias</div>
-                    <div class="event-categories" style="margin-top: 0.75rem;">
-                        ${event.categories.map(cat => `<div class="category-tag">${cat}</div>`).join('')}
-                    </div>
-                </div>
-                ` : ''}
-
-                ${federation.website ? `
-                <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #eee;">
-                    <a href="${federation.website}" target="_blank" style="display: inline-block; background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%); color: white; padding: 0.75rem 1.5rem; border-radius: 6px; text-decoration: none; font-weight: 600;">
-                        <i class="fas fa-external-link-alt"></i> Ir para Página Oficial
-                    </a>
-                </div>
-                ` : ''}
-            `;
-
-            document.getElementById('eventModal').classList.add('active');
-        }
-
-        function closeModal() {
-            document.getElementById('eventModal').classList.remove('active');
-        }
-
-        function switchView(view) {
-            document.querySelectorAll('.view-content').forEach(el => el.classList.remove('active'));
-            document.querySelectorAll('.view-tab').forEach(el => el.classList.remove('active'));
-
-            document.getElementById(`view-${view}`).classList.add('active');
-            event.target.closest('.view-tab').classList.add('active');
-        }
-
-        function getEventsForDate(date) {
-            return filteredEvents.filter(event => {
-                const eventDate = new Date(event.date.start);
-                return eventDate.toDateString() === date.toDateString();
-            });
-        }
-
-        function renderCalendar() {
-            const year = currentDate.getFullYear();
-            const month = currentDate.getMonth();
-
-            document.getElementById('calendarTitle').textContent =
-                currentDate.toLocaleDateString('pt-PT', { month: 'long', year: 'numeric' })
-                    .split(' ')
-                    .map((w, i) => i === 0 ? w.charAt(0).toUpperCase() + w.slice(1) : w)
-                    .join(' ');
-
-            const firstDay = new Date(year, month, 1);
-            const startDate = new Date(firstDay);
-            startDate.setDate(startDate.getDate() - firstDay.getDay());
-
-            const calendar = document.getElementById('calendar');
-            calendar.innerHTML = '';
-
-            let current = new Date(startDate);
-            const today = new Date();
-
-            for (let i = 0; i < 42; i++) {
-                const dayEl = document.createElement('div');
-                dayEl.className = 'day';
-
-                if (current.getMonth() !== month) dayEl.classList.add('other-month');
-                if (current.toDateString() === today.toDateString()) dayEl.classList.add('today');
-
-                const dayNum = document.createElement('div');
-                dayNum.className = 'day-number';
-                dayNum.textContent = current.getDate();
-                dayEl.appendChild(dayNum);
-
-                const events = getEventsForDate(current);
-                if (events.length > 0) {
-                    const eventList = document.createElement('div');
-                    eventList.className = 'day-event-list';
-                    events.forEach(event => {
-                        const badge = document.createElement('div');
-                        badge.className = 'day-event-badge';
-                        badge.textContent = event.title;
-                        badge.style.cursor = 'pointer';
-                        badge.onclick = () => showModal(allEvents.indexOf(event));
-                        eventList.appendChild(badge);
-                    });
-                    dayEl.appendChild(eventList);
-                }
-
-                calendar.appendChild(dayEl);
-                current.setDate(current.getDate() + 1);
-            }
-        }
-
-        function previousMonth() {
-            currentDate.setMonth(currentDate.getMonth() - 1);
-            renderCalendar();
-        }
-
-        function nextMonth() {
-            currentDate.setMonth(currentDate.getMonth() + 1);
-            renderCalendar();
-        }
-
-        function goToday() {
-            currentDate = new Date();
-            renderCalendar();
-        }
-
-        document.getElementById('eventModal').addEventListener('click', (e) => {
-            if (e.target.id === 'eventModal') closeModal();
+        d.innerHTML = `<div class="cal-day-num">${day}</div>`;
+        dayEvents.forEach(ev => {
+            const badge = document.createElement('div');
+            badge.className = `cal-event ${ev.level}`;
+            badge.textContent = ev.title;
+            badge.onclick = () => showModal(allEvents.indexOf(ev));
+            d.appendChild(badge);
         });
-    </script>
+
+        container.appendChild(d);
+    }
+
+    // Dias do próximo mês (preenchimento)
+    const totalCells = container.children.length;
+    const remaining = 42 - totalCells;
+    for (let i = 1; i <= remaining; i++) {
+        const d = document.createElement('div');
+        d.className = 'cal-day other-month';
+        d.innerHTML = `<div class="cal-day-num">${i}</div>`;
+        container.appendChild(d);
+    }
+}
+
+function prevMonth() { calDate.setMonth(calDate.getMonth() - 1); renderCalendar(); }
+function nextMonth() { calDate.setMonth(calDate.getMonth() + 1); renderCalendar(); }
+function goToday() { calDate = new Date(); calDate.setDate(1); renderCalendar(); }
+</script>
 </body>
 </html>
