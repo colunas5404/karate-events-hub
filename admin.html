@@ -375,10 +375,34 @@ level: "international" para mundiais/europeus/mediterrâneo/premier league, "reg
         const data = await res.json();
         const text = data.candidates?.[0]?.content?.parts?.[0]?.text || '';
 
-        const match = text.match(/\[[\s\S]*\]/);
+        // Limpar resposta do Gemini - remover markdown, texto extra, etc.
+        let clean = text
+            .replace(/```json/gi, '')
+            .replace(/```/g, '')
+            .trim();
+
+        // Extrair apenas o array JSON
+        const match = clean.match(/\[[\s\S]*\]/);
         if (!match) throw new Error('O Gemini não devolveu eventos no formato esperado. Tenta novamente.');
 
-        const raw = JSON.parse(match[0]);
+        let jsonStr = match[0];
+
+        // Corrigir problemas comuns de JSON mal formado
+        jsonStr = jsonStr
+            .replace(/,\s*]/g, ']')           // trailing comma em arrays
+            .replace(/,\s*}/g, '}')           // trailing comma em objetos
+            .replace(/(['"])?([a-zA-Z0-9_]+)(['"])?:/g, '"$2":') // keys sem aspas
+            .replace(/:\s*'([^']*)'/g, ': "$1"');  // values com aspas simples
+
+        let raw;
+        try {
+            raw = JSON.parse(jsonStr);
+        } catch(parseErr) {
+            // Última tentativa: extrair objetos individualmente
+            const objMatches = jsonStr.match(/\{[^{}]*\}/g);
+            if (!objMatches) throw new Error('Não foi possível interpretar a resposta da IA. Tenta novamente.');
+            raw = objMatches.map(o => { try { return JSON.parse(o); } catch(e) { return null; } }).filter(Boolean);
+        }
         extracted = raw.map((ev, i) => buildEvent(ev, fedId, fed, i));
 
         if (!extracted.length) {
