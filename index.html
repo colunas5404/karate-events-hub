@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Karate Events - Calendário de Provas e Competições</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
@@ -36,7 +37,6 @@
 
         .container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
 
-        /* Filtros */
         .search-bar {
             background: white; padding: 1.5rem; border-radius: 12px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.08); margin-bottom: 1.5rem;
@@ -48,23 +48,19 @@
             padding: 0.65rem 1rem; border: 2px solid var(--border);
             border-radius: 6px; font-size: 0.95rem; transition: border-color 0.2s;
         }
-        .search-group input:focus, .search-group select:focus {
-            outline: none; border-color: var(--primary);
-        }
+        .search-group input:focus, .search-group select:focus { outline: none; border-color: var(--primary); }
         .btn-search {
             padding: 0.65rem 1.5rem;
             background: linear-gradient(135deg, var(--primary), var(--accent));
-            color: white; border: none; border-radius: 6px;
-            font-weight: 600; cursor: pointer; transition: all 0.2s;
+            color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer;
         }
-        .btn-search:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(192,25,90,0.3); }
+        .btn-search:hover { opacity: 0.9; transform: translateY(-1px); }
         .btn-clear {
             padding: 0.65rem 1.5rem; background: white; color: var(--text-light);
             border: 2px solid var(--border); border-radius: 6px; font-weight: 600; cursor: pointer;
         }
         .btn-clear:hover { border-color: var(--primary); color: var(--primary); }
 
-        /* Tabs */
         .tabs {
             display: flex; gap: 0.5rem; margin-bottom: 1.5rem;
             background: white; padding: 0.5rem; border-radius: 10px;
@@ -72,30 +68,26 @@
         }
         .tab {
             padding: 0.6rem 1.5rem; background: none; border: none;
-            border-radius: 8px; color: var(--text-light); font-weight: 600;
-            cursor: pointer; transition: all 0.2s;
+            border-radius: 8px; color: var(--text-light); font-weight: 600; cursor: pointer; transition: all 0.2s;
         }
         .tab.active { background: linear-gradient(135deg, var(--primary), var(--accent)); color: white; }
         .tab:hover:not(.active) { background: var(--light); }
 
-        /* LISTA DE EVENTOS */
         .view { display: none; }
         .view.active { display: block; }
 
+        /* CARDS */
         .events-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
             gap: 1.5rem;
         }
-
         .event-card {
             background: white; border-radius: 12px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            overflow: hidden; transition: all 0.3s;
-            display: flex; flex-direction: column;
+            overflow: hidden; transition: all 0.3s; display: flex; flex-direction: column;
         }
         .event-card:hover { transform: translateY(-6px); box-shadow: 0 10px 24px rgba(192,25,90,0.18); }
-
         .card-top {
             background: linear-gradient(135deg, var(--secondary), var(--primary));
             color: white; padding: 1.25rem 1.5rem;
@@ -116,33 +108,23 @@
             background: #f0f0f0; color: var(--secondary);
             padding: 0.25rem 0.65rem; border-radius: 10px; font-size: 0.78rem; font-weight: 600;
         }
-        .card-footer {
-            border-top: 1px solid var(--border);
-            padding: 1rem 1.5rem; display: flex; gap: 0.75rem;
-        }
+        .card-footer { border-top: 1px solid var(--border); padding: 1rem 1.5rem; display: flex; gap: 0.75rem; }
         .btn-detail {
             flex: 1; padding: 0.65rem;
             background: linear-gradient(135deg, var(--primary), var(--accent));
-            color: white; border: none; border-radius: 6px;
-            font-weight: 600; cursor: pointer; transition: all 0.2s;
+            color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer;
         }
-        .btn-detail:hover { opacity: 0.9; transform: scale(1.02); }
+        .btn-detail:hover { opacity: 0.9; }
         .btn-fed {
             flex: 1; padding: 0.65rem; background: white; color: var(--primary);
-            border: 2px solid var(--primary); border-radius: 6px;
-            font-weight: 600; cursor: pointer; text-decoration: none;
-            text-align: center; transition: all 0.2s;
+            border: 2px solid var(--primary); border-radius: 6px; font-weight: 600;
+            cursor: pointer; text-decoration: none; text-align: center;
         }
         .btn-fed:hover { background: var(--primary); color: white; }
 
         /* CALENDÁRIO */
-        .calendar-wrapper {
-            background: white; border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08); padding: 1.5rem;
-        }
-        .cal-header {
-            display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;
-        }
+        .calendar-wrapper { background: white; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); padding: 1.5rem; }
+        .cal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; }
         .cal-title { font-size: 1.4rem; font-weight: 700; color: var(--secondary); }
         .cal-nav { display: flex; gap: 0.5rem; }
         .cal-nav button {
@@ -150,30 +132,17 @@
             background: white; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.2s;
         }
         .cal-nav button:hover { border-color: var(--primary); color: var(--primary); }
-
-        .cal-weekdays {
-            display: grid; grid-template-columns: repeat(7, 1fr);
-            gap: 4px; margin-bottom: 4px;
-        }
+        .cal-weekdays { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; margin-bottom: 4px; }
         .cal-weekday {
             text-align: center; font-weight: 700; font-size: 0.85rem;
             color: var(--secondary); padding: 0.5rem; background: #f0f2f5; border-radius: 6px;
         }
-        .cal-days {
-            display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px;
-        }
-        .cal-day {
-            border: 2px solid var(--border); border-radius: 8px;
-            padding: 0.5rem; min-height: 90px;
-            transition: all 0.2s; background: white;
-        }
+        .cal-days { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; }
+        .cal-day { border: 2px solid var(--border); border-radius: 8px; padding: 0.5rem; min-height: 90px; transition: all 0.2s; background: white; }
         .cal-day:hover { border-color: var(--primary); box-shadow: 0 4px 12px rgba(192,25,90,0.1); }
-        .cal-day.other-month { background: #f9f9f9; opacity: 0.5; }
+        .cal-day.other-month { background: #f9f9f9; opacity: 0.45; }
         .cal-day.today { border-color: var(--accent); border-width: 2px; background: #fff8f0; }
-        .cal-day-num {
-            font-weight: 700; font-size: 0.95rem; color: var(--text);
-            margin-bottom: 4px;
-        }
+        .cal-day-num { font-weight: 700; font-size: 0.95rem; color: var(--text); margin-bottom: 4px; }
         .cal-day.today .cal-day-num { color: var(--accent); }
         .cal-event {
             background: linear-gradient(135deg, var(--primary), var(--accent));
@@ -190,18 +159,18 @@
         .modal {
             display: none; position: fixed; inset: 0;
             background: rgba(0,0,0,0.65); z-index: 1000;
-            align-items: center; justify-content: center;
+            align-items: center; justify-content: center; padding: 1rem;
         }
         .modal.active { display: flex; }
         .modal-box {
             background: white; border-radius: 14px;
-            max-width: 560px; width: 92%; max-height: 85vh; overflow-y: auto;
+            max-width: 620px; width: 100%; max-height: 90vh; overflow-y: auto;
         }
         .modal-head {
             background: linear-gradient(135deg, var(--secondary), var(--primary));
             color: white; padding: 1.75rem;
             display: flex; justify-content: space-between; align-items: flex-start;
-            border-radius: 14px 14px 0 0;
+            border-radius: 14px 14px 0 0; position: sticky; top: 0; z-index: 10;
         }
         .modal-head-title { font-size: 1.3rem; font-weight: 700; padding-right: 1rem; }
         .modal-head-fed { font-size: 0.9rem; opacity: 0.8; margin-top: 0.4rem; }
@@ -214,14 +183,34 @@
         .modal-body { padding: 1.75rem; }
         .modal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-bottom: 1.5rem; }
         .modal-item {}
-        .modal-label { font-size: 0.8rem; font-weight: 700; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.3rem; }
+        .modal-label { font-size: 0.78rem; font-weight: 700; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.3rem; }
         .modal-value { font-size: 0.95rem; color: var(--text); }
-        .modal-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 1rem 0; }
+        .modal-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0.5rem 0 1.5rem; }
+
+        /* MAPA */
+        .map-section { margin-top: 1.5rem; }
+        .map-section h4 { font-size: 0.85rem; font-weight: 700; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.75rem; }
+        #eventMap { height: 260px; border-radius: 10px; border: 2px solid var(--border); z-index: 1; }
+
+        .map-actions { display: flex; gap: 0.75rem; margin-top: 0.75rem; }
+        .btn-gmaps {
+            flex: 1; display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+            padding: 0.7rem; background: #4285f4; color: white;
+            text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 0.9rem;
+        }
+        .btn-gmaps:hover { background: #3367d6; }
+        .btn-waze {
+            flex: 1; display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+            padding: 0.7rem; background: #00c1ff; color: white;
+            text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 0.9rem;
+        }
+        .btn-waze:hover { background: #00a8df; }
+
         .modal-link {
-            display: block; text-align: center; padding: 0.85rem;
+            display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+            padding: 0.85rem; margin-top: 1rem;
             background: linear-gradient(135deg, var(--primary), var(--accent));
-            color: white; text-decoration: none; border-radius: 8px;
-            font-weight: 700; margin-top: 1.5rem; transition: opacity 0.2s;
+            color: white; text-decoration: none; border-radius: 8px; font-weight: 700;
         }
         .modal-link:hover { opacity: 0.9; }
 
@@ -239,6 +228,8 @@
             .cal-day-num { font-size: 0.8rem; }
             .cal-event { font-size: 0.6rem; }
             .modal-grid { grid-template-columns: 1fr; }
+            #eventMap { height: 200px; }
+            .map-actions { flex-direction: column; }
         }
     </style>
 </head>
@@ -259,7 +250,6 @@
 </header>
 
 <div class="container">
-    <!-- Filtros -->
     <div class="search-bar">
         <div class="search-group">
             <label><i class="fas fa-globe"></i> País</label>
@@ -282,18 +272,15 @@
         <button class="btn-clear" onclick="clearFilters()"><i class="fas fa-redo"></i> Limpar</button>
     </div>
 
-    <!-- Tabs -->
     <div class="tabs">
         <button class="tab active" onclick="switchView('events', this)"><i class="fas fa-list"></i> Lista de Provas</button>
         <button class="tab" onclick="switchView('calendar', this)"><i class="fas fa-calendar"></i> Calendário</button>
     </div>
 
-    <!-- Vista: Lista -->
     <div class="view active" id="view-events">
         <div class="events-grid" id="eventsGrid"></div>
     </div>
 
-    <!-- Vista: Calendário -->
     <div class="view" id="view-calendar">
         <div class="calendar-wrapper">
             <div class="cal-header">
@@ -305,12 +292,9 @@
                 </div>
             </div>
             <div class="cal-weekdays">
-                <div class="cal-weekday">Dom</div>
-                <div class="cal-weekday">Seg</div>
-                <div class="cal-weekday">Ter</div>
-                <div class="cal-weekday">Qua</div>
-                <div class="cal-weekday">Qui</div>
-                <div class="cal-weekday">Sex</div>
+                <div class="cal-weekday">Dom</div><div class="cal-weekday">Seg</div>
+                <div class="cal-weekday">Ter</div><div class="cal-weekday">Qua</div>
+                <div class="cal-weekday">Qui</div><div class="cal-weekday">Sex</div>
                 <div class="cal-weekday">Sab</div>
             </div>
             <div class="cal-days" id="calDays"></div>
@@ -318,7 +302,7 @@
     </div>
 </div>
 
-<!-- Modal -->
+<!-- Modal com Mapa -->
 <div class="modal" id="modal">
     <div class="modal-box">
         <div class="modal-head">
@@ -336,10 +320,11 @@
     <strong>Karate Events Hub</strong> — Calendário Europeu de Provas e Competições de Karaté 🥋
 </footer>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <script>
 let allEvents = [], filtered = [], feds = {};
-let calDate = new Date();
-calDate.setDate(1);
+let calDate = new Date(); calDate.setDate(1);
+let eventMap = null;
 
 document.addEventListener('DOMContentLoaded', async () => {
     await loadData();
@@ -359,9 +344,7 @@ async function loadData() {
         document.getElementById('evCount').textContent = allEvents.length;
         document.getElementById('ctCount').textContent = new Set(allEvents.map(e => e.country)).size;
         document.getElementById('fedCount').textContent = new Set(allEvents.map(e => e.source)).size;
-    } catch(e) {
-        console.error('Erro:', e);
-    }
+    } catch(e) { console.error('Erro:', e); }
 }
 
 function populateCountries() {
@@ -376,12 +359,10 @@ function applyFilters() {
     const l = document.getElementById('fLevel').value;
     const s = document.getElementById('fSearch').value.toLowerCase();
     filtered = allEvents.filter(ev =>
-        (!c || ev.country === c) &&
-        (!l || ev.level === l) &&
+        (!c || ev.country === c) && (!l || ev.level === l) &&
         (!s || ev.title.toLowerCase().includes(s))
     );
-    renderList();
-    renderCalendar();
+    renderList(); renderCalendar();
 }
 
 function clearFilters() {
@@ -389,8 +370,7 @@ function clearFilters() {
     document.getElementById('fLevel').value = '';
     document.getElementById('fSearch').value = '';
     filtered = [...allEvents];
-    renderList();
-    renderCalendar();
+    renderList(); renderCalendar();
 }
 
 function switchView(name, btn) {
@@ -408,17 +388,16 @@ function levelLabel(l) {
 function renderList() {
     const grid = document.getElementById('eventsGrid');
     const sorted = [...filtered].sort((a,b) => new Date(a.date.start) - new Date(b.date.start));
-
     if (!sorted.length) {
         grid.innerHTML = `<div class="empty"><i class="fas fa-search"></i><p>Nenhuma prova encontrada. Tenta ajustar os filtros.</p></div>`;
         return;
     }
-
-    grid.innerHTML = sorted.map((ev, i) => {
+    grid.innerHTML = sorted.map(ev => {
         const d = new Date(ev.date.start);
         const day = d.getDate();
         const month = d.toLocaleDateString('pt-PT', { month: 'short' }).toUpperCase().replace('.','');
         const fed = feds[ev.source] || {};
+        const idx = allEvents.indexOf(ev);
         return `
         <div class="event-card">
             <div class="card-top">
@@ -430,13 +409,13 @@ function renderList() {
             </div>
             <div class="card-body">
                 <div class="card-title">${ev.title}</div>
-                <div class="card-info"><i class="fas fa-map-marker-alt"></i> ${ev.location.city}${ev.location.venue ? ', ' + ev.location.venue : ''}</div>
+                <div class="card-info"><i class="fas fa-map-marker-alt"></i> ${ev.location.city}${ev.location.venue ? ' · ' + ev.location.venue : ''}</div>
                 <div class="card-info"><i class="fas fa-flag"></i> ${ev.country}</div>
                 <div class="card-info"><i class="fas fa-building"></i> ${ev.federation}</div>
                 ${ev.categories?.length ? `<div class="card-tags">${ev.categories.map(c=>`<span class="card-tag">${c}</span>`).join('')}</div>` : ''}
             </div>
             <div class="card-footer">
-                <button class="btn-detail" onclick="showModal(${allEvents.indexOf(ev)})"><i class="fas fa-eye"></i> Ver Detalhes</button>
+                <button class="btn-detail" onclick="showModal(${idx})"><i class="fas fa-map-marker-alt"></i> Ver & Localizar</button>
                 ${fed.website ? `<a href="${fed.website}" target="_blank" class="btn-fed"><i class="fas fa-external-link-alt"></i> Federação</a>` : ''}
             </div>
         </div>`;
@@ -449,9 +428,18 @@ function showModal(idx) {
     const d = new Date(ev.date.start);
     const dateStr = d.toLocaleDateString('pt-PT', { weekday:'long', year:'numeric', month:'long', day:'numeric' });
     const timeStr = d.toLocaleTimeString('pt-PT', { hour:'2-digit', minute:'2-digit' });
+    const coords = ev.location?.coordinates;
 
     document.getElementById('mTitle').textContent = ev.title;
-    document.getElementById('mFed').textContent = ev.federation;
+    document.getElementById('mFed').textContent = `${ev.federation} · ${ev.country}`;
+
+    const mapsUrl = coords
+        ? `https://www.google.com/maps/search/?api=1&query=${coords.latitude},${coords.longitude}`
+        : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(ev.location.venue + ' ' + ev.location.city)}`;
+    const wazeUrl = coords
+        ? `https://waze.com/ul?ll=${coords.latitude},${coords.longitude}&navigate=yes`
+        : `https://waze.com/ul?q=${encodeURIComponent(ev.location.city)}`;
+
     document.getElementById('mBody').innerHTML = `
         <div class="modal-grid">
             <div class="modal-item">
@@ -471,23 +459,65 @@ function showModal(idx) {
                 <div class="modal-value">${ev.location.venue || '—'}</div>
             </div>
             <div class="modal-item">
-                <div class="modal-label"><i class="fas fa-flag"></i> País</div>
-                <div class="modal-value">${ev.country}</div>
-            </div>
-            <div class="modal-item">
                 <div class="modal-label"><i class="fas fa-trophy"></i> Tipo</div>
                 <div class="modal-value">${levelLabel(ev.level)}</div>
             </div>
+            <div class="modal-item">
+                <div class="modal-label"><i class="fas fa-list"></i> Categorias</div>
+                <div class="modal-value">${ev.categories?.join(', ') || '—'}</div>
+            </div>
         </div>
-        ${ev.categories?.length ? `
-        <div class="modal-label">Categorias</div>
-        <div class="modal-tags">${ev.categories.map(c=>`<span class="card-tag">${c}</span>`).join('')}</div>` : ''}
-        ${fed.website ? `<a href="${fed.website}" target="_blank" class="modal-link"><i class="fas fa-external-link-alt"></i> Página Oficial da Federação</a>` : ''}
+
+        <div class="map-section">
+            <h4><i class="fas fa-map-marked-alt"></i> Localização do Evento</h4>
+            <div id="eventMap"></div>
+            <div class="map-actions">
+                <a href="${mapsUrl}" target="_blank" class="btn-gmaps">
+                    <i class="fas fa-map"></i> Abrir no Google Maps
+                </a>
+                <a href="${wazeUrl}" target="_blank" class="btn-waze">
+                    <i class="fas fa-car"></i> Navegar no Waze
+                </a>
+            </div>
+        </div>
+
+        ${fed.website ? `
+        <a href="${fed.website}" target="_blank" class="modal-link">
+            <i class="fas fa-external-link-alt"></i> Página Oficial da Federação
+        </a>` : ''}
     `;
+
     document.getElementById('modal').classList.add('active');
+
+    // Inicializar mapa DEPOIS de o HTML estar no DOM
+    setTimeout(() => {
+        if (eventMap) { eventMap.remove(); eventMap = null; }
+
+        const lat = coords?.latitude || 48.8566;
+        const lng = coords?.longitude || 2.3522;
+
+        eventMap = L.map('eventMap').setView([lat, lng], 14);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap'
+        }).addTo(eventMap);
+
+        // Marcador personalizado
+        const icon = L.divIcon({
+            html: `<div style="background:linear-gradient(135deg,#c0195a,#ff6f00);width:36px;height:36px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);border:3px solid white;box-shadow:0 2px 8px rgba(0,0,0,0.4);"></div>`,
+            iconSize: [36, 36],
+            iconAnchor: [18, 36],
+            className: ''
+        });
+
+        L.marker([lat, lng], { icon })
+            .addTo(eventMap)
+            .bindPopup(`<strong>${ev.title}</strong><br>${ev.location.venue || ''}<br>${ev.location.city}`, { maxWidth: 220 })
+            .openPopup();
+    }, 100);
 }
 
 function closeModal() {
+    if (eventMap) { eventMap.remove(); eventMap = null; }
     document.getElementById('modal').classList.remove('active');
 }
 
@@ -504,36 +534,33 @@ function renderCalendar() {
 
     const firstDay = new Date(year, month, 1).getDay();
     const daysInMonth = new Date(year, month + 1, 0).getDate();
+    const prevDays = new Date(year, month, 0).getDate();
     const today = new Date();
     const container = document.getElementById('calDays');
     container.innerHTML = '';
 
-    // Dias do mês anterior (preenchimento)
-    const prevMonthDays = new Date(year, month, 0).getDate();
     for (let i = firstDay - 1; i >= 0; i--) {
         const d = document.createElement('div');
         d.className = 'cal-day other-month';
-        d.innerHTML = `<div class="cal-day-num">${prevMonthDays - i}</div>`;
+        d.innerHTML = `<div class="cal-day-num">${prevDays - i}</div>`;
         container.appendChild(d);
     }
 
-    // Dias deste mês
     for (let day = 1; day <= daysInMonth; day++) {
         const date = new Date(year, month, day);
         const d = document.createElement('div');
         d.className = 'cal-day';
         if (date.toDateString() === today.toDateString()) d.classList.add('today');
+        d.innerHTML = `<div class="cal-day-num">${day}</div>`;
 
-        const dayEvents = filtered.filter(ev => {
+        filtered.filter(ev => {
             const ed = new Date(ev.date.start);
             return ed.getFullYear() === year && ed.getMonth() === month && ed.getDate() === day;
-        });
-
-        d.innerHTML = `<div class="cal-day-num">${day}</div>`;
-        dayEvents.forEach(ev => {
+        }).forEach(ev => {
             const badge = document.createElement('div');
             badge.className = `cal-event ${ev.level}`;
             badge.textContent = ev.title;
+            badge.title = `${ev.title} — ${ev.location.city}`;
             badge.onclick = () => showModal(allEvents.indexOf(ev));
             d.appendChild(badge);
         });
@@ -541,9 +568,7 @@ function renderCalendar() {
         container.appendChild(d);
     }
 
-    // Dias do próximo mês (preenchimento)
-    const totalCells = container.children.length;
-    const remaining = 42 - totalCells;
+    const remaining = 42 - container.children.length;
     for (let i = 1; i <= remaining; i++) {
         const d = document.createElement('div');
         d.className = 'cal-day other-month';
