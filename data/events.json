@@ -1,14 +1,15 @@
 {
   "meta": {
     "version": "1.0",
-    "lastUpdated": "2026-06-24T23:30:00Z",
-    "totalEvents": 140,
+    "lastUpdated": "2026-06-24T23:45:00Z",
+    "totalEvents": 154,
     "countryCoverage": 20,
     "generatedBy": "Karate Events Hub — Extracted from official PDFs",
     "sources": [
       "FNK-P (Portugal) — Calendário 2026",
       "RFEK (Espanha) — Calendario Actividades 2026",
-      "FIJLKAM (Itália) — Calendario Attività Agonistica Federale 2026"
+      "FIJLKAM (Itália) — Calendario Attività Agonistica Federale 2026",
+      "FFKA (França) — Calendrier Fédération Française de Karaté 2026"
     ]
   },
   "events": [
@@ -2672,6 +2673,139 @@
       }
     },
     {
+      "id": "FR_FFKA_20260606a",
+      "source": "FR_FFKA",
+      "title": "Open National Wushu Saint-Étienne",
+      "country": "França",
+      "countryCode": "FR",
+      "federation": "Fédération Française de Karaté",
+      "date": {
+        "start": "2026-06-06T09:00:00Z",
+        "end": "2026-06-07T18:00:00Z"
+      },
+      "location": {
+        "city": "Andrézieux-Bouthéon",
+        "venue": "Dojo d'Andrézieux-Bouthéon",
+        "address": "",
+        "coordinates": {
+          "latitude": 45.5236,
+          "longitude": 4.2658
+        }
+      },
+      "categories": [
+        "Wushu"
+      ],
+      "level": "national",
+      "eventType": "Competição Nacional",
+      "registrationUrl": "https://www.ffkarate.fr",
+      "metadata": {
+        "sourceUrl": "https://www.ffkarate.fr",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "FR_FFKA_20260606b",
+      "source": "FR_FFKA",
+      "title": "Coupe de France Combat / Kata Zone Nord Benjamins — Individuels",
+      "country": "França",
+      "countryCode": "FR",
+      "federation": "Fédération Française de Karaté",
+      "date": {
+        "start": "2026-06-06T09:00:00Z",
+        "end": "2026-06-06T18:00:00Z"
+      },
+      "location": {
+        "city": "Châlons-En-Champagne",
+        "venue": "",
+        "address": "",
+        "coordinates": {
+          "latitude": 48.9567,
+          "longitude": 4.3652
+        }
+      },
+      "categories": [
+        "Benjamins"
+      ],
+      "level": "national",
+      "eventType": "Copa/Taça",
+      "registrationUrl": "https://www.ffkarate.fr",
+      "metadata": {
+        "sourceUrl": "https://www.ffkarate.fr",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "FR_FFKA_20260607a",
+      "source": "FR_FFKA",
+      "title": "Championnat de France Para-Karaté et Coupe Handi des Disciplines Associées",
+      "country": "França",
+      "countryCode": "FR",
+      "federation": "Fédération Française de Karaté",
+      "date": {
+        "start": "2026-06-07T09:00:00Z",
+        "end": "2026-06-07T18:00:00Z"
+      },
+      "location": {
+        "city": "Le Plessis-Robinson",
+        "venue": "",
+        "address": "",
+        "coordinates": {
+          "latitude": 48.7818,
+          "longitude": 2.2638
+        }
+      },
+      "categories": [
+        "Para-Karaté",
+        "Handi"
+      ],
+      "level": "national",
+      "eventType": "Competição Nacional",
+      "registrationUrl": "https://www.ffkarate.fr",
+      "metadata": {
+        "sourceUrl": "https://www.ffkarate.fr",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "FR_FFKA_20260607b",
+      "source": "FR_FFKA",
+      "title": "Coupe de France Combat / Kata Zone Nord Minimes — Individuels",
+      "country": "França",
+      "countryCode": "FR",
+      "federation": "Fédération Française de Karaté",
+      "date": {
+        "start": "2026-06-07T09:00:00Z",
+        "end": "2026-06-07T18:00:00Z"
+      },
+      "location": {
+        "city": "Châlons-En-Champagne",
+        "venue": "",
+        "address": "",
+        "coordinates": {
+          "latitude": 48.9567,
+          "longitude": 4.3652
+        }
+      },
+      "categories": [
+        "Minimes"
+      ],
+      "level": "national",
+      "eventType": "Copa/Taça",
+      "registrationUrl": "https://www.ffkarate.fr",
+      "metadata": {
+        "sourceUrl": "https://www.ffkarate.fr",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
       "id": "PT_FNK_20260608",
       "source": "PT_FNK",
       "title": "FISU WUC Combat Sports",
@@ -2870,6 +3004,105 @@
       }
     },
     {
+      "id": "FR_FFKA_20260612",
+      "source": "FR_FFKA",
+      "title": "Examen 6ème DAN des (-50 ans) — Zone Sud",
+      "country": "França",
+      "countryCode": "FR",
+      "federation": "Fédération Française de Karaté",
+      "date": {
+        "start": "2026-06-12T09:00:00Z",
+        "end": "2026-06-12T18:00:00Z"
+      },
+      "location": {
+        "city": "Castelnau-le-Lez",
+        "venue": "Centre National d'Entraînement (CNE)",
+        "address": "",
+        "coordinates": {
+          "latitude": 43.6173,
+          "longitude": 3.901
+        }
+      },
+      "categories": [
+        "Exame 6º DAN"
+      ],
+      "level": "national",
+      "eventType": "Formação",
+      "registrationUrl": "https://www.ffkarate.fr",
+      "metadata": {
+        "sourceUrl": "https://www.ffkarate.fr",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "FR_FFKA_20260613a",
+      "source": "FR_FFKA",
+      "title": "Examen de Grades Zone Sud — Disciplines Associées",
+      "country": "França",
+      "countryCode": "FR",
+      "federation": "Fédération Française de Karaté",
+      "date": {
+        "start": "2026-06-13T09:00:00Z",
+        "end": "2026-06-13T18:00:00Z"
+      },
+      "location": {
+        "city": "Castelnau-le-Lez",
+        "venue": "Centre National d'Entraînement (CNE)",
+        "address": "",
+        "coordinates": {
+          "latitude": 43.6173,
+          "longitude": 3.901
+        }
+      },
+      "categories": [
+        "Exame de Graus"
+      ],
+      "level": "national",
+      "eventType": "Formação",
+      "registrationUrl": "https://www.ffkarate.fr",
+      "metadata": {
+        "sourceUrl": "https://www.ffkarate.fr",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "FR_FFKA_20260613b",
+      "source": "FR_FFKA",
+      "title": "Coupe de France Thanh Long",
+      "country": "França",
+      "countryCode": "FR",
+      "federation": "Fédération Française de Karaté",
+      "date": {
+        "start": "2026-06-13T09:00:00Z",
+        "end": "2026-06-14T18:00:00Z"
+      },
+      "location": {
+        "city": "Andrézieux-Bouthéon",
+        "venue": "Dojo d'Andrézieux-Bouthéon",
+        "address": "",
+        "coordinates": {
+          "latitude": 45.5236,
+          "longitude": 4.2658
+        }
+      },
+      "categories": [
+        "AMV"
+      ],
+      "level": "national",
+      "eventType": "Copa/Taça",
+      "registrationUrl": "https://www.ffkarate.fr",
+      "metadata": {
+        "sourceUrl": "https://www.ffkarate.fr",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
       "id": "PT_FNK_20260616",
       "source": "PT_FNK",
       "title": "Campeonato dos Países do Mediterrâneo",
@@ -3002,6 +3235,105 @@
       }
     },
     {
+      "id": "FR_FFKA_20260620",
+      "source": "FR_FFKA",
+      "title": "Coupe de France des Corporations",
+      "country": "França",
+      "countryCode": "FR",
+      "federation": "Fédération Française de Karaté",
+      "date": {
+        "start": "2026-06-20T09:00:00Z",
+        "end": "2026-06-21T18:00:00Z"
+      },
+      "location": {
+        "city": "Paris",
+        "venue": "Halle Carpentier",
+        "address": "Paris 13e",
+        "coordinates": {
+          "latitude": 48.8282,
+          "longitude": 2.3603
+        }
+      },
+      "categories": [
+        "Todos"
+      ],
+      "level": "national",
+      "eventType": "Copa/Taça",
+      "registrationUrl": "https://www.ffkarate.fr",
+      "metadata": {
+        "sourceUrl": "https://www.ffkarate.fr",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "FR_FFKA_20260626",
+      "source": "FR_FFKA",
+      "title": "Examen 6ème DAN des (-50 ans) — Zone Nord",
+      "country": "França",
+      "countryCode": "FR",
+      "federation": "Fédération Française de Karaté",
+      "date": {
+        "start": "2026-06-26T09:00:00Z",
+        "end": "2026-06-26T18:00:00Z"
+      },
+      "location": {
+        "city": "Montrouge",
+        "venue": "Gymnase Rabelais",
+        "address": "",
+        "coordinates": {
+          "latitude": 48.8181,
+          "longitude": 2.3108
+        }
+      },
+      "categories": [
+        "Exame 6º DAN"
+      ],
+      "level": "national",
+      "eventType": "Formação",
+      "registrationUrl": "https://www.ffkarate.fr",
+      "metadata": {
+        "sourceUrl": "https://www.ffkarate.fr",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "FR_FFKA_20260627",
+      "source": "FR_FFKA",
+      "title": "Examen de Grades Zone Nord — Disciplines Associées",
+      "country": "França",
+      "countryCode": "FR",
+      "federation": "Fédération Française de Karaté",
+      "date": {
+        "start": "2026-06-27T09:00:00Z",
+        "end": "2026-06-27T18:00:00Z"
+      },
+      "location": {
+        "city": "Montrouge",
+        "venue": "Gymnase Rabelais",
+        "address": "",
+        "coordinates": {
+          "latitude": 48.8181,
+          "longitude": 2.3108
+        }
+      },
+      "categories": [
+        "Exame de Graus"
+      ],
+      "level": "national",
+      "eventType": "Formação",
+      "registrationUrl": "https://www.ffkarate.fr",
+      "metadata": {
+        "sourceUrl": "https://www.ffkarate.fr",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
       "id": "PT_FNK_20260702",
       "source": "PT_FNK",
       "title": "Karate 1 - Youth League",
@@ -3101,6 +3433,40 @@
       "registrationUrl": "https://www.fijlkam.it",
       "metadata": {
         "sourceUrl": "https://www.fijlkam.it",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "FR_FFKA_20260711",
+      "source": "FR_FFKA",
+      "title": "Tournoi Elite Pankido",
+      "country": "França",
+      "countryCode": "FR",
+      "federation": "Fédération Française de Karaté",
+      "date": {
+        "start": "2026-07-11T09:00:00Z",
+        "end": "2026-07-11T18:00:00Z"
+      },
+      "location": {
+        "city": "Puivert",
+        "venue": "Château de Puivert",
+        "address": "",
+        "coordinates": {
+          "latitude": 42.9098,
+          "longitude": 2.0553
+        }
+      },
+      "categories": [
+        "Karaté",
+        "Pankido"
+      ],
+      "level": "national",
+      "eventType": "Competição Nacional",
+      "registrationUrl": "https://www.ffkarate.fr",
+      "metadata": {
+        "sourceUrl": "https://www.ffkarate.fr",
         "scrapedAt": "2026-06-24T23:30:00Z",
         "quality": 1.0,
         "extractedFromPdf": true
@@ -3239,6 +3605,39 @@
       }
     },
     {
+      "id": "FR_FFKA_20260718",
+      "source": "FR_FFKA",
+      "title": "Master Class",
+      "country": "França",
+      "countryCode": "FR",
+      "federation": "Fédération Française de Karaté",
+      "date": {
+        "start": "2026-07-18T09:00:00Z",
+        "end": "2026-07-18T18:00:00Z"
+      },
+      "location": {
+        "city": "Chatenay-Malabry",
+        "venue": "CREPS Chatenay",
+        "address": "",
+        "coordinates": {
+          "latitude": 48.7725,
+          "longitude": 2.2869
+        }
+      },
+      "categories": [
+        "Todos"
+      ],
+      "level": "national",
+      "eventType": "Formação",
+      "registrationUrl": "https://www.ffkarate.fr",
+      "metadata": {
+        "sourceUrl": "https://www.ffkarate.fr",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
       "id": "IT_FIJ_20260722",
       "source": "IT_FIJLKAM",
       "title": "37° Internazionali di Karate di Lignano — Trofeo Alpe Adria",
@@ -3299,6 +3698,39 @@
       "registrationUrl": "https://www.rfek.es",
       "metadata": {
         "sourceUrl": "https://www.rfek.es",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "FR_FFKA_20260828",
+      "source": "FR_FFKA",
+      "title": "Université d'Été",
+      "country": "França",
+      "countryCode": "FR",
+      "federation": "Fédération Française de Karaté",
+      "date": {
+        "start": "2026-08-28T09:00:00Z",
+        "end": "2026-08-30T18:00:00Z"
+      },
+      "location": {
+        "city": "Castelnau-le-Lez",
+        "venue": "Centre National d'Entraînement (CNE)",
+        "address": "",
+        "coordinates": {
+          "latitude": 43.6173,
+          "longitude": 3.901
+        }
+      },
+      "categories": [
+        "Todos"
+      ],
+      "level": "national",
+      "eventType": "Formação",
+      "registrationUrl": "https://www.ffkarate.fr",
+      "metadata": {
+        "sourceUrl": "https://www.ffkarate.fr",
         "scrapedAt": "2026-06-24T23:30:00Z",
         "quality": 1.0,
         "extractedFromPdf": true
@@ -3906,6 +4338,41 @@
       "registrationUrl": "https://www.rfek.es",
       "metadata": {
         "sourceUrl": "https://www.rfek.es",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "FR_FFKA_20261014",
+      "source": "FR_FFKA",
+      "title": "Championnats du Monde Cadets, Juniors, Espoirs (U21)",
+      "country": "Polónia",
+      "countryCode": "POL",
+      "federation": "Fédération Française de Karaté",
+      "date": {
+        "start": "2026-10-14T09:00:00Z",
+        "end": "2026-10-18T18:00:00Z"
+      },
+      "location": {
+        "city": "Bielsko-Biala",
+        "venue": "",
+        "address": "",
+        "coordinates": {
+          "latitude": 49.8225,
+          "longitude": 19.0444
+        }
+      },
+      "categories": [
+        "Cadete",
+        "Junior",
+        "Sub21"
+      ],
+      "level": "international",
+      "eventType": "WKF - World Championships",
+      "registrationUrl": "https://www.ffkarate.fr",
+      "metadata": {
+        "sourceUrl": "https://www.ffkarate.fr",
         "scrapedAt": "2026-06-24T23:30:00Z",
         "quality": 1.0,
         "extractedFromPdf": true
