@@ -7,193 +7,178 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
     <style>
-        * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
-        :root {
-            --primary:#c0195a; --secondary:#1a237e; --accent:#ff6f00;
-            --light:#f5f5f5; --border:#e0e0e0; --text:#212121; --muted:#757575;
+        *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+        :root{
+            --pri:#c0195a;--sec:#1a237e;--acc:#ff6f00;
+            --bg:#f0f2f5;--card:#fff;--border:#e0e0e0;
+            --text:#212121;--muted:#757575;
         }
-        body { font-family:'Segoe UI',sans-serif; background:#f0f2f5; color:var(--text); }
+        body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;}
 
-        /* ── HEADER ── */
-        header {
-            background:linear-gradient(135deg,var(--secondary),var(--primary));
-            color:white; padding:1rem 1.25rem;
-            box-shadow:0 4px 12px rgba(0,0,0,0.2);
-            position:sticky; top:0; z-index:200;
-        }
-        .hdr { max-width:1200px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; gap:0.75rem; }
-        .logo { display:flex; align-items:center; gap:0.5rem; font-size:1.25rem; font-weight:700; }
-        .logo i { color:var(--accent); font-size:1.5rem; }
-        .hdr-stats { display:flex; gap:1rem; font-size:0.8rem; }
-        .hdr-stat { display:flex; align-items:center; gap:0.3rem; }
-        .hdr-num { font-weight:700; font-size:1rem; color:var(--accent); }
+        /* HEADER */
+        header{background:linear-gradient(135deg,var(--sec),var(--pri));color:#fff;
+            padding:.9rem 1rem;position:sticky;top:0;z-index:100;
+            box-shadow:0 2px 12px rgba(0,0,0,.25);}
+        .hdr{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:.5rem;}
+        .logo{display:flex;align-items:center;gap:.5rem;font-size:1.2rem;font-weight:800;letter-spacing:.5px;}
+        .logo i{color:var(--acc);font-size:1.4rem;}
+        .hdr-pills{display:flex;gap:.5rem;}
+        .hdr-pill{background:rgba(255,255,255,.18);border-radius:20px;padding:.25rem .7rem;
+            font-size:.78rem;font-weight:700;display:flex;align-items:center;gap:.3rem;}
+        .hdr-pill b{color:var(--acc);}
 
-        /* ── CONTAINER ── */
-        .wrap { max-width:1200px; margin:0 auto; padding:1rem; }
+        /* CONTENT */
+        .wrap{max-width:1200px;margin:0 auto;padding:.9rem .9rem 2rem;}
 
-        /* ── FILTROS ── */
-        .filters {
-            background:white; border-radius:12px;
-            box-shadow:0 2px 8px rgba(0,0,0,0.08);
-            padding:1rem; margin-bottom:1rem;
-            display:grid; gap:0.75rem;
-            grid-template-columns:1fr 1fr;
-        }
-        .filters input, .filters select {
-            padding:0.7rem 0.9rem; border:2px solid var(--border);
-            border-radius:8px; font-size:0.95rem; width:100%;
-            background:white; -webkit-appearance:none;
-        }
-        .filters input:focus, .filters select:focus { outline:none; border-color:var(--primary); }
-        .filter-search { grid-column:1/-1; }
-        .filter-btns { grid-column:1/-1; display:flex; gap:0.5rem; }
-        .btn { padding:0.7rem 1.25rem; border:none; border-radius:8px; font-weight:700;
-               cursor:pointer; font-size:0.9rem; display:flex; align-items:center; gap:0.4rem; transition:all 0.2s; }
-        .btn-primary { background:linear-gradient(135deg,var(--primary),var(--accent)); color:white; flex:1; justify-content:center; }
-        .btn-primary:active { opacity:0.85; }
-        .btn-ghost { background:var(--light); color:var(--muted); border:2px solid var(--border); flex:1; justify-content:center; }
-        .btn-ghost:active { background:var(--border); }
+        /* FILTROS */
+        .filters{background:var(--card);border-radius:14px;padding:1rem;
+            box-shadow:0 1px 6px rgba(0,0,0,.08);margin-bottom:.9rem;
+            display:flex;flex-direction:column;gap:.6rem;}
+        .frow{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;}
+        select,input[type=text]{width:100%;padding:.65rem .8rem;border:1.5px solid var(--border);
+            border-radius:9px;font-size:.9rem;background:#fff;appearance:none;-webkit-appearance:none;}
+        select:focus,input:focus{outline:none;border-color:var(--pri);}
+        .fbtns{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;}
+        .btn{padding:.7rem;border:none;border-radius:9px;font-weight:700;
+            font-size:.88rem;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:.35rem;}
+        .btn-p{background:linear-gradient(135deg,var(--pri),var(--acc));color:#fff;}
+        .btn-p:active{opacity:.85;}
+        .btn-g{background:var(--bg);color:var(--muted);border:1.5px solid var(--border);}
+        .btn-g:active{background:var(--border);}
 
-        /* ── TABS ── */
-        .tabs { display:flex; background:white; border-radius:10px; padding:0.4rem;
-                box-shadow:0 2px 8px rgba(0,0,0,0.06); margin-bottom:1rem; gap:0.3rem; }
-        .tab { flex:1; padding:0.65rem 0.5rem; background:none; border:none; border-radius:8px;
-               color:var(--muted); font-weight:600; cursor:pointer; font-size:0.85rem;
-               display:flex; align-items:center; justify-content:center; gap:0.3rem; transition:all 0.2s; }
-        .tab.active { background:linear-gradient(135deg,var(--primary),var(--accent)); color:white; }
-        .tab:active { opacity:0.85; }
+        /* TABS */
+        .tabs{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.35rem;
+            background:var(--card);border-radius:12px;padding:.35rem;
+            box-shadow:0 1px 6px rgba(0,0,0,.07);margin-bottom:.9rem;}
+        .tab{padding:.6rem .3rem;background:none;border:none;border-radius:9px;
+            color:var(--muted);font-weight:700;cursor:pointer;font-size:.82rem;
+            display:flex;align-items:center;justify-content:center;gap:.3rem;transition:all .2s;}
+        .tab.active{background:linear-gradient(135deg,var(--pri),var(--acc));color:#fff;}
 
-        /* ── VIEWS ── */
-        .view { display:none; }
-        .view.active { display:block; }
+        /* VIEWS */
+        .view{display:none;}
+        .view.active{display:block;}
 
-        /* ── CARDS ── */
-        .cards { display:grid; gap:1rem; grid-template-columns:1fr; }
-        @media(min-width:640px){ .cards { grid-template-columns:1fr 1fr; } }
-        @media(min-width:1024px){ .cards { grid-template-columns:1fr 1fr 1fr; } }
+        /* CARDS */
+        .cards{display:grid;gap:.75rem;}
+        @media(min-width:580px){.cards{grid-template-columns:1fr 1fr;}}
+        @media(min-width:900px){.cards{grid-template-columns:1fr 1fr 1fr;}}
+        @media(min-width:1200px){.cards{grid-template-columns:repeat(4,1fr);}}
 
-        .card { background:white; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.08);
-                overflow:hidden; display:flex; flex-direction:column; cursor:pointer;
-                transition:transform 0.15s, box-shadow 0.15s; }
-        .card:active { transform:scale(0.98); }
+        .card{background:var(--card);border-radius:14px;overflow:hidden;
+            box-shadow:0 1px 6px rgba(0,0,0,.09);display:flex;flex-direction:column;}
+        .card-top{background:linear-gradient(135deg,var(--sec),var(--pri));color:#fff;
+            padding:.9rem 1rem;display:flex;justify-content:space-between;align-items:flex-start;}
+        .card-day{font-size:2.1rem;font-weight:900;line-height:1;}
+        .card-month{font-size:.72rem;opacity:.85;text-transform:uppercase;letter-spacing:1px;}
+        .card-lv{background:var(--acc);padding:.2rem .6rem;border-radius:16px;
+            font-size:.65rem;font-weight:800;text-transform:uppercase;white-space:nowrap;}
+        .card-body{padding:.85rem 1rem;flex:1;display:flex;flex-direction:column;gap:.45rem;}
+        .card-title{font-size:.95rem;font-weight:700;color:var(--sec);line-height:1.3;}
+        .card-meta{display:flex;align-items:center;gap:.4rem;font-size:.8rem;color:var(--muted);}
+        .card-meta i{color:var(--pri);width:13px;text-align:center;}
+        .card-tags{display:flex;flex-wrap:wrap;gap:.3rem;margin-top:.3rem;}
+        .tag{background:#f0f2f5;color:var(--sec);padding:.15rem .5rem;border-radius:7px;font-size:.72rem;font-weight:600;}
+        .tag-type{background:#fce4ec;color:var(--pri);}
+        .card-foot{border-top:1px solid var(--border);padding:.65rem 1rem;display:flex;gap:.5rem;}
+        .cbtn{flex:1;padding:.55rem;border:none;border-radius:8px;font-weight:700;font-size:.8rem;cursor:pointer;
+            display:flex;align-items:center;justify-content:center;gap:.3rem;}
+        .cbtn-p{background:linear-gradient(135deg,var(--pri),var(--acc));color:#fff;}
+        .cbtn-o{background:#fff;color:var(--pri);border:1.5px solid var(--pri);text-decoration:none;}
+        .cbtn-p:active,.cbtn-o:active{opacity:.8;}
 
-        .card-top { background:linear-gradient(135deg,var(--secondary),var(--primary));
-                    color:white; padding:1rem 1.25rem; display:flex; justify-content:space-between; align-items:flex-start; }
-        .card-date { }
-        .card-day { font-size:2rem; font-weight:800; line-height:1; }
-        .card-month { font-size:0.8rem; opacity:0.85; text-transform:uppercase; letter-spacing:1px; }
-        .card-badge { background:var(--accent); padding:0.25rem 0.65rem; border-radius:20px;
-                      font-size:0.7rem; font-weight:700; text-transform:uppercase; white-space:nowrap; }
+        /* CALENDÁRIO */
+        .cal-wrap{background:var(--card);border-radius:14px;padding:.9rem;box-shadow:0 1px 6px rgba(0,0,0,.08);}
+        .cal-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:.8rem;gap:.5rem;}
+        .cal-title{font-size:1rem;font-weight:800;color:var(--sec);}
+        .cal-nav{display:flex;gap:.35rem;}
+        .cal-nav button{padding:.45rem .7rem;border:1.5px solid var(--border);background:#fff;
+            border-radius:8px;font-weight:700;cursor:pointer;font-size:.8rem;}
+        .cal-nav button:active{background:var(--bg);}
 
-        .card-body { padding:1rem 1.25rem; flex:1; display:flex; flex-direction:column; gap:0.6rem; }
-        .card-title { font-size:1rem; font-weight:700; color:var(--secondary); line-height:1.3; }
-        .card-row { display:flex; align-items:center; gap:0.5rem; font-size:0.85rem; color:var(--muted); }
-        .card-row i { color:var(--primary); width:14px; text-align:center; }
-        .card-tags { display:flex; flex-wrap:wrap; gap:0.35rem; margin-top:auto; padding-top:0.5rem; }
-        .tag { background:#f0f2f5; color:var(--secondary); padding:0.2rem 0.55rem; border-radius:8px; font-size:0.75rem; font-weight:600; }
-        .tag-type { background:#fce4ec; color:var(--primary); }
+        /* Calendário mobile: scroll horizontal */
+        .cal-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;}
+        .cal-inner{min-width:320px;}
+        .cal-wdays{display:grid;grid-template-columns:repeat(7,1fr);gap:2px;margin-bottom:2px;}
+        .cal-wday{text-align:center;font-size:.68rem;font-weight:700;color:var(--sec);
+            padding:.3rem 0;background:#f0f2f5;border-radius:4px;}
+        .cal-days{display:grid;grid-template-columns:repeat(7,1fr);gap:2px;}
+        .cal-day{border:1.5px solid var(--border);border-radius:8px;padding:.3rem;
+            min-height:62px;background:#fff;cursor:pointer;position:relative;}
+        .cal-day.other{background:#fafafa;opacity:.4;}
+        .cal-day.today{border-color:var(--acc);border-width:2px;background:#fff9f0;}
+        .cal-num{font-weight:700;font-size:.78rem;color:var(--text);margin-bottom:2px;}
+        .cal-day.today .cal-num{color:var(--acc);}
+        .cal-ev{background:linear-gradient(135deg,var(--pri),var(--acc));color:#fff;
+            padding:1px 4px;border-radius:3px;font-size:.55rem;font-weight:700;
+            white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom:1px;cursor:pointer;display:block;}
+        .cal-ev.international{background:linear-gradient(135deg,#6a1b9a,#c0195a);}
+        .cal-ev.regional{background:linear-gradient(135deg,#1565c0,#0097a7);}
+        .cal-more{font-size:.55rem;color:var(--pri);font-weight:700;padding:1px 4px;}
 
-        .card-footer { border-top:1px solid var(--border); padding:0.75rem 1.25rem; display:flex; gap:0.5rem; }
-        .btn-detail { flex:1; padding:0.6rem; background:linear-gradient(135deg,var(--primary),var(--accent));
-                      color:white; border:none; border-radius:8px; font-weight:700; font-size:0.85rem; cursor:pointer; }
-        .btn-detail:active { opacity:0.85; }
-        .btn-fed { flex:1; padding:0.6rem; background:white; color:var(--primary);
-                   border:2px solid var(--primary); border-radius:8px; font-weight:700;
-                   font-size:0.85rem; text-decoration:none; text-align:center; display:flex;
-                   align-items:center; justify-content:center; gap:0.3rem; }
-        .btn-fed:active { background:var(--primary); color:white; }
+        /* MAPA */
+        #map{height:60vh;min-height:320px;border-radius:14px;box-shadow:0 1px 6px rgba(0,0,0,.08);}
 
-        /* ── CALENDÁRIO ── */
-        .cal-wrap { background:white; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.08); padding:1rem; }
-        .cal-hdr { display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem; gap:0.5rem; }
-        .cal-title { font-size:1.1rem; font-weight:700; color:var(--secondary); }
-        .cal-nav { display:flex; gap:0.4rem; }
-        .cal-nav button { padding:0.5rem 0.85rem; border:2px solid var(--border); background:white;
-                          border-radius:8px; font-weight:700; cursor:pointer; font-size:0.85rem; }
-        .cal-nav button:active { background:var(--light); }
-        .cal-grid { display:grid; grid-template-columns:repeat(7,1fr); gap:2px; }
-        .cal-wday { text-align:center; font-weight:700; font-size:0.72rem; color:var(--secondary);
-                    padding:0.4rem 0; background:#f0f2f5; border-radius:4px; }
-        .cal-day { border:1.5px solid var(--border); border-radius:8px; padding:0.35rem;
-                   min-height:70px; background:white; cursor:pointer; transition:border-color 0.15s; }
-        .cal-day:active { background:var(--light); }
-        .cal-day.other { background:#fafafa; opacity:0.4; }
-        .cal-day.today { border-color:var(--accent); border-width:2px; background:#fff8f0; }
-        .cal-num { font-weight:700; font-size:0.85rem; margin-bottom:2px; }
-        .cal-day.today .cal-num { color:var(--accent); }
-        .cal-ev { background:linear-gradient(135deg,var(--primary),var(--accent)); color:white;
-                  padding:1px 4px; border-radius:3px; font-size:0.6rem; font-weight:600;
-                  white-space:nowrap; overflow:hidden; text-overflow:ellipsis; margin-bottom:1px; cursor:pointer; }
-        .cal-ev.international { background:linear-gradient(135deg,#6a1b9a,#c0195a); }
-        .cal-ev.regional { background:linear-gradient(135deg,#1565c0,#0097a7); }
-
-        /* ── MAPA ── */
-        #map { height:60vh; min-height:350px; border-radius:12px;
-               box-shadow:0 2px 8px rgba(0,0,0,0.08); }
-
-        /* ── MODAL ── */
-        .modal { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.65);
-                 z-index:1000; align-items:flex-end; justify-content:center; padding:0; }
-        .modal.active { display:flex; }
-        .modal-box { background:white; border-radius:16px 16px 0 0; width:100%; max-height:90vh;
-                     overflow-y:auto; animation:slideUp 0.25s ease; }
+        /* MODAL — bottom sheet */
+        .modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:500;}
+        .modal-overlay.open{display:block;}
+        .modal-sheet{position:fixed;bottom:0;left:0;right:0;z-index:600;
+            background:var(--card);border-radius:20px 20px 0 0;
+            max-height:90vh;overflow-y:auto;
+            transform:translateY(100%);transition:transform .3s cubic-bezier(.4,0,.2,1);}
+        .modal-sheet.open{transform:translateY(0);}
         @media(min-width:640px){
-            .modal { align-items:center; padding:1rem; }
-            .modal-box { border-radius:16px; max-width:560px; max-height:85vh; }
+            .modal-overlay.open{display:flex;align-items:center;justify-content:center;}
+            .modal-sheet{position:static;border-radius:18px;max-width:560px;width:100%;
+                max-height:85vh;transform:none;transition:none;}
         }
-        @keyframes slideUp { from{transform:translateY(100%)} to{transform:translateY(0)} }
+        .modal-handle{width:40px;height:4px;background:var(--border);border-radius:2px;
+            margin:.75rem auto .25rem;}
+        .modal-hdr{background:linear-gradient(135deg,var(--sec),var(--pri));color:#fff;
+            padding:1rem 1.1rem 1.1rem;}
+        .modal-htitle{font-size:1.05rem;font-weight:800;line-height:1.3;margin-bottom:.25rem;}
+        .modal-hfed{font-size:.78rem;opacity:.8;}
+        .modal-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.5rem;}
+        .modal-x{background:rgba(255,255,255,.2);border:none;color:#fff;
+            width:32px;height:32px;border-radius:50%;font-size:1.1rem;cursor:pointer;
+            display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+        .modal-x:active{background:rgba(255,255,255,.35);}
+        .modal-body{padding:1rem 1.1rem;}
+        .mgrid{display:grid;grid-template-columns:1fr 1fr;gap:.85rem;margin-bottom:1rem;}
+        .ml{font-size:.7rem;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:.2rem;}
+        .mv{font-size:.88rem;color:var(--text);line-height:1.35;}
+        #evMap{height:200px;border-radius:10px;border:1.5px solid var(--border);margin:.75rem 0;}
+        .map-btns{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-bottom:.6rem;}
+        .mbtn{display:flex;align-items:center;justify-content:center;gap:.35rem;
+            padding:.65rem;border-radius:9px;font-weight:700;font-size:.82rem;text-decoration:none;}
+        .mbtn-g{background:#4285f4;color:#fff;}
+        .mbtn-w{background:#00c1ff;color:#fff;}
+        .mbtn-g:active,.mbtn-w:active{opacity:.85;}
+        .mbtn-fed{display:flex;align-items:center;justify-content:center;gap:.4rem;
+            padding:.8rem;background:linear-gradient(135deg,var(--pri),var(--acc));
+            color:#fff;text-decoration:none;border-radius:10px;font-weight:800;font-size:.88rem;}
+        .mbtn-fed:active{opacity:.85;}
+        .sec-title{font-size:.7rem;font-weight:800;color:var(--muted);text-transform:uppercase;
+            letter-spacing:.5px;margin:.75rem 0 .4rem;}
 
-        .modal-hdr { background:linear-gradient(135deg,var(--secondary),var(--primary)); color:white;
-                     padding:1.25rem; display:flex; justify-content:space-between; align-items:flex-start;
-                     border-radius:16px 16px 0 0; position:sticky; top:0; z-index:10; }
-        @media(min-width:640px){ .modal-hdr { border-radius:16px 16px 0 0; } }
-        .modal-title { font-size:1.1rem; font-weight:700; padding-right:1rem; line-height:1.3; }
-        .modal-fed { font-size:0.82rem; opacity:0.8; margin-top:0.3rem; }
-        .modal-close { background:rgba(255,255,255,0.2); border:none; color:white;
-                       width:34px; height:34px; border-radius:50%; font-size:1.2rem;
-                       cursor:pointer; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
-        .modal-close:active { background:rgba(255,255,255,0.35); }
-        .modal-body { padding:1.25rem; }
-        .modal-grid { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-bottom:1.25rem; }
-        .mi-label { font-size:0.72rem; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:0.2rem; }
-        .mi-value { font-size:0.9rem; color:var(--text); }
+        /* EMPTY */
+        .empty{text-align:center;padding:3rem 1.5rem;color:var(--muted);}
+        .empty i{font-size:2.5rem;opacity:.25;margin-bottom:1rem;display:block;}
 
-        #evMap { height:220px; border-radius:10px; border:2px solid var(--border); margin:1rem 0; }
-        .map-btns { display:grid; grid-template-columns:1fr 1fr; gap:0.5rem; }
-        .btn-maps { display:flex; align-items:center; justify-content:center; gap:0.4rem;
-                    padding:0.7rem; background:#4285f4; color:white; text-decoration:none;
-                    border-radius:8px; font-weight:700; font-size:0.85rem; }
-        .btn-waze { display:flex; align-items:center; justify-content:center; gap:0.4rem;
-                    padding:0.7rem; background:#00c1ff; color:white; text-decoration:none;
-                    border-radius:8px; font-weight:700; font-size:0.85rem; }
-        .btn-maps:active, .btn-waze:active { opacity:0.85; }
-        .btn-website { display:flex; align-items:center; justify-content:center; gap:0.4rem;
-                       padding:0.85rem; margin-top:0.75rem;
-                       background:linear-gradient(135deg,var(--primary),var(--accent));
-                       color:white; text-decoration:none; border-radius:10px; font-weight:700; }
-        .btn-website:active { opacity:0.85; }
-
-        /* ── EMPTY ── */
-        .empty { text-align:center; padding:3rem 1.5rem; color:var(--muted); }
-        .empty i { font-size:2.5rem; opacity:0.3; margin-bottom:1rem; display:block; }
-
-        /* ── FOOTER ── */
-        footer { background:var(--secondary); color:white; text-align:center;
-                 padding:1.25rem; margin-top:1.5rem; font-size:0.82rem; }
-        footer a { color:rgba(255,255,255,0.7); text-decoration:none; margin-left:0.5rem; }
+        /* FOOTER */
+        footer{background:var(--sec);color:#fff;text-align:center;padding:1rem;font-size:.78rem;}
+        footer a{color:rgba(255,255,255,.6);text-decoration:none;margin-left:.5rem;}
+        footer a:hover{color:#fff;}
     </style>
 </head>
 <body>
 
 <header>
     <div class="hdr">
-        <div class="logo">
-            <i class="fas fa-crown"></i>
-            <span>Karate Events</span>
-        </div>
-        <div class="hdr-stats">
-            <div class="hdr-stat"><i class="fas fa-calendar-check"></i> <span class="hdr-num" id="evCount">0</span></div>
-            <div class="hdr-stat"><i class="fas fa-globe"></i> <span class="hdr-num" id="ctCount">0</span></div>
+        <div class="logo"><i class="fas fa-crown"></i> Karate Events</div>
+        <div class="hdr-pills">
+            <div class="hdr-pill"><i class="fas fa-calendar-check"></i><b id="evCount">0</b></div>
+            <div class="hdr-pill"><i class="fas fa-globe"></i><b id="ctCount">0</b></div>
         </div>
     </div>
 </header>
@@ -202,18 +187,14 @@
 
     <!-- FILTROS -->
     <div class="filters">
-        <div>
+        <div class="frow">
             <select id="fCountry"><option value="">🌍 Todos os países</option></select>
-        </div>
-        <div>
             <select id="fType"><option value="">📋 Todos os tipos</option></select>
         </div>
-        <div class="filter-search">
-            <input type="text" id="fSearch" placeholder="🔍 Procurar prova..." autocomplete="off">
-        </div>
-        <div class="filter-btns">
-            <button class="btn btn-primary" onclick="applyFilters()"><i class="fas fa-search"></i> Filtrar</button>
-            <button class="btn btn-ghost" onclick="clearFilters()"><i class="fas fa-redo"></i> Limpar</button>
+        <input type="text" id="fSearch" placeholder="🔍 Procurar prova ou cidade...">
+        <div class="fbtns">
+            <button class="btn btn-p" onclick="applyFilters()"><i class="fas fa-search"></i> Filtrar</button>
+            <button class="btn btn-g" onclick="clearFilters()"><i class="fas fa-redo"></i> Limpar</button>
         </div>
     </div>
 
@@ -246,13 +227,17 @@
                     <button onclick="nextMonth()"><i class="fas fa-chevron-right"></i></button>
                 </div>
             </div>
-            <div class="cal-grid">
-                <div class="cal-wday">Dom</div><div class="cal-wday">Seg</div>
-                <div class="cal-wday">Ter</div><div class="cal-wday">Qua</div>
-                <div class="cal-wday">Qui</div><div class="cal-wday">Sex</div>
-                <div class="cal-wday">Sab</div>
+            <div class="cal-scroll">
+                <div class="cal-inner">
+                    <div class="cal-wdays">
+                        <div class="cal-wday">Dom</div><div class="cal-wday">Seg</div>
+                        <div class="cal-wday">Ter</div><div class="cal-wday">Qua</div>
+                        <div class="cal-wday">Qui</div><div class="cal-wday">Sex</div>
+                        <div class="cal-wday">Sab</div>
+                    </div>
+                    <div class="cal-days" id="calDays"></div>
+                </div>
             </div>
-            <div class="cal-grid" id="calDays" style="margin-top:2px;"></div>
         </div>
     </div>
 
@@ -264,17 +249,19 @@
 </div>
 
 <!-- MODAL -->
-<div class="modal" id="modal">
-    <div class="modal-box">
-        <div class="modal-hdr">
+<div class="modal-overlay" id="overlay" onclick="closeModal()"></div>
+<div class="modal-sheet" id="sheet">
+    <div class="modal-handle"></div>
+    <div class="modal-hdr">
+        <div class="modal-top">
             <div>
-                <div class="modal-title" id="mTitle"></div>
-                <div class="modal-fed" id="mFed"></div>
+                <div class="modal-htitle" id="mTitle"></div>
+                <div class="modal-hfed" id="mFed"></div>
             </div>
-            <button class="modal-close" onclick="closeModal()">×</button>
+            <button class="modal-x" onclick="closeModal()">×</button>
         </div>
-        <div class="modal-body" id="mBody"></div>
     </div>
+    <div class="modal-body" id="mBody"></div>
 </div>
 
 <footer>
@@ -284,117 +271,88 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <script>
-let all=[], filtered=[], feds={};
+let all=[],filtered=[],mapL=null,evMap=null;
 let calDate=new Date(); calDate.setDate(1);
-let mapL=null, evMap=null;
 
-const FEDS = {
-    PT_FNK:{name:"Federação Nacional de Karaté - Portugal",website:"https://www.fnkp.pt"},
-    ES_RFEK:{name:"Real Federación Española de Karate",website:"https://www.rfek.es"},
-    IT_FIJLKAM:{name:"Federazione Italiana Judo Lotta Karate",website:"https://www.fijlkam.it"},
-    FR_FFKA:{name:"Fédération Française de Karaté",website:"https://www.ffkarate.fr"},
-    WKF:{name:"World Karate Federation",website:"https://www.wkf.net"}
+const FEDS={
+    PT_FNK:{w:"https://www.fnkp.pt"},
+    ES_RFEK:{w:"https://www.rfek.es"},
+    IT_FIJLKAM:{w:"https://www.fijlkam.it"},
+    FR_FFKA:{w:"https://www.ffkarate.fr"},
+    WKF:{w:"https://www.wkf.net"}
 };
 
-document.addEventListener('DOMContentLoaded', async ()=>{
-    await load();
-    buildFilters();
-    renderCards();
-    renderCalendar();
+document.addEventListener('DOMContentLoaded',async()=>{
+    await load(); buildFilters(); renderCards(); renderCalendar();
 });
 
 async function load(){
     try{
-        const r = await fetch('events.json');
-        const d = await r.json();
-        all = d.events || [];
-        filtered = [...all];
-        document.getElementById('evCount').textContent = all.length;
-        document.getElementById('ctCount').textContent = new Set(all.map(e=>e.country)).size;
-    }catch(e){ console.error(e); }
+        const d=await(await fetch('events.json')).json();
+        all=d.events||[]; filtered=[...all];
+        document.getElementById('evCount').textContent=all.length;
+        document.getElementById('ctCount').textContent=new Set(all.map(e=>e.country)).size;
+    }catch(e){console.error(e);}
 }
 
 function buildFilters(){
-    const cs = document.getElementById('fCountry');
-    [...new Set(all.map(e=>e.country))].sort().forEach(c=>{
-        cs.innerHTML += `<option value="${c}">${c}</option>`;
-    });
-    const ts = document.getElementById('fType');
-    [...new Set(all.map(e=>e.eventType).filter(Boolean))].sort().forEach(t=>{
-        ts.innerHTML += `<option value="${t}">${t}</option>`;
-    });
+    const cs=document.getElementById('fCountry');
+    [...new Set(all.map(e=>e.country))].sort().forEach(c=>cs.innerHTML+=`<option value="${c}">${c}</option>`);
+    const ts=document.getElementById('fType');
+    [...new Set(all.map(e=>e.eventType).filter(Boolean))].sort().forEach(t=>ts.innerHTML+=`<option value="${t}">${t}</option>`);
 }
 
 function applyFilters(){
     const c=document.getElementById('fCountry').value;
     const t=document.getElementById('fType').value;
     const s=document.getElementById('fSearch').value.toLowerCase().trim();
-    filtered=all.filter(e=>
-        (!c||e.country===c)&&
-        (!t||e.eventType===t)&&
-        (!s||e.title.toLowerCase().includes(s)||e.location?.city?.toLowerCase().includes(s))
-    );
-    renderCards(); renderCalendar();
-    if(mapL) updateMapMarkers();
+    filtered=all.filter(e=>(!c||e.country===c)&&(!t||e.eventType===t)&&
+        (!s||e.title.toLowerCase().includes(s)||e.location?.city?.toLowerCase().includes(s)));
+    renderCards(); renderCalendar(); if(mapL)updateMapMarkers();
 }
-
 function clearFilters(){
-    document.getElementById('fCountry').value='';
-    document.getElementById('fType').value='';
+    ['fCountry','fType'].forEach(id=>document.getElementById(id).value='');
     document.getElementById('fSearch').value='';
-    filtered=[...all];
-    renderCards(); renderCalendar();
-    if(mapL) updateMapMarkers();
+    filtered=[...all]; renderCards(); renderCalendar(); if(mapL)updateMapMarkers();
 }
 
-function switchView(name, btn){
+function switchView(n,btn){
     document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
     document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
-    document.getElementById('view-'+name).classList.add('active');
-    btn.classList.add('active');
-    if(name==='map' && !mapL) initMap();
-    else if(name==='map' && mapL){ mapL.invalidateSize(); updateMapMarkers(); }
+    document.getElementById('view-'+n).classList.add('active'); btn.classList.add('active');
+    if(n==='map'&&!mapL)initMap();
+    else if(n==='map'&&mapL){mapL.invalidateSize();updateMapMarkers();}
 }
 
-function levelLabel(l){
-    return {national:'Nacional',regional:'Regional',international:'Internacional'}[l]||l;
-}
+function lvLabel(l){return{national:'Nacional',regional:'Regional',international:'Internacional'}[l]||l;}
 
 function renderCards(){
     const g=document.getElementById('cardGrid');
     const sorted=[...filtered].sort((a,b)=>new Date(a.date.start)-new Date(b.date.start));
-    if(!sorted.length){
-        g.innerHTML=`<div class="empty" style="grid-column:1/-1"><i class="fas fa-search"></i><p>Nenhuma prova encontrada.<br>Tenta ajustar os filtros.</p></div>`;
-        return;
-    }
+    if(!sorted.length){g.innerHTML=`<div class="empty" style="grid-column:1/-1"><i class="fas fa-search"></i><p>Nenhuma prova encontrada.</p></div>`;return;}
     g.innerHTML=sorted.map(ev=>{
         const d=new Date(ev.date.start);
-        const day=d.getDate();
-        const mon=d.toLocaleDateString('pt-PT',{month:'short'}).toUpperCase().replace('.','');
-        const yr=d.getFullYear();
-        const fed=FEDS[ev.source]||{};
         const idx=all.indexOf(ev);
+        const fed=FEDS[ev.source]||{};
         return `<div class="card">
             <div class="card-top">
-                <div class="card-date">
-                    <div class="card-day">${day}</div>
-                    <div class="card-month">${mon} ${yr}</div>
-                </div>
-                <span class="card-badge">${levelLabel(ev.level)}</span>
+                <div><div class="card-day">${d.getDate()}</div>
+                <div class="card-month">${d.toLocaleDateString('pt-PT',{month:'short',year:'numeric'}).replace('.','')} </div></div>
+                <span class="card-lv">${lvLabel(ev.level)}</span>
             </div>
             <div class="card-body">
                 <div class="card-title">${ev.title}</div>
-                <div class="card-row"><i class="fas fa-map-marker-alt"></i>${ev.location.city}${ev.location.venue&&ev.location.venue!=='A confirmar'?' · '+ev.location.venue:''}</div>
-                <div class="card-row"><i class="fas fa-flag"></i>${ev.country}</div>
-                <div class="card-row"><i class="fas fa-building"></i>${ev.federation}</div>
+                <div class="card-meta"><i class="fas fa-map-marker-alt"></i>${ev.location.city}</div>
+                <div class="card-meta"><i class="fas fa-flag"></i>${ev.country}</div>
+                <div class="card-meta"><i class="fas fa-building"></i>${ev.federation}</div>
                 <div class="card-tags">
                     ${ev.eventType?`<span class="tag tag-type">${ev.eventType}</span>`:''}
-                    ${(ev.categories||[]).slice(0,3).map(c=>`<span class="tag">${c}</span>`).join('')}
+                    ${(ev.categories||[]).slice(0,2).map(c=>`<span class="tag">${c}</span>`).join('')}
                 </div>
             </div>
-            <div class="card-footer">
-                <button class="btn-detail" onclick="showModal(${idx})"><i class="fas fa-map-marker-alt"></i> Ver & Localizar</button>
-                ${fed.website?`<a href="${fed.website}" target="_blank" rel="noopener" class="btn-fed"><i class="fas fa-external-link-alt"></i> Federação</a>`:''}
+            <div class="card-foot">
+                <button class="cbtn cbtn-p" onclick="showModal(${idx})"><i class="fas fa-map-marker-alt"></i> Detalhes</button>
+                ${fed.w?`<a href="${fed.w}" target="_blank" rel="noopener" class="cbtn cbtn-o"><i class="fas fa-external-link-alt"></i> Fed.</a>`:''}
             </div>
         </div>`;
     }).join('');
@@ -404,54 +362,58 @@ function showModal(idx){
     const ev=all[idx];
     const fed=FEDS[ev.source]||{};
     const d=new Date(ev.date.start);
-    const dEnd=ev.date.end?new Date(ev.date.end):null;
-    const dateStr=d.toLocaleDateString('pt-PT',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
-    const endStr=dEnd&&dEnd.toDateString()!==d.toDateString()?` → ${dEnd.toLocaleDateString('pt-PT',{day:'numeric',month:'long'})}`:'' ;
+    const dE=ev.date.end?new Date(ev.date.end):null;
+    const ds=d.toLocaleDateString('pt-PT',{weekday:'short',year:'numeric',month:'short',day:'numeric'});
+    const de=dE&&dE.toDateString()!==d.toDateString()?` → ${dE.toLocaleDateString('pt-PT',{day:'numeric',month:'short'})}`:'';
     const coords=ev.location?.coordinates;
-    const mapsUrl=coords?`https://www.google.com/maps/search/?api=1&query=${coords.latitude},${coords.longitude}`:`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(ev.location.city)}`;
-    const wazeUrl=coords?`https://waze.com/ul?ll=${coords.latitude},${coords.longitude}&navigate=yes`:`https://waze.com/ul?q=${encodeURIComponent(ev.location.city)}`;
+    const lat=coords?.latitude||48.8;
+    const lng=coords?.longitude||2.35;
+    const mapsUrl=coords?`https://www.google.com/maps/search/?api=1&query=${lat},${lng}`:`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(ev.location.city)}`;
+    const wazeUrl=coords?`https://waze.com/ul?ll=${lat},${lng}&navigate=yes`:`https://waze.com/ul?q=${encodeURIComponent(ev.location.city)}`;
 
     document.getElementById('mTitle').textContent=ev.title;
     document.getElementById('mFed').textContent=`${ev.federation} · ${ev.country}`;
     document.getElementById('mBody').innerHTML=`
-        <div class="modal-grid">
-            <div><div class="mi-label">Data</div><div class="mi-value">${dateStr}${endStr}</div></div>
-            <div><div class="mi-label">Tipo</div><div class="mi-value">${ev.eventType||levelLabel(ev.level)}</div></div>
-            <div><div class="mi-label">Cidade</div><div class="mi-value">${ev.location.city}</div></div>
-            <div><div class="mi-label">Local</div><div class="mi-value">${ev.location.venue&&ev.location.venue!=='A confirmar'?ev.location.venue:'—'}</div></div>
+        <div class="mgrid">
+            <div><div class="ml">Data</div><div class="mv">${ds}${de}</div></div>
+            <div><div class="ml">Tipo</div><div class="mv">${ev.eventType||lvLabel(ev.level)}</div></div>
+            <div><div class="ml">Cidade</div><div class="mv">${ev.location.city}</div></div>
+            <div><div class="ml">Local</div><div class="mv">${ev.location.venue&&ev.location.venue!=='A confirmar'?ev.location.venue:'—'}</div></div>
         </div>
-        ${ev.categories?.length?`<div class="mi-label" style="margin-bottom:0.4rem">Categorias</div><div class="card-tags" style="margin-bottom:1rem">${ev.categories.map(c=>`<span class="tag">${c}</span>`).join('')}</div>`:''}
-        <div class="mi-label" style="margin-bottom:0.5rem"><i class="fas fa-map-marked-alt"></i> Localização</div>
+        ${ev.categories?.length?`<div class="ml">Categorias</div><div class="card-tags" style="margin:.35rem 0 .75rem">${ev.categories.map(c=>`<span class="tag">${c}</span>`).join('')}</div>`:''}
+        <div class="sec-title"><i class="fas fa-map-marked-alt"></i> Localização</div>
         <div id="evMap"></div>
         <div class="map-btns">
-            <a href="${mapsUrl}" target="_blank" rel="noopener" class="btn-maps"><i class="fas fa-map"></i> Google Maps</a>
-            <a href="${wazeUrl}" target="_blank" rel="noopener" class="btn-waze"><i class="fas fa-car"></i> Waze</a>
+            <a href="${mapsUrl}" target="_blank" rel="noopener" class="mbtn mbtn-g"><i class="fas fa-map"></i> Google Maps</a>
+            <a href="${wazeUrl}" target="_blank" rel="noopener" class="mbtn mbtn-w"><i class="fas fa-car"></i> Waze</a>
         </div>
-        ${fed.website?`<a href="${fed.website}" target="_blank" rel="noopener" class="btn-website"><i class="fas fa-external-link-alt"></i> Página Oficial da Federação</a>`:''}
+        ${fed.w?`<a href="${fed.w}" target="_blank" rel="noopener" class="mbtn-fed"><i class="fas fa-external-link-alt"></i> Página Oficial da Federação</a>`:''}
+        <div style="height:.5rem"></div>
     `;
-    document.getElementById('modal').classList.add('active');
+
+    document.getElementById('overlay').classList.add('open');
+    document.getElementById('sheet').classList.add('open');
     document.body.style.overflow='hidden';
 
     setTimeout(()=>{
         if(evMap){evMap.remove();evMap=null;}
-        const lat=coords?.latitude||48.8566, lng=coords?.longitude||2.3522;
         evMap=L.map('evMap').setView([lat,lng],13);
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'© OpenStreetMap'}).addTo(evMap);
-        const icon=L.divIcon({html:`<div style="background:linear-gradient(135deg,#c0195a,#ff6f00);width:32px;height:32px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);border:3px solid white;box-shadow:0 2px 8px rgba(0,0,0,0.4)"></div>`,iconSize:[32,32],iconAnchor:[16,32],className:''});
+        const icon=L.divIcon({html:`<div style="background:linear-gradient(135deg,#c0195a,#ff6f00);width:28px;height:28px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);border:3px solid white;box-shadow:0 2px 8px rgba(0,0,0,.4)"></div>`,iconSize:[28,28],iconAnchor:[14,28],className:''});
         L.marker([lat,lng],{icon}).addTo(evMap).bindPopup(`<strong>${ev.title}</strong><br>${ev.location.city}`).openPopup();
-    },150);
+    },200);
 }
 
 function closeModal(){
     if(evMap){evMap.remove();evMap=null;}
-    document.getElementById('modal').classList.remove('active');
+    document.getElementById('overlay').classList.remove('open');
+    document.getElementById('sheet').classList.remove('open');
     document.body.style.overflow='';
 }
-document.getElementById('modal').addEventListener('click',e=>{if(e.target.id==='modal')closeModal();});
 
-/* ── CALENDÁRIO ── */
+/* CALENDÁRIO */
 function renderCalendar(){
-    const yr=calDate.getFullYear(), mo=calDate.getMonth();
+    const yr=calDate.getFullYear(),mo=calDate.getMonth();
     document.getElementById('calTitle').textContent=
         calDate.toLocaleDateString('pt-PT',{month:'long',year:'numeric'}).replace(/^\w/,c=>c.toUpperCase());
     const first=new Date(yr,mo,1).getDay();
@@ -461,58 +423,60 @@ function renderCalendar(){
     const c=document.getElementById('calDays');
     c.innerHTML='';
     for(let i=first-1;i>=0;i--){
-        const d=document.createElement('div');
-        d.className='cal-day other';
-        d.innerHTML=`<div class="cal-num">${prev-i}</div>`;
-        c.appendChild(d);
+        const d=document.createElement('div');d.className='cal-day other';
+        d.innerHTML=`<div class="cal-num">${prev-i}</div>`;c.appendChild(d);
     }
     for(let day=1;day<=days;day++){
-        const d=document.createElement('div');
-        d.className='cal-day';
-        const thisDate=new Date(yr,mo,day);
-        if(thisDate.toDateString()===today.toDateString()) d.classList.add('today');
+        const d=document.createElement('div');d.className='cal-day';
+        const dt=new Date(yr,mo,day);
+        if(dt.toDateString()===today.toDateString())d.classList.add('today');
         d.innerHTML=`<div class="cal-num">${day}</div>`;
-        filtered.filter(ev=>{
+        const evs=filtered.filter(ev=>{
             const ed=new Date(ev.date.start);
             return ed.getFullYear()===yr&&ed.getMonth()===mo&&ed.getDate()===day;
-        }).forEach(ev=>{
+        });
+        evs.slice(0,2).forEach(ev=>{
             const b=document.createElement('div');
             b.className=`cal-ev ${ev.level}`;
-            b.textContent=ev.title;
-            b.title=`${ev.title} — ${ev.location.city}`;
+            b.textContent=ev.title;b.title=ev.title;
             b.onclick=()=>showModal(all.indexOf(ev));
             d.appendChild(b);
         });
+        if(evs.length>2){
+            const m=document.createElement('div');
+            m.className='cal-more';m.textContent=`+${evs.length-2} mais`;
+            d.appendChild(m);
+        }
         c.appendChild(d);
     }
     const rem=42-c.children.length;
     for(let i=1;i<=rem;i++){
-        const d=document.createElement('div');
-        d.className='cal-day other';
-        d.innerHTML=`<div class="cal-num">${i}</div>`;
-        c.appendChild(d);
+        const d=document.createElement('div');d.className='cal-day other';
+        d.innerHTML=`<div class="cal-num">${i}</div>`;c.appendChild(d);
     }
 }
 function prevMonth(){calDate.setMonth(calDate.getMonth()-1);renderCalendar();}
 function nextMonth(){calDate.setMonth(calDate.getMonth()+1);renderCalendar();}
 function goToday(){calDate=new Date();calDate.setDate(1);renderCalendar();}
 
-/* ── MAPA GLOBAL ── */
+/* MAPA */
 function initMap(){
     mapL=L.map('map').setView([48,10],4);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'© OpenStreetMap'}).addTo(mapL);
     updateMapMarkers();
 }
 function updateMapMarkers(){
-    if(!mapL) return;
-    mapL.eachLayer(l=>{if(l instanceof L.Marker)mapL.removeLayer(l);});
+    if(!mapL)return;
+    mapL.eachLayer(l=>{if(l instanceof L.Marker||l instanceof L.CircleMarker)mapL.removeLayer(l);});
     filtered.forEach(ev=>{
-        const c=ev.location?.coordinates;
-        if(!c) return;
-        L.circleMarker([c.latitude,c.longitude],{
-            radius:7,fillColor:ev.level==='international'?'#7b1fa2':ev.level==='regional'?'#1565c0':'#c0195a',
-            color:'white',weight:2,opacity:1,fillOpacity:0.85
-        }).bindPopup(`<strong>${ev.title}</strong><br>${ev.location.city}`).addTo(mapL);
+        const co=ev.location?.coordinates;
+        if(!co)return;
+        L.circleMarker([co.latitude,co.longitude],{
+            radius:7,
+            fillColor:ev.level==='international'?'#7b1fa2':ev.level==='regional'?'#1565c0':'#c0195a',
+            color:'#fff',weight:2,fillOpacity:.85
+        }).bindPopup(`<strong>${ev.title}</strong><br>${ev.location.city}`)
+        .on('click',()=>showModal(all.indexOf(ev))).addTo(mapL);
     });
 }
 </script>
