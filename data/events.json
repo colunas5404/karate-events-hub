@@ -1,12 +1,54 @@
 {
   "meta": {
     "version": "1.0",
-    "lastUpdated": "2026-06-24T10:00:00Z",
-    "totalEvents": 28,
+    "lastUpdated": "2026-06-24T22:00:00Z",
+    "totalEvents": 26,
     "countryCoverage": 11,
     "generatedBy": "Karate Events Hub v1.0"
   },
   "events": [
+    {
+      "id": "PT_FNK_20260608_001",
+      "source": "PT_FNK",
+      "title": "FISU WUC Combat Sports",
+      "country": "Portugal",
+      "countryCode": "PT",
+      "federation": "Federação Nacional de Karaté - Portugal",
+      "date": { "start": "2026-06-08T09:00:00Z", "end": "2026-06-13T18:00:00Z" },
+      "location": { "city": "Portugal", "venue": "A confirmar", "address": "", "coordinates": { "latitude": 38.7223, "longitude": -9.1393 } },
+      "categories": ["Senior"],
+      "level": "international",
+      "registrationUrl": "https://www.fnkp.pt/calendario",
+      "metadata": { "sourceUrl": "https://www.fnkp.pt/calendario", "scrapedAt": "2026-06-24T22:00:00Z", "quality": 1.0 }
+    },
+    {
+      "id": "PT_FNK_20260612_001",
+      "source": "PT_FNK",
+      "title": "Karate 1 – Premier League",
+      "country": "Portugal",
+      "countryCode": "PT",
+      "federation": "Federação Nacional de Karaté - Portugal",
+      "date": { "start": "2026-06-12T09:00:00Z", "end": "2026-06-14T18:00:00Z" },
+      "location": { "city": "Portugal", "venue": "A confirmar", "address": "", "coordinates": { "latitude": 38.7223, "longitude": -9.1393 } },
+      "categories": ["Senior Men", "Senior Women"],
+      "level": "international",
+      "registrationUrl": "https://www.fnkp.pt/calendario",
+      "metadata": { "sourceUrl": "https://www.fnkp.pt/calendario", "scrapedAt": "2026-06-24T22:00:00Z", "quality": 1.0 }
+    },
+    {
+      "id": "PT_FNK_20260616_001",
+      "source": "PT_FNK",
+      "title": "Campeonato dos Países do Mediterrâneo",
+      "country": "Portugal",
+      "countryCode": "PT",
+      "federation": "Federação Nacional de Karaté - Portugal",
+      "date": { "start": "2026-06-16T09:00:00Z", "end": "2026-06-21T18:00:00Z" },
+      "location": { "city": "Portugal", "venue": "A confirmar", "address": "", "coordinates": { "latitude": 38.7223, "longitude": -9.1393 } },
+      "categories": ["Senior Men", "Senior Women"],
+      "level": "international",
+      "registrationUrl": "https://www.fnkp.pt/calendario",
+      "metadata": { "sourceUrl": "https://www.fnkp.pt/calendario", "scrapedAt": "2026-06-24T22:00:00Z", "quality": 1.0 }
+    },
     {
       "id": "WKF_20260628_001",
       "source": "WKF",
@@ -19,7 +61,7 @@
       "categories": ["Senior Men", "Senior Women"],
       "level": "international",
       "registrationUrl": "https://www.wkf.net",
-      "metadata": { "sourceUrl": "https://www.wkf.net/events", "scrapedAt": "2026-06-24T10:00:00Z", "quality": 0.99 }
+      "metadata": { "sourceUrl": "https://www.wkf.net/events", "scrapedAt": "2026-06-24T22:00:00Z", "quality": 0.99 }
     },
     {
       "id": "PT_FNK_20260705_001",
@@ -27,13 +69,13 @@
       "title": "Campeonato Nacional de Clubes 2026",
       "country": "Portugal",
       "countryCode": "PT",
-      "federation": "Federação Nacional de Karaté",
+      "federation": "Federação Nacional de Karaté - Portugal",
       "date": { "start": "2026-07-05T09:00:00Z", "end": "2026-07-05T18:00:00Z" },
       "location": { "city": "Porto", "venue": "Pavilhão Rosa Mota", "address": "Jardins do Palácio de Cristal", "coordinates": { "latitude": 41.1497, "longitude": -8.6202 } },
       "categories": ["Cadete", "Junior", "Senior"],
       "level": "national",
-      "registrationUrl": "https://www.fnkp.pt",
-      "metadata": { "sourceUrl": "https://www.fnkp.pt/competicoes", "scrapedAt": "2026-06-24T10:00:00Z", "quality": 0.95 }
+      "registrationUrl": "https://www.fnkp.pt/calendario",
+      "metadata": { "sourceUrl": "https://www.fnkp.pt/calendario", "scrapedAt": "2026-06-24T22:00:00Z", "quality": 0.95 }
     },
     {
       "id": "ES_RFEK_20260712_001",
@@ -47,7 +89,7 @@
       "categories": ["Senior", "Sub-21"],
       "level": "national",
       "registrationUrl": "https://www.rfek.es",
-      "metadata": { "sourceUrl": "https://www.rfek.es/calendario", "scrapedAt": "2026-06-24T10:00:00Z", "quality": 0.95 }
+      "metadata": { "sourceUrl": "https://www.rfek.es/calendario", "scrapedAt": "2026-06-24T22:00:00Z", "quality": 0.95 }
     },
     {
       "id": "DE_DKV_20260718_001",
@@ -61,7 +103,7 @@
       "categories": ["U14", "U16", "U18"],
       "level": "national",
       "registrationUrl": "https://www.dkv.de",
-      "metadata": { "sourceUrl": "https://www.dkv.de/termine", "scrapedAt": "2026-06-24T10:00:00Z", "quality": 0.92 }
+      "metadata": { "sourceUrl": "https://www.dkv.de/termine", "scrapedAt": "2026-06-24T22:00:00Z", "quality": 0.92 }
     },
     {
       "id": "IT_FIJLKAM_20260725_001",
@@ -75,7 +117,7 @@
       "categories": ["U12", "U16", "Senior", "Master"],
       "level": "international",
       "registrationUrl": "https://www.fijlkam.it",
-      "metadata": { "sourceUrl": "https://www.fijlkam.it/karate", "scrapedAt": "2026-06-24T10:00:00Z", "quality": 0.93 }
+      "metadata": { "sourceUrl": "https://www.fijlkam.it/karate", "scrapedAt": "2026-06-24T22:00:00Z", "quality": 0.93 }
     },
     {
       "id": "FR_FFKA_20260801_001",
@@ -89,7 +131,7 @@
       "categories": ["Senior Men", "Senior Women", "Junior"],
       "level": "national",
       "registrationUrl": "https://www.ffkarate.fr",
-      "metadata": { "sourceUrl": "https://www.ffkarate.fr/competitions", "scrapedAt": "2026-06-24T10:00:00Z", "quality": 0.94 }
+      "metadata": { "sourceUrl": "https://www.ffkarate.fr/competitions", "scrapedAt": "2026-06-24T22:00:00Z", "quality": 0.94 }
     },
     {
       "id": "NL_KBN_20260808_001",
@@ -100,10 +142,10 @@
       "federation": "Koninklijke Nederlandse Karatebond",
       "date": { "start": "2026-08-08T09:30:00Z", "end": "2026-08-08T17:30:00Z" },
       "location": { "city": "Roterdão", "venue": "Ahoy Rotterdam", "address": "Ahoyweg 10", "coordinates": { "latitude": 51.8878, "longitude": 4.4769 } },
-      "categories": ["U10", "U12", "U14", "U16", "U18", "Senior"],
+      "categories": ["U10", "U12", "U14", "U16", "Senior"],
       "level": "international",
       "registrationUrl": "https://www.karatebond.nl",
-      "metadata": { "sourceUrl": "https://www.karatebond.nl/agenda", "scrapedAt": "2026-06-24T10:00:00Z", "quality": 0.90 }
+      "metadata": { "sourceUrl": "https://www.karatebond.nl/agenda", "scrapedAt": "2026-06-24T22:00:00Z", "quality": 0.90 }
     },
     {
       "id": "PT_FNK_20260815_001",
@@ -111,13 +153,13 @@
       "title": "Torneio Internacional Lisboa Open 2026",
       "country": "Portugal",
       "countryCode": "PT",
-      "federation": "Federação Nacional de Karaté",
+      "federation": "Federação Nacional de Karaté - Portugal",
       "date": { "start": "2026-08-15T09:00:00Z", "end": "2026-08-16T18:00:00Z" },
       "location": { "city": "Lisboa", "venue": "Pavilhão Multiusos de Odivelas", "address": "Rua Consiglieri Pedroso 75", "coordinates": { "latitude": 38.7938, "longitude": -9.1774 } },
       "categories": ["Infantil", "Cadete", "Junior", "Senior"],
       "level": "international",
-      "registrationUrl": "https://www.fnkp.pt",
-      "metadata": { "sourceUrl": "https://www.fnkp.pt/competicoes", "scrapedAt": "2026-06-24T10:00:00Z", "quality": 0.97 }
+      "registrationUrl": "https://www.fnkp.pt/calendario",
+      "metadata": { "sourceUrl": "https://www.fnkp.pt/calendario", "scrapedAt": "2026-06-24T22:00:00Z", "quality": 0.97 }
     },
     {
       "id": "WKF_20260905_001",
@@ -131,7 +173,7 @@
       "categories": ["Senior Men", "Senior Women", "U21 Men", "U21 Women"],
       "level": "international",
       "registrationUrl": "https://www.wkf.net",
-      "metadata": { "sourceUrl": "https://www.wkf.net/events", "scrapedAt": "2026-06-24T10:00:00Z", "quality": 0.99 }
+      "metadata": { "sourceUrl": "https://www.wkf.net/events", "scrapedAt": "2026-06-24T22:00:00Z", "quality": 0.99 }
     },
     {
       "id": "CH_SKV_20260912_001",
@@ -145,7 +187,7 @@
       "categories": ["Cadete", "Junior", "Senior", "Master"],
       "level": "international",
       "registrationUrl": "https://www.karate.ch",
-      "metadata": { "sourceUrl": "https://www.karate.ch/kalender", "scrapedAt": "2026-06-24T10:00:00Z", "quality": 0.91 }
+      "metadata": { "sourceUrl": "https://www.karate.ch/kalender", "scrapedAt": "2026-06-24T22:00:00Z", "quality": 0.91 }
     },
     {
       "id": "AT_OKV_20260919_001",
@@ -159,7 +201,7 @@
       "categories": ["U16", "U18", "Junior", "Senior"],
       "level": "international",
       "registrationUrl": "https://www.karate.at",
-      "metadata": { "sourceUrl": "https://www.karate.at/termine", "scrapedAt": "2026-06-24T10:00:00Z", "quality": 0.90 }
+      "metadata": { "sourceUrl": "https://www.karate.at/termine", "scrapedAt": "2026-06-24T22:00:00Z", "quality": 0.90 }
     },
     {
       "id": "ES_RFEK_20260926_001",
@@ -173,7 +215,7 @@
       "categories": ["Infantil", "Cadete", "Junior", "Senior"],
       "level": "national",
       "registrationUrl": "https://www.rfek.es",
-      "metadata": { "sourceUrl": "https://www.rfek.es/calendario", "scrapedAt": "2026-06-24T10:00:00Z", "quality": 0.94 }
+      "metadata": { "sourceUrl": "https://www.rfek.es/calendario", "scrapedAt": "2026-06-24T22:00:00Z", "quality": 0.94 }
     },
     {
       "id": "GB_EK_20261003_001",
@@ -187,7 +229,7 @@
       "categories": ["Junior", "Senior"],
       "level": "national",
       "registrationUrl": "https://www.englandkarate.com",
-      "metadata": { "sourceUrl": "https://www.englandkarate.com/events", "scrapedAt": "2026-06-24T10:00:00Z", "quality": 0.88 }
+      "metadata": { "sourceUrl": "https://www.englandkarate.com/events", "scrapedAt": "2026-06-24T22:00:00Z", "quality": 0.88 }
     },
     {
       "id": "DE_DKV_20261010_001",
@@ -201,7 +243,7 @@
       "categories": ["Senior Men", "Senior Women", "Para-Karate"],
       "level": "national",
       "registrationUrl": "https://www.dkv.de",
-      "metadata": { "sourceUrl": "https://www.dkv.de/termine", "scrapedAt": "2026-06-24T10:00:00Z", "quality": 0.93 }
+      "metadata": { "sourceUrl": "https://www.dkv.de/termine", "scrapedAt": "2026-06-24T22:00:00Z", "quality": 0.93 }
     },
     {
       "id": "PT_FNK_20261017_001",
@@ -209,13 +251,13 @@
       "title": "Campeonato Nacional Sénior 2026",
       "country": "Portugal",
       "countryCode": "PT",
-      "federation": "Federação Nacional de Karaté",
+      "federation": "Federação Nacional de Karaté - Portugal",
       "date": { "start": "2026-10-17T09:00:00Z", "end": "2026-10-18T18:00:00Z" },
       "location": { "city": "Coimbra", "venue": "Pavilhão Municipal Coimbra", "address": "Praceta Dr. Castilho", "coordinates": { "latitude": 40.2056, "longitude": -8.4191 } },
       "categories": ["Senior Men", "Senior Women"],
       "level": "national",
-      "registrationUrl": "https://www.fnkp.pt",
-      "metadata": { "sourceUrl": "https://www.fnkp.pt/competicoes", "scrapedAt": "2026-06-24T10:00:00Z", "quality": 0.97 }
+      "registrationUrl": "https://www.fnkp.pt/calendario",
+      "metadata": { "sourceUrl": "https://www.fnkp.pt/calendario", "scrapedAt": "2026-06-24T22:00:00Z", "quality": 0.97 }
     },
     {
       "id": "FR_FFKA_20261024_001",
@@ -229,7 +271,7 @@
       "categories": ["Cadete", "Junior"],
       "level": "national",
       "registrationUrl": "https://www.ffkarate.fr",
-      "metadata": { "sourceUrl": "https://www.ffkarate.fr/competitions", "scrapedAt": "2026-06-24T10:00:00Z", "quality": 0.92 }
+      "metadata": { "sourceUrl": "https://www.ffkarate.fr/competitions", "scrapedAt": "2026-06-24T22:00:00Z", "quality": 0.92 }
     },
     {
       "id": "IT_FIJLKAM_20261031_001",
@@ -243,7 +285,7 @@
       "categories": ["Senior Men", "Senior Women"],
       "level": "national",
       "registrationUrl": "https://www.fijlkam.it",
-      "metadata": { "sourceUrl": "https://www.fijlkam.it/karate", "scrapedAt": "2026-06-24T10:00:00Z", "quality": 0.93 }
+      "metadata": { "sourceUrl": "https://www.fijlkam.it/karate", "scrapedAt": "2026-06-24T22:00:00Z", "quality": 0.93 }
     },
     {
       "id": "WKF_20261107_001",
@@ -257,7 +299,7 @@
       "categories": ["Senior Men", "Senior Women"],
       "level": "international",
       "registrationUrl": "https://www.wkf.net",
-      "metadata": { "sourceUrl": "https://www.wkf.net/events", "scrapedAt": "2026-06-24T10:00:00Z", "quality": 0.99 }
+      "metadata": { "sourceUrl": "https://www.wkf.net/events", "scrapedAt": "2026-06-24T22:00:00Z", "quality": 0.99 }
     },
     {
       "id": "NL_KBN_20261114_001",
@@ -271,21 +313,7 @@
       "categories": ["U14", "U16", "U18", "Senior"],
       "level": "national",
       "registrationUrl": "https://www.karatebond.nl",
-      "metadata": { "sourceUrl": "https://www.karatebond.nl/agenda", "scrapedAt": "2026-06-24T10:00:00Z", "quality": 0.90 }
-    },
-    {
-      "id": "AT_OKV_20261121_001",
-      "source": "AT_OKV",
-      "title": "Österreichische Meisterschaften 2026",
-      "country": "Áustria",
-      "countryCode": "AT",
-      "federation": "Österreichischer Karate Verband",
-      "date": { "start": "2026-11-21T09:00:00Z", "end": "2026-11-22T17:00:00Z" },
-      "location": { "city": "Graz", "venue": "Helmut-List-Halle", "address": "Messeplatz 1", "coordinates": { "latitude": 47.0764, "longitude": 15.4359 } },
-      "categories": ["Cadete", "Junior", "Senior"],
-      "level": "national",
-      "registrationUrl": "https://www.karate.at",
-      "metadata": { "sourceUrl": "https://www.karate.at/termine", "scrapedAt": "2026-06-24T10:00:00Z", "quality": 0.89 }
+      "metadata": { "sourceUrl": "https://www.karatebond.nl/agenda", "scrapedAt": "2026-06-24T22:00:00Z", "quality": 0.90 }
     },
     {
       "id": "PT_FNK_20261128_001",
@@ -293,13 +321,13 @@
       "title": "Open Internacional de Braga 2026",
       "country": "Portugal",
       "countryCode": "PT",
-      "federation": "Federação Nacional de Karaté",
+      "federation": "Federação Nacional de Karaté - Portugal",
       "date": { "start": "2026-11-28T09:00:00Z", "end": "2026-11-29T18:00:00Z" },
       "location": { "city": "Braga", "venue": "Pavilhão Municipal de Braga", "address": "Rua do Carmo", "coordinates": { "latitude": 41.5454, "longitude": -8.4265 } },
       "categories": ["Infantil", "Cadete", "Junior", "Senior", "Master"],
       "level": "international",
-      "registrationUrl": "https://www.fnkp.pt",
-      "metadata": { "sourceUrl": "https://www.fnkp.pt/competicoes", "scrapedAt": "2026-06-24T10:00:00Z", "quality": 0.96 }
+      "registrationUrl": "https://www.fnkp.pt/calendario",
+      "metadata": { "sourceUrl": "https://www.fnkp.pt/calendario", "scrapedAt": "2026-06-24T22:00:00Z", "quality": 0.96 }
     },
     {
       "id": "CH_SKV_20261205_001",
@@ -313,7 +341,7 @@
       "categories": ["U14", "U16", "U18"],
       "level": "national",
       "registrationUrl": "https://www.karate.ch",
-      "metadata": { "sourceUrl": "https://www.karate.ch/kalender", "scrapedAt": "2026-06-24T10:00:00Z", "quality": 0.90 }
+      "metadata": { "sourceUrl": "https://www.karate.ch/kalender", "scrapedAt": "2026-06-24T22:00:00Z", "quality": 0.90 }
     },
     {
       "id": "ES_RFEK_20261212_001",
@@ -327,7 +355,7 @@
       "categories": ["Cadete", "Junior", "Senior"],
       "level": "national",
       "registrationUrl": "https://www.rfek.es",
-      "metadata": { "sourceUrl": "https://www.rfek.es/calendario", "scrapedAt": "2026-06-24T10:00:00Z", "quality": 0.93 }
+      "metadata": { "sourceUrl": "https://www.rfek.es/calendario", "scrapedAt": "2026-06-24T22:00:00Z", "quality": 0.93 }
     }
   ]
 }
