@@ -1,53 +1,4760 @@
 {
   "meta": {
     "version": "1.0",
-    "lastUpdated": "2026-06-24T23:00:00Z",
-    "totalEvents": 3,
-    "countryCoverage": 1,
-    "generatedBy": "Karate Events Hub v1.0"
+    "lastUpdated": "2026-06-24T23:30:00Z",
+    "totalEvents": 140,
+    "countryCoverage": 20,
+    "generatedBy": "Karate Events Hub — Extracted from official PDFs",
+    "sources": [
+      "FNK-P (Portugal) — Calendário 2026",
+      "RFEK (Espanha) — Calendario Actividades 2026",
+      "FIJLKAM (Itália) — Calendario Attività Agonistica Federale 2026"
+    ]
   },
   "events": [
     {
-      "id": "PT_FNK_20260608_001",
+      "id": "PT_FNK_20260103",
+      "source": "PT_FNK",
+      "title": "Treino Nacional de Seleção (Cad, Jun, Sub21, Sen)",
+      "country": "Portugal",
+      "countryCode": "PT",
+      "federation": "Federação Nacional de Karaté - Portugal",
+      "date": {
+        "start": "2026-01-03T09:00:00Z",
+        "end": "2026-01-04T18:00:00Z"
+      },
+      "location": {
+        "city": "Pombal",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 39.9147,
+          "longitude": -8.6272
+        }
+      },
+      "categories": [
+        "Cadete",
+        "Junior",
+        "Sub21",
+        "Senior"
+      ],
+      "level": "national",
+      "eventType": "Estágio de Seleção",
+      "registrationUrl": "https://www.fnkp.pt",
+      "metadata": {
+        "sourceUrl": "https://www.fnkp.pt",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "PT_FNK_20260109",
+      "source": "PT_FNK",
+      "title": "Karate 1 - Series A",
+      "country": "Geórgia",
+      "countryCode": "GEO",
+      "federation": "WKF",
+      "date": {
+        "start": "2026-01-09T09:00:00Z",
+        "end": "2026-01-11T18:00:00Z"
+      },
+      "location": {
+        "city": "Tbilisi",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 41.6938,
+          "longitude": 44.8015
+        }
+      },
+      "categories": [
+        "Senior"
+      ],
+      "level": "international",
+      "eventType": "WKF - Series A",
+      "registrationUrl": "https://www.fnkp.pt",
+      "metadata": {
+        "sourceUrl": "https://www.fnkp.pt",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "ES_RFEK_20260109",
+      "source": "ES_RFEK",
+      "title": "Karate 1 Series A",
+      "country": "Geórgia",
+      "countryCode": "GEO",
+      "federation": "WKF",
+      "date": {
+        "start": "2026-01-09T09:00:00Z",
+        "end": "2026-01-11T18:00:00Z"
+      },
+      "location": {
+        "city": "Tbilisi",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 41.6938,
+          "longitude": 44.8015
+        }
+      },
+      "categories": [
+        "Senior"
+      ],
+      "level": "international",
+      "eventType": "WKF - Series A",
+      "registrationUrl": "https://www.rfek.es",
+      "metadata": {
+        "sourceUrl": "https://www.rfek.es",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "IT_FIJ_20260109",
+      "source": "IT_FIJLKAM",
+      "title": "WKF K1 Series A",
+      "country": "Geórgia",
+      "countryCode": "GEO",
+      "federation": "WKF",
+      "date": {
+        "start": "2026-01-09T09:00:00Z",
+        "end": "2026-01-11T18:00:00Z"
+      },
+      "location": {
+        "city": "Tbilisi",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 41.6938,
+          "longitude": 44.8015
+        }
+      },
+      "categories": [
+        "Senior"
+      ],
+      "level": "international",
+      "eventType": "WKF - Series A",
+      "registrationUrl": "https://www.fijlkam.it",
+      "metadata": {
+        "sourceUrl": "https://www.fijlkam.it",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "ES_RFEK_20260117",
+      "source": "ES_RFEK",
+      "title": "1ª Ronda Liga Nacional Masculina (Absoluto/Cadete/Para-Karate)",
+      "country": "Espanha",
+      "countryCode": "ESP",
+      "federation": "RFEK",
+      "date": {
+        "start": "2026-01-17T09:00:00Z",
+        "end": "2026-01-17T18:00:00Z"
+      },
+      "location": {
+        "city": "Valdepeñas",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 38.7627,
+          "longitude": -3.3855
+        }
+      },
+      "categories": [
+        "Absoluto",
+        "Cadete",
+        "Para-Karate"
+      ],
+      "level": "national",
+      "eventType": "Liga Nacional",
+      "registrationUrl": "https://www.rfek.es",
+      "metadata": {
+        "sourceUrl": "https://www.rfek.es",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "IT_FIJ_20260117",
+      "source": "IT_FIJLKAM",
+      "title": "Open League Senior",
+      "country": "Itália",
+      "countryCode": "ITA",
+      "federation": "FIJLKAM",
+      "date": {
+        "start": "2026-01-17T09:00:00Z",
+        "end": "2026-01-18T18:00:00Z"
+      },
+      "location": {
+        "city": "Padova",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 45.4064,
+          "longitude": 11.8768
+        }
+      },
+      "categories": [
+        "Senior"
+      ],
+      "level": "national",
+      "eventType": "Competição Nacional",
+      "registrationUrl": "https://www.fijlkam.it",
+      "metadata": {
+        "sourceUrl": "https://www.fijlkam.it",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "ES_RFEK_20260118",
+      "source": "ES_RFEK",
+      "title": "1ª Ronda Liga Iberdrola (Absoluto/Cadete/Para-Karate)",
+      "country": "Espanha",
+      "countryCode": "ESP",
+      "federation": "RFEK",
+      "date": {
+        "start": "2026-01-18T09:00:00Z",
+        "end": "2026-01-18T18:00:00Z"
+      },
+      "location": {
+        "city": "Valdepeñas",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 38.7627,
+          "longitude": -3.3855
+        }
+      },
+      "categories": [
+        "Absoluto",
+        "Cadete",
+        "Para-Karate"
+      ],
+      "level": "national",
+      "eventType": "Liga Nacional",
+      "registrationUrl": "https://www.rfek.es",
+      "metadata": {
+        "sourceUrl": "https://www.rfek.es",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "PT_FNK_20260123",
+      "source": "PT_FNK",
+      "title": "Karate 1 - Premier League",
+      "country": "Turquia",
+      "countryCode": "TUR",
+      "federation": "WKF",
+      "date": {
+        "start": "2026-01-23T09:00:00Z",
+        "end": "2026-01-25T18:00:00Z"
+      },
+      "location": {
+        "city": "Istambul",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 41.0082,
+          "longitude": 28.9784
+        }
+      },
+      "categories": [
+        "Senior"
+      ],
+      "level": "international",
+      "eventType": "WKF - Premier League",
+      "registrationUrl": "https://www.fnkp.pt",
+      "metadata": {
+        "sourceUrl": "https://www.fnkp.pt",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "ES_RFEK_20260123",
+      "source": "ES_RFEK",
+      "title": "Karate 1 Premier League",
+      "country": "Turquia",
+      "countryCode": "TUR",
+      "federation": "WKF",
+      "date": {
+        "start": "2026-01-23T09:00:00Z",
+        "end": "2026-01-25T18:00:00Z"
+      },
+      "location": {
+        "city": "Estambul",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 41.0082,
+          "longitude": 28.9784
+        }
+      },
+      "categories": [
+        "Senior"
+      ],
+      "level": "international",
+      "eventType": "WKF - Premier League",
+      "registrationUrl": "https://www.rfek.es",
+      "metadata": {
+        "sourceUrl": "https://www.rfek.es",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "IT_FIJ_20260123",
+      "source": "IT_FIJLKAM",
+      "title": "WKF K1 Premier League",
+      "country": "Turquia",
+      "countryCode": "TUR",
+      "federation": "WKF",
+      "date": {
+        "start": "2026-01-23T09:00:00Z",
+        "end": "2026-01-25T18:00:00Z"
+      },
+      "location": {
+        "city": "Istanbul",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 41.0082,
+          "longitude": 28.9784
+        }
+      },
+      "categories": [
+        "Senior"
+      ],
+      "level": "international",
+      "eventType": "WKF - Premier League",
+      "registrationUrl": "https://www.fijlkam.it",
+      "metadata": {
+        "sourceUrl": "https://www.fijlkam.it",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "PT_FNK_20260130",
+      "source": "PT_FNK",
+      "title": "Estágio Nacional da Seleção (Cad, Jun, Sub21)",
+      "country": "Portugal",
+      "countryCode": "PT",
+      "federation": "Federação Nacional de Karaté - Portugal",
+      "date": {
+        "start": "2026-01-30T09:00:00Z",
+        "end": "2026-01-31T18:00:00Z"
+      },
+      "location": {
+        "city": "Pombal",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 39.9147,
+          "longitude": -8.6272
+        }
+      },
+      "categories": [
+        "Cadete",
+        "Junior",
+        "Sub21"
+      ],
+      "level": "national",
+      "eventType": "Estágio de Seleção",
+      "registrationUrl": "https://www.fnkp.pt",
+      "metadata": {
+        "sourceUrl": "https://www.fnkp.pt",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "PT_FNK_20260206",
+      "source": "PT_FNK",
+      "title": "Campeonato da Europa de Cadetes, Juniores e Sub21",
+      "country": "Chipre",
+      "countryCode": "CYP",
+      "federation": "EKF",
+      "date": {
+        "start": "2026-02-06T09:00:00Z",
+        "end": "2026-02-08T18:00:00Z"
+      },
+      "location": {
+        "city": "Limassol",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 34.6857,
+          "longitude": 33.0413
+        }
+      },
+      "categories": [
+        "Cadete",
+        "Junior",
+        "Sub21"
+      ],
+      "level": "international",
+      "eventType": "EKF - Championships",
+      "registrationUrl": "https://www.fnkp.pt",
+      "metadata": {
+        "sourceUrl": "https://www.fnkp.pt",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "ES_RFEK_20260206",
+      "source": "ES_RFEK",
+      "title": "Campeonato de Europa Cad/Jun/Sub21",
+      "country": "Chipre",
+      "countryCode": "CYP",
+      "federation": "EKF",
+      "date": {
+        "start": "2026-02-06T09:00:00Z",
+        "end": "2026-02-08T18:00:00Z"
+      },
+      "location": {
+        "city": "Limassol",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 34.6857,
+          "longitude": 33.0413
+        }
+      },
+      "categories": [
+        "Cadete",
+        "Junior",
+        "Sub21"
+      ],
+      "level": "international",
+      "eventType": "EKF - Championships",
+      "registrationUrl": "https://www.rfek.es",
+      "metadata": {
+        "sourceUrl": "https://www.rfek.es",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "IT_FIJ_20260206",
+      "source": "IT_FIJLKAM",
+      "title": "EKF Cadet, Junior & U21 Championships",
+      "country": "Chipre",
+      "countryCode": "CYP",
+      "federation": "EKF",
+      "date": {
+        "start": "2026-02-06T09:00:00Z",
+        "end": "2026-02-08T18:00:00Z"
+      },
+      "location": {
+        "city": "Limassol",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 34.6857,
+          "longitude": 33.0413
+        }
+      },
+      "categories": [
+        "Cadete",
+        "Junior",
+        "Sub21"
+      ],
+      "level": "international",
+      "eventType": "EKF - Championships",
+      "registrationUrl": "https://www.fijlkam.it",
+      "metadata": {
+        "sourceUrl": "https://www.fijlkam.it",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "PT_FNK_20260212",
+      "source": "PT_FNK",
+      "title": "Karate 1 - Youth League",
+      "country": "Emirados Árabes",
+      "countryCode": "UAE",
+      "federation": "WKF",
+      "date": {
+        "start": "2026-02-12T09:00:00Z",
+        "end": "2026-02-15T18:00:00Z"
+      },
+      "location": {
+        "city": "Fujairah",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 25.1288,
+          "longitude": 56.3265
+        }
+      },
+      "categories": [
+        "U14",
+        "Cadete",
+        "Junior"
+      ],
+      "level": "international",
+      "eventType": "WKF - Youth League",
+      "registrationUrl": "https://www.fnkp.pt",
+      "metadata": {
+        "sourceUrl": "https://www.fnkp.pt",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "ES_RFEK_20260212",
+      "source": "ES_RFEK",
+      "title": "Karate 1 Youth League",
+      "country": "Emirados Árabes",
+      "countryCode": "UAE",
+      "federation": "WKF",
+      "date": {
+        "start": "2026-02-12T09:00:00Z",
+        "end": "2026-02-15T18:00:00Z"
+      },
+      "location": {
+        "city": "Fujairah",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 25.1288,
+          "longitude": 56.3265
+        }
+      },
+      "categories": [
+        "U14",
+        "Cadete",
+        "Junior"
+      ],
+      "level": "international",
+      "eventType": "WKF - Youth League",
+      "registrationUrl": "https://www.rfek.es",
+      "metadata": {
+        "sourceUrl": "https://www.rfek.es",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "IT_FIJ_20260212",
+      "source": "IT_FIJLKAM",
+      "title": "WKF K1 Youth League",
+      "country": "Emirados Árabes",
+      "countryCode": "UAE",
+      "federation": "WKF",
+      "date": {
+        "start": "2026-02-12T09:00:00Z",
+        "end": "2026-02-15T18:00:00Z"
+      },
+      "location": {
+        "city": "Fujairah",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 25.1288,
+          "longitude": 56.3265
+        }
+      },
+      "categories": [
+        "U14",
+        "Cadete",
+        "Junior"
+      ],
+      "level": "international",
+      "eventType": "WKF - Youth League",
+      "registrationUrl": "https://www.fijlkam.it",
+      "metadata": {
+        "sourceUrl": "https://www.fijlkam.it",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "IT_FIJ_20260220",
+      "source": "IT_FIJLKAM",
+      "title": "Open League",
+      "country": "Itália",
+      "countryCode": "ITA",
+      "federation": "FIJLKAM",
+      "date": {
+        "start": "2026-02-20T09:00:00Z",
+        "end": "2026-02-22T18:00:00Z"
+      },
+      "location": {
+        "city": "Vigevano",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 45.3143,
+          "longitude": 8.8559
+        }
+      },
+      "categories": [
+        "Senior"
+      ],
+      "level": "national",
+      "eventType": "Competição Nacional",
+      "registrationUrl": "https://www.fijlkam.it",
+      "metadata": {
+        "sourceUrl": "https://www.fijlkam.it",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "PT_FNK_20260221a",
+      "source": "PT_FNK",
+      "title": "Campeonato Nacional Universitário",
+      "country": "Portugal",
+      "countryCode": "PT",
+      "federation": "Federação Nacional de Karaté - Portugal",
+      "date": {
+        "start": "2026-02-21T09:00:00Z",
+        "end": "2026-02-21T18:00:00Z"
+      },
+      "location": {
+        "city": "Barcelos",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 41.5339,
+          "longitude": -8.6192
+        }
+      },
+      "categories": [
+        "Universitário"
+      ],
+      "level": "national",
+      "eventType": "Competição Nacional",
+      "registrationUrl": "https://www.fnkp.pt",
+      "metadata": {
+        "sourceUrl": "https://www.fnkp.pt",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "PT_FNK_20260221b",
+      "source": "PT_FNK",
+      "title": "Campeonato Nacional Para-Karate — Fase Regional Madeira",
+      "country": "Portugal",
+      "countryCode": "PT",
+      "federation": "Federação Nacional de Karaté - Portugal",
+      "date": {
+        "start": "2026-02-21T09:00:00Z",
+        "end": "2026-02-21T18:00:00Z"
+      },
+      "location": {
+        "city": "Madeira",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 32.7607,
+          "longitude": -16.9595
+        }
+      },
+      "categories": [
+        "Infantil",
+        "Iniciados",
+        "Juvenil",
+        "Cadete",
+        "Junior"
+      ],
+      "level": "regional",
+      "eventType": "Competição Nacional",
+      "registrationUrl": "https://www.fnkp.pt",
+      "metadata": {
+        "sourceUrl": "https://www.fnkp.pt",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "PT_FNK_20260221c",
+      "source": "PT_FNK",
+      "title": "Campeonato Nacional Inf, Ini, Juv — Fase Regional Madeira",
+      "country": "Portugal",
+      "countryCode": "PT",
+      "federation": "Federação Nacional de Karaté - Portugal",
+      "date": {
+        "start": "2026-02-21T09:00:00Z",
+        "end": "2026-02-21T18:00:00Z"
+      },
+      "location": {
+        "city": "Madeira",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 32.7607,
+          "longitude": -16.9595
+        }
+      },
+      "categories": [
+        "Infantil",
+        "Iniciados",
+        "Juvenil"
+      ],
+      "level": "regional",
+      "eventType": "Competição Nacional",
+      "registrationUrl": "https://www.fnkp.pt",
+      "metadata": {
+        "sourceUrl": "https://www.fnkp.pt",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "ES_RFEK_20260221",
+      "source": "ES_RFEK",
+      "title": "1ª Ronda Liga Nacional Masculina Ale/Inf/Juv",
+      "country": "Espanha",
+      "countryCode": "ESP",
+      "federation": "RFEK",
+      "date": {
+        "start": "2026-02-21T09:00:00Z",
+        "end": "2026-02-21T18:00:00Z"
+      },
+      "location": {
+        "city": "Logroño",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 42.4667,
+          "longitude": -2.45
+        }
+      },
+      "categories": [
+        "Alevín",
+        "Infantil",
+        "Juvenil"
+      ],
+      "level": "national",
+      "eventType": "Liga Nacional",
+      "registrationUrl": "https://www.rfek.es",
+      "metadata": {
+        "sourceUrl": "https://www.rfek.es",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "ES_RFEK_20260222",
+      "source": "ES_RFEK",
+      "title": "1ª Ronda Liga Iberdrola Ale/Inf/Juv",
+      "country": "Espanha",
+      "countryCode": "ESP",
+      "federation": "RFEK",
+      "date": {
+        "start": "2026-02-22T09:00:00Z",
+        "end": "2026-02-22T18:00:00Z"
+      },
+      "location": {
+        "city": "Logroño",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 42.4667,
+          "longitude": -2.45
+        }
+      },
+      "categories": [
+        "Alevín",
+        "Infantil",
+        "Juvenil"
+      ],
+      "level": "national",
+      "eventType": "Liga Nacional",
+      "registrationUrl": "https://www.rfek.es",
+      "metadata": {
+        "sourceUrl": "https://www.rfek.es",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "PT_FNK_20260228a",
+      "source": "PT_FNK",
+      "title": "Campeonato Nacional Para-Karate — Fase Regional Açores",
+      "country": "Portugal",
+      "countryCode": "PT",
+      "federation": "Federação Nacional de Karaté - Portugal",
+      "date": {
+        "start": "2026-02-28T09:00:00Z",
+        "end": "2026-02-28T18:00:00Z"
+      },
+      "location": {
+        "city": "Açores",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 37.7412,
+          "longitude": -25.6756
+        }
+      },
+      "categories": [
+        "Infantil",
+        "Iniciados",
+        "Juvenil",
+        "Cadete",
+        "Junior"
+      ],
+      "level": "regional",
+      "eventType": "Competição Nacional",
+      "registrationUrl": "https://www.fnkp.pt",
+      "metadata": {
+        "sourceUrl": "https://www.fnkp.pt",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "PT_FNK_20260228b",
+      "source": "PT_FNK",
+      "title": "Campeonato Nacional Inf, Ini, Juv — Fase Regional Açores",
+      "country": "Portugal",
+      "countryCode": "PT",
+      "federation": "Federação Nacional de Karaté - Portugal",
+      "date": {
+        "start": "2026-02-28T09:00:00Z",
+        "end": "2026-02-28T18:00:00Z"
+      },
+      "location": {
+        "city": "Açores",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 37.7412,
+          "longitude": -25.6756
+        }
+      },
+      "categories": [
+        "Infantil",
+        "Iniciados",
+        "Juvenil"
+      ],
+      "level": "regional",
+      "eventType": "Competição Nacional",
+      "registrationUrl": "https://www.fnkp.pt",
+      "metadata": {
+        "sourceUrl": "https://www.fnkp.pt",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "PT_FNK_20260228c",
+      "source": "PT_FNK",
+      "title": "Formação — Modelo Técnico Conceptual Seleções Nacionais",
+      "country": "Portugal",
+      "countryCode": "PT",
+      "federation": "Federação Nacional de Karaté - Portugal",
+      "date": {
+        "start": "2026-02-28T09:00:00Z",
+        "end": "2026-03-01T18:00:00Z"
+      },
+      "location": {
+        "city": "Braga / Lisboa",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 41.5454,
+          "longitude": -8.4265
+        }
+      },
+      "categories": [
+        "Treinadores"
+      ],
+      "level": "national",
+      "eventType": "Formação",
+      "registrationUrl": "https://www.fnkp.pt",
+      "metadata": {
+        "sourceUrl": "https://www.fnkp.pt",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "ES_RFEK_20260228",
+      "source": "ES_RFEK",
+      "title": "1ª Ronda Liga Nacional Equipos",
+      "country": "Espanha",
+      "countryCode": "ESP",
+      "federation": "RFEK",
+      "date": {
+        "start": "2026-02-28T09:00:00Z",
+        "end": "2026-02-28T18:00:00Z"
+      },
+      "location": {
+        "city": "Torrejón de Ardoz",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 40.4593,
+          "longitude": -3.4626
+        }
+      },
+      "categories": [
+        "Equipas"
+      ],
+      "level": "national",
+      "eventType": "Liga Nacional",
+      "registrationUrl": "https://www.rfek.es",
+      "metadata": {
+        "sourceUrl": "https://www.rfek.es",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "ES_RFEK_20260301",
+      "source": "ES_RFEK",
+      "title": "1ª Ronda Liga Nacional Master",
+      "country": "Espanha",
+      "countryCode": "ESP",
+      "federation": "RFEK",
+      "date": {
+        "start": "2026-03-01T09:00:00Z",
+        "end": "2026-03-01T18:00:00Z"
+      },
+      "location": {
+        "city": "Torrejón de Ardoz",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 40.4593,
+          "longitude": -3.4626
+        }
+      },
+      "categories": [
+        "Master"
+      ],
+      "level": "national",
+      "eventType": "Liga Nacional",
+      "registrationUrl": "https://www.rfek.es",
+      "metadata": {
+        "sourceUrl": "https://www.rfek.es",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "PT_FNK_20260307",
+      "source": "PT_FNK",
+      "title": "Campeonato Nacional de Seniores e Para-Karate",
+      "country": "Portugal",
+      "countryCode": "PT",
+      "federation": "Federação Nacional de Karaté - Portugal",
+      "date": {
+        "start": "2026-03-07T09:00:00Z",
+        "end": "2026-03-08T18:00:00Z"
+      },
+      "location": {
+        "city": "Santarém",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 39.2369,
+          "longitude": -8.6859
+        }
+      },
+      "categories": [
+        "Senior",
+        "Para-Karate"
+      ],
+      "level": "national",
+      "eventType": "Competição Nacional",
+      "registrationUrl": "https://www.fnkp.pt",
+      "metadata": {
+        "sourceUrl": "https://www.fnkp.pt",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "ES_RFEK_20260307",
+      "source": "ES_RFEK",
+      "title": "1ª Ronda Liga Nacional Masculina Junior/Sub21",
+      "country": "Espanha",
+      "countryCode": "ESP",
+      "federation": "RFEK",
+      "date": {
+        "start": "2026-03-07T09:00:00Z",
+        "end": "2026-03-07T18:00:00Z"
+      },
+      "location": {
+        "city": "Ciudad Real",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 38.9848,
+          "longitude": -3.9274
+        }
+      },
+      "categories": [
+        "Junior",
+        "Sub21"
+      ],
+      "level": "national",
+      "eventType": "Liga Nacional",
+      "registrationUrl": "https://www.rfek.es",
+      "metadata": {
+        "sourceUrl": "https://www.rfek.es",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "ES_RFEK_20260308",
+      "source": "ES_RFEK",
+      "title": "1ª Ronda Liga Iberdrola Junior/Sub21",
+      "country": "Espanha",
+      "countryCode": "ESP",
+      "federation": "RFEK",
+      "date": {
+        "start": "2026-03-08T09:00:00Z",
+        "end": "2026-03-08T18:00:00Z"
+      },
+      "location": {
+        "city": "Ciudad Real",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 38.9848,
+          "longitude": -3.9274
+        }
+      },
+      "categories": [
+        "Junior",
+        "Sub21"
+      ],
+      "level": "national",
+      "eventType": "Liga Nacional",
+      "registrationUrl": "https://www.rfek.es",
+      "metadata": {
+        "sourceUrl": "https://www.rfek.es",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "IT_FIJ_20260308",
+      "source": "IT_FIJLKAM",
+      "title": "Kumite/Kata — Fase Regionale Qualificazione Camp. Italiano Assoluto",
+      "country": "Itália",
+      "countryCode": "ITA",
+      "federation": "FIJLKAM",
+      "date": {
+        "start": "2026-03-08T09:00:00Z",
+        "end": "2026-03-08T18:00:00Z"
+      },
+      "location": {
+        "city": "Sedi Regionali",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 41.8719,
+          "longitude": 12.5674
+        }
+      },
+      "categories": [
+        "Senior"
+      ],
+      "level": "regional",
+      "eventType": "Competição Nacional",
+      "registrationUrl": "https://www.fijlkam.it",
+      "metadata": {
+        "sourceUrl": "https://www.fijlkam.it",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "PT_FNK_20260313",
+      "source": "PT_FNK",
+      "title": "Karate 1 - Premier League",
+      "country": "Itália",
+      "countryCode": "ITA",
+      "federation": "WKF",
+      "date": {
+        "start": "2026-03-13T09:00:00Z",
+        "end": "2026-03-15T18:00:00Z"
+      },
+      "location": {
+        "city": "Roma",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 41.9028,
+          "longitude": 12.4964
+        }
+      },
+      "categories": [
+        "Senior"
+      ],
+      "level": "international",
+      "eventType": "WKF - Premier League",
+      "registrationUrl": "https://www.fnkp.pt",
+      "metadata": {
+        "sourceUrl": "https://www.fnkp.pt",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "ES_RFEK_20260313",
+      "source": "ES_RFEK",
+      "title": "Karate 1 Premier League",
+      "country": "Itália",
+      "countryCode": "ITA",
+      "federation": "WKF",
+      "date": {
+        "start": "2026-03-13T09:00:00Z",
+        "end": "2026-03-15T18:00:00Z"
+      },
+      "location": {
+        "city": "Roma",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 41.9028,
+          "longitude": 12.4964
+        }
+      },
+      "categories": [
+        "Senior"
+      ],
+      "level": "international",
+      "eventType": "WKF - Premier League",
+      "registrationUrl": "https://www.rfek.es",
+      "metadata": {
+        "sourceUrl": "https://www.rfek.es",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "IT_FIJ_20260313",
+      "source": "IT_FIJLKAM",
+      "title": "WKF K1 Premier League",
+      "country": "Itália",
+      "countryCode": "ITA",
+      "federation": "WKF",
+      "date": {
+        "start": "2026-03-13T09:00:00Z",
+        "end": "2026-03-15T18:00:00Z"
+      },
+      "location": {
+        "city": "Lido di Ostia",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 41.7358,
+          "longitude": 12.2483
+        }
+      },
+      "categories": [
+        "Senior"
+      ],
+      "level": "international",
+      "eventType": "WKF - Premier League",
+      "registrationUrl": "https://www.fijlkam.it",
+      "metadata": {
+        "sourceUrl": "https://www.fijlkam.it",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "PT_FNK_20260321a",
+      "source": "PT_FNK",
+      "title": "Campeonato Nacional Para-Karate — Fase Regional Sul",
+      "country": "Portugal",
+      "countryCode": "PT",
+      "federation": "Federação Nacional de Karaté - Portugal",
+      "date": {
+        "start": "2026-03-21T09:00:00Z",
+        "end": "2026-03-21T18:00:00Z"
+      },
+      "location": {
+        "city": "Albufeira",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 37.0889,
+          "longitude": -8.2482
+        }
+      },
+      "categories": [
+        "Infantil",
+        "Iniciados",
+        "Juvenil",
+        "Cadete",
+        "Junior"
+      ],
+      "level": "regional",
+      "eventType": "Competição Nacional",
+      "registrationUrl": "https://www.fnkp.pt",
+      "metadata": {
+        "sourceUrl": "https://www.fnkp.pt",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "PT_FNK_20260321b",
+      "source": "PT_FNK",
+      "title": "Campeonato Nacional Inf, Ini, Juv — Fase Regional Sul",
+      "country": "Portugal",
+      "countryCode": "PT",
+      "federation": "Federação Nacional de Karaté - Portugal",
+      "date": {
+        "start": "2026-03-21T09:00:00Z",
+        "end": "2026-03-21T18:00:00Z"
+      },
+      "location": {
+        "city": "Albufeira",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 37.0889,
+          "longitude": -8.2482
+        }
+      },
+      "categories": [
+        "Infantil",
+        "Iniciados",
+        "Juvenil"
+      ],
+      "level": "regional",
+      "eventType": "Competição Nacional",
+      "registrationUrl": "https://www.fnkp.pt",
+      "metadata": {
+        "sourceUrl": "https://www.fnkp.pt",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "IT_FIJ_20260321",
+      "source": "IT_FIJLKAM",
+      "title": "Coppa Italia Karate FIJLKAM",
+      "country": "Itália",
+      "countryCode": "ITA",
+      "federation": "FIJLKAM",
+      "date": {
+        "start": "2026-03-21T09:00:00Z",
+        "end": "2026-03-22T18:00:00Z"
+      },
+      "location": {
+        "city": "Follonica",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 42.9193,
+          "longitude": 10.7607
+        }
+      },
+      "categories": [
+        "Todos"
+      ],
+      "level": "national",
+      "eventType": "Copa/Taça",
+      "registrationUrl": "https://www.fijlkam.it",
+      "metadata": {
+        "sourceUrl": "https://www.fijlkam.it",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "PT_FNK_20260322a",
+      "source": "PT_FNK",
+      "title": "Campeonato Nacional Para-Karate — Fase Regional Centro Sul",
+      "country": "Portugal",
+      "countryCode": "PT",
+      "federation": "Federação Nacional de Karaté - Portugal",
+      "date": {
+        "start": "2026-03-22T09:00:00Z",
+        "end": "2026-03-22T18:00:00Z"
+      },
+      "location": {
+        "city": "Salvaterra de Magos",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 39.0194,
+          "longitude": -8.7942
+        }
+      },
+      "categories": [
+        "Infantil",
+        "Iniciados",
+        "Juvenil",
+        "Cadete",
+        "Junior"
+      ],
+      "level": "regional",
+      "eventType": "Competição Nacional",
+      "registrationUrl": "https://www.fnkp.pt",
+      "metadata": {
+        "sourceUrl": "https://www.fnkp.pt",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "PT_FNK_20260322b",
+      "source": "PT_FNK",
+      "title": "Campeonato Nacional Inf, Ini, Juv — Fase Regional Centro Sul",
+      "country": "Portugal",
+      "countryCode": "PT",
+      "federation": "Federação Nacional de Karaté - Portugal",
+      "date": {
+        "start": "2026-03-22T09:00:00Z",
+        "end": "2026-03-22T18:00:00Z"
+      },
+      "location": {
+        "city": "Salvaterra de Magos",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 39.0194,
+          "longitude": -8.7942
+        }
+      },
+      "categories": [
+        "Infantil",
+        "Iniciados",
+        "Juvenil"
+      ],
+      "level": "regional",
+      "eventType": "Competição Nacional",
+      "registrationUrl": "https://www.fnkp.pt",
+      "metadata": {
+        "sourceUrl": "https://www.fnkp.pt",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "ES_RFEK_20260326",
+      "source": "ES_RFEK",
+      "title": "Karate 1 Youth League",
+      "country": "Zimbabué",
+      "countryCode": "ZWE",
+      "federation": "WKF",
+      "date": {
+        "start": "2026-03-26T09:00:00Z",
+        "end": "2026-03-29T18:00:00Z"
+      },
+      "location": {
+        "city": "Harare",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": -17.8292,
+          "longitude": 31.0522
+        }
+      },
+      "categories": [
+        "U14",
+        "Cadete",
+        "Junior"
+      ],
+      "level": "international",
+      "eventType": "WKF - Youth League",
+      "registrationUrl": "https://www.rfek.es",
+      "metadata": {
+        "sourceUrl": "https://www.rfek.es",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "PT_FNK_20260327",
+      "source": "PT_FNK",
+      "title": "Karate 1 - Youth League",
+      "country": "Zimbabué",
+      "countryCode": "ZWE",
+      "federation": "WKF",
+      "date": {
+        "start": "2026-03-27T09:00:00Z",
+        "end": "2026-03-29T18:00:00Z"
+      },
+      "location": {
+        "city": "Harare",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": -17.8292,
+          "longitude": 31.0522
+        }
+      },
+      "categories": [
+        "U14",
+        "Cadete",
+        "Junior"
+      ],
+      "level": "international",
+      "eventType": "WKF - Youth League",
+      "registrationUrl": "https://www.fnkp.pt",
+      "metadata": {
+        "sourceUrl": "https://www.fnkp.pt",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "ES_RFEK_20260327",
+      "source": "ES_RFEK",
+      "title": "Campeonato de España Absoluto + VII Campeonato de España Parakarate",
+      "country": "Espanha",
+      "countryCode": "ESP",
+      "federation": "RFEK",
+      "date": {
+        "start": "2026-03-27T09:00:00Z",
+        "end": "2026-03-29T18:00:00Z"
+      },
+      "location": {
+        "city": "Pontevedra",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 42.4336,
+          "longitude": -8.6478
+        }
+      },
+      "categories": [
+        "Absoluto",
+        "Para-Karate"
+      ],
+      "level": "national",
+      "eventType": "Competição Nacional",
+      "registrationUrl": "https://www.rfek.es",
+      "metadata": {
+        "sourceUrl": "https://www.rfek.es",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "IT_FIJ_20260327",
+      "source": "IT_FIJLKAM",
+      "title": "Campionato Italiano Assoluto (Kumite/Kata)",
+      "country": "Itália",
+      "countryCode": "ITA",
+      "federation": "FIJLKAM",
+      "date": {
+        "start": "2026-03-27T09:00:00Z",
+        "end": "2026-03-29T18:00:00Z"
+      },
+      "location": {
+        "city": "Lido di Ostia",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 41.7358,
+          "longitude": 12.2483
+        }
+      },
+      "categories": [
+        "Senior"
+      ],
+      "level": "national",
+      "eventType": "Competição Nacional",
+      "registrationUrl": "https://www.fijlkam.it",
+      "metadata": {
+        "sourceUrl": "https://www.fijlkam.it",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "PT_FNK_20260328",
+      "source": "PT_FNK",
+      "title": "Campeonato Nacional Para-Karate — Fase Regional Centro Norte",
+      "country": "Portugal",
+      "countryCode": "PT",
+      "federation": "Federação Nacional de Karaté - Portugal",
+      "date": {
+        "start": "2026-03-28T09:00:00Z",
+        "end": "2026-03-28T18:00:00Z"
+      },
+      "location": {
+        "city": "A definir",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 39.7436,
+          "longitude": -8.8071
+        }
+      },
+      "categories": [
+        "Infantil",
+        "Iniciados",
+        "Juvenil",
+        "Cadete",
+        "Junior"
+      ],
+      "level": "regional",
+      "eventType": "Competição Nacional",
+      "registrationUrl": "https://www.fnkp.pt",
+      "metadata": {
+        "sourceUrl": "https://www.fnkp.pt",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "PT_FNK_20260329a",
+      "source": "PT_FNK",
+      "title": "Campeonato Nacional Para-Karate — Fase Regional Norte",
+      "country": "Portugal",
+      "countryCode": "PT",
+      "federation": "Federação Nacional de Karaté - Portugal",
+      "date": {
+        "start": "2026-03-29T09:00:00Z",
+        "end": "2026-03-29T18:00:00Z"
+      },
+      "location": {
+        "city": "Caminha",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 41.8727,
+          "longitude": -8.8388
+        }
+      },
+      "categories": [
+        "Infantil",
+        "Iniciados",
+        "Juvenil",
+        "Cadete",
+        "Junior"
+      ],
+      "level": "regional",
+      "eventType": "Competição Nacional",
+      "registrationUrl": "https://www.fnkp.pt",
+      "metadata": {
+        "sourceUrl": "https://www.fnkp.pt",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "PT_FNK_20260329b",
+      "source": "PT_FNK",
+      "title": "Campeonato Nacional Inf, Ini, Juv — Fase Regional Norte",
+      "country": "Portugal",
+      "countryCode": "PT",
+      "federation": "Federação Nacional de Karaté - Portugal",
+      "date": {
+        "start": "2026-03-29T09:00:00Z",
+        "end": "2026-03-29T18:00:00Z"
+      },
+      "location": {
+        "city": "Caminha",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 41.8727,
+          "longitude": -8.8388
+        }
+      },
+      "categories": [
+        "Infantil",
+        "Iniciados",
+        "Juvenil"
+      ],
+      "level": "regional",
+      "eventType": "Competição Nacional",
+      "registrationUrl": "https://www.fnkp.pt",
+      "metadata": {
+        "sourceUrl": "https://www.fnkp.pt",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "PT_FNK_20260410",
+      "source": "PT_FNK",
+      "title": "Karate 1 - Premier League",
+      "country": "China",
+      "countryCode": "CHN",
+      "federation": "WKF",
+      "date": {
+        "start": "2026-04-10T09:00:00Z",
+        "end": "2026-04-12T18:00:00Z"
+      },
+      "location": {
+        "city": "A definir (China)",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 35.8617,
+          "longitude": 104.1954
+        }
+      },
+      "categories": [
+        "Senior"
+      ],
+      "level": "international",
+      "eventType": "WKF - Premier League",
+      "registrationUrl": "https://www.fnkp.pt",
+      "metadata": {
+        "sourceUrl": "https://www.fnkp.pt",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "ES_RFEK_20260410a",
+      "source": "ES_RFEK",
+      "title": "Karate 1 Premier League",
+      "country": "China",
+      "countryCode": "CHN",
+      "federation": "WKF",
+      "date": {
+        "start": "2026-04-10T09:00:00Z",
+        "end": "2026-04-12T18:00:00Z"
+      },
+      "location": {
+        "city": "Leshan",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 29.5637,
+          "longitude": 103.7667
+        }
+      },
+      "categories": [
+        "Senior"
+      ],
+      "level": "international",
+      "eventType": "WKF - Premier League",
+      "registrationUrl": "https://www.rfek.es",
+      "metadata": {
+        "sourceUrl": "https://www.rfek.es",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "ES_RFEK_20260410b",
+      "source": "ES_RFEK",
+      "title": "VII Campeonato de España Master",
+      "country": "Espanha",
+      "countryCode": "ESP",
+      "federation": "RFEK",
+      "date": {
+        "start": "2026-04-10T09:00:00Z",
+        "end": "2026-04-12T18:00:00Z"
+      },
+      "location": {
+        "city": "La Nucía",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 38.6167,
+          "longitude": -0.1167
+        }
+      },
+      "categories": [
+        "Master"
+      ],
+      "level": "national",
+      "eventType": "Competição Nacional",
+      "registrationUrl": "https://www.rfek.es",
+      "metadata": {
+        "sourceUrl": "https://www.rfek.es",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "IT_FIJ_20260410a",
+      "source": "IT_FIJLKAM",
+      "title": "WKF K1 Premier League",
+      "country": "China",
+      "countryCode": "CHN",
+      "federation": "WKF",
+      "date": {
+        "start": "2026-04-10T09:00:00Z",
+        "end": "2026-04-12T18:00:00Z"
+      },
+      "location": {
+        "city": "Leshan",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 29.5637,
+          "longitude": 103.7667
+        }
+      },
+      "categories": [
+        "Senior"
+      ],
+      "level": "international",
+      "eventType": "WKF - Premier League",
+      "registrationUrl": "https://www.fijlkam.it",
+      "metadata": {
+        "sourceUrl": "https://www.fijlkam.it",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "IT_FIJ_20260410b",
+      "source": "IT_FIJLKAM",
+      "title": "Open League",
+      "country": "Itália",
+      "countryCode": "ITA",
+      "federation": "FIJLKAM",
+      "date": {
+        "start": "2026-04-10T09:00:00Z",
+        "end": "2026-04-12T18:00:00Z"
+      },
+      "location": {
+        "city": "Riccione",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 44.0009,
+          "longitude": 12.6595
+        }
+      },
+      "categories": [
+        "Senior"
+      ],
+      "level": "national",
+      "eventType": "Competição Nacional",
+      "registrationUrl": "https://www.fijlkam.it",
+      "metadata": {
+        "sourceUrl": "https://www.fijlkam.it",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "ES_RFEK_20260417",
+      "source": "ES_RFEK",
+      "title": "Campeonato de España Universitario",
+      "country": "Espanha",
+      "countryCode": "ESP",
+      "federation": "RFEK",
+      "date": {
+        "start": "2026-04-17T09:00:00Z",
+        "end": "2026-04-18T18:00:00Z"
+      },
+      "location": {
+        "city": "Granada",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 37.1773,
+          "longitude": -3.5986
+        }
+      },
+      "categories": [
+        "Universitário"
+      ],
+      "level": "national",
+      "eventType": "Competição Nacional",
+      "registrationUrl": "https://www.rfek.es",
+      "metadata": {
+        "sourceUrl": "https://www.rfek.es",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "PT_FNK_20260418",
+      "source": "PT_FNK",
+      "title": "Campeonato Nacional de Clubes",
+      "country": "Portugal",
+      "countryCode": "PT",
+      "federation": "Federação Nacional de Karaté - Portugal",
+      "date": {
+        "start": "2026-04-18T09:00:00Z",
+        "end": "2026-04-19T18:00:00Z"
+      },
+      "location": {
+        "city": "A definir",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 38.7223,
+          "longitude": -9.1393
+        }
+      },
+      "categories": [
+        "Todos"
+      ],
+      "level": "national",
+      "eventType": "Competição Nacional",
+      "registrationUrl": "https://www.fnkp.pt",
+      "metadata": {
+        "sourceUrl": "https://www.fnkp.pt",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "IT_FIJ_20260419",
+      "source": "IT_FIJLKAM",
+      "title": "Karate Kids Project — Gran Premio Giovanissimi",
+      "country": "Itália",
+      "countryCode": "ITA",
+      "federation": "FIJLKAM",
+      "date": {
+        "start": "2026-04-19T09:00:00Z",
+        "end": "2026-04-19T18:00:00Z"
+      },
+      "location": {
+        "city": "Sedi Regionali",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 41.8719,
+          "longitude": 12.5674
+        }
+      },
+      "categories": [
+        "Giovanissimi"
+      ],
+      "level": "regional",
+      "eventType": "Competição Nacional",
+      "registrationUrl": "https://www.fijlkam.it",
+      "metadata": {
+        "sourceUrl": "https://www.fijlkam.it",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "PT_FNK_20260424",
+      "source": "PT_FNK",
+      "title": "Karate 1 - Series A",
+      "country": "Espanha",
+      "countryCode": "ESP",
+      "federation": "WKF",
+      "date": {
+        "start": "2026-04-24T09:00:00Z",
+        "end": "2026-04-26T18:00:00Z"
+      },
+      "location": {
+        "city": "Corunha",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 43.3623,
+          "longitude": -8.4115
+        }
+      },
+      "categories": [
+        "Senior"
+      ],
+      "level": "international",
+      "eventType": "WKF - Series A",
+      "registrationUrl": "https://www.fnkp.pt",
+      "metadata": {
+        "sourceUrl": "https://www.fnkp.pt",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "ES_RFEK_20260424",
+      "source": "ES_RFEK",
+      "title": "Karate 1 Series A",
+      "country": "Espanha",
+      "countryCode": "ESP",
+      "federation": "WKF",
+      "date": {
+        "start": "2026-04-24T09:00:00Z",
+        "end": "2026-04-26T18:00:00Z"
+      },
+      "location": {
+        "city": "A Coruña",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 43.3623,
+          "longitude": -8.4115
+        }
+      },
+      "categories": [
+        "Senior"
+      ],
+      "level": "international",
+      "eventType": "WKF - Series A",
+      "registrationUrl": "https://www.rfek.es",
+      "metadata": {
+        "sourceUrl": "https://www.rfek.es",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "IT_FIJ_20260424",
+      "source": "IT_FIJLKAM",
+      "title": "WKF K1 Series A",
+      "country": "Espanha",
+      "countryCode": "ESP",
+      "federation": "WKF",
+      "date": {
+        "start": "2026-04-24T09:00:00Z",
+        "end": "2026-04-26T18:00:00Z"
+      },
+      "location": {
+        "city": "La Coruña",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 43.3623,
+          "longitude": -8.4115
+        }
+      },
+      "categories": [
+        "Senior"
+      ],
+      "level": "international",
+      "eventType": "WKF - Series A",
+      "registrationUrl": "https://www.fijlkam.it",
+      "metadata": {
+        "sourceUrl": "https://www.fijlkam.it",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "PT_FNK_20260502a",
+      "source": "PT_FNK",
+      "title": "Campeonato Nacional Para-Karate Inf, Ini, Juv, Cad e Jun",
+      "country": "Portugal",
+      "countryCode": "PT",
+      "federation": "Federação Nacional de Karaté - Portugal",
+      "date": {
+        "start": "2026-05-02T09:00:00Z",
+        "end": "2026-05-03T18:00:00Z"
+      },
+      "location": {
+        "city": "A definir",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 38.7223,
+          "longitude": -9.1393
+        }
+      },
+      "categories": [
+        "Infantil",
+        "Iniciados",
+        "Juvenil",
+        "Cadete",
+        "Junior"
+      ],
+      "level": "national",
+      "eventType": "Competição Nacional",
+      "registrationUrl": "https://www.fnkp.pt",
+      "metadata": {
+        "sourceUrl": "https://www.fnkp.pt",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "PT_FNK_20260502b",
+      "source": "PT_FNK",
+      "title": "Campeonato Nacional Inf, Ini, Juv",
+      "country": "Portugal",
+      "countryCode": "PT",
+      "federation": "Federação Nacional de Karaté - Portugal",
+      "date": {
+        "start": "2026-05-02T09:00:00Z",
+        "end": "2026-05-03T18:00:00Z"
+      },
+      "location": {
+        "city": "A definir",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 38.7223,
+          "longitude": -9.1393
+        }
+      },
+      "categories": [
+        "Infantil",
+        "Iniciados",
+        "Juvenil"
+      ],
+      "level": "national",
+      "eventType": "Competição Nacional",
+      "registrationUrl": "https://www.fnkp.pt",
+      "metadata": {
+        "sourceUrl": "https://www.fnkp.pt",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "IT_FIJ_20260503",
+      "source": "IT_FIJLKAM",
+      "title": "Kumite/Kata — Fase Regionale Qualificazione Camp. Italiano Cadetti",
+      "country": "Itália",
+      "countryCode": "ITA",
+      "federation": "FIJLKAM",
+      "date": {
+        "start": "2026-05-03T09:00:00Z",
+        "end": "2026-05-03T18:00:00Z"
+      },
+      "location": {
+        "city": "Sedi Regionali",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 41.8719,
+          "longitude": 12.5674
+        }
+      },
+      "categories": [
+        "Cadete"
+      ],
+      "level": "regional",
+      "eventType": "Competição Nacional",
+      "registrationUrl": "https://www.fijlkam.it",
+      "metadata": {
+        "sourceUrl": "https://www.fijlkam.it",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "ES_RFEK_20260508",
+      "source": "ES_RFEK",
+      "title": "Campeonato de España Infantil",
+      "country": "Espanha",
+      "countryCode": "ESP",
+      "federation": "RFEK",
+      "date": {
+        "start": "2026-05-08T09:00:00Z",
+        "end": "2026-05-10T18:00:00Z"
+      },
+      "location": {
+        "city": "Oviedo",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 43.3614,
+          "longitude": -5.8593
+        }
+      },
+      "categories": [
+        "Infantil"
+      ],
+      "level": "national",
+      "eventType": "Competição Nacional",
+      "registrationUrl": "https://www.rfek.es",
+      "metadata": {
+        "sourceUrl": "https://www.rfek.es",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "IT_FIJ_20260508",
+      "source": "IT_FIJLKAM",
+      "title": "Campionato Italiano U21 e Campionato Nazionale Master",
+      "country": "Itália",
+      "countryCode": "ITA",
+      "federation": "FIJLKAM",
+      "date": {
+        "start": "2026-05-08T09:00:00Z",
+        "end": "2026-05-10T18:00:00Z"
+      },
+      "location": {
+        "city": "Lido di Ostia",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 41.7358,
+          "longitude": 12.2483
+        }
+      },
+      "categories": [
+        "Sub21",
+        "Master"
+      ],
+      "level": "national",
+      "eventType": "Competição Nacional",
+      "registrationUrl": "https://www.fijlkam.it",
+      "metadata": {
+        "sourceUrl": "https://www.fijlkam.it",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "PT_FNK_20260514",
+      "source": "PT_FNK",
+      "title": "Karate 1 - Youth League",
+      "country": "Filipinas",
+      "countryCode": "PHL",
+      "federation": "WKF",
+      "date": {
+        "start": "2026-05-14T09:00:00Z",
+        "end": "2026-05-17T18:00:00Z"
+      },
+      "location": {
+        "city": "Manila",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 14.5995,
+          "longitude": 120.9842
+        }
+      },
+      "categories": [
+        "U14",
+        "Cadete",
+        "Junior"
+      ],
+      "level": "international",
+      "eventType": "WKF - Youth League",
+      "registrationUrl": "https://www.fnkp.pt",
+      "metadata": {
+        "sourceUrl": "https://www.fnkp.pt",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "ES_RFEK_20260514",
+      "source": "ES_RFEK",
+      "title": "Karate 1 Youth League",
+      "country": "Filipinas",
+      "countryCode": "PHL",
+      "federation": "WKF",
+      "date": {
+        "start": "2026-05-14T09:00:00Z",
+        "end": "2026-05-17T18:00:00Z"
+      },
+      "location": {
+        "city": "Manila",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 14.5995,
+          "longitude": 120.9842
+        }
+      },
+      "categories": [
+        "U14",
+        "Cadete",
+        "Junior"
+      ],
+      "level": "international",
+      "eventType": "WKF - Youth League",
+      "registrationUrl": "https://www.rfek.es",
+      "metadata": {
+        "sourceUrl": "https://www.rfek.es",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "IT_FIJ_20260514",
+      "source": "IT_FIJLKAM",
+      "title": "WKF K1 Youth League",
+      "country": "Filipinas",
+      "countryCode": "PHL",
+      "federation": "WKF",
+      "date": {
+        "start": "2026-05-14T09:00:00Z",
+        "end": "2026-05-17T18:00:00Z"
+      },
+      "location": {
+        "city": "Manila",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 14.5995,
+          "longitude": 120.9842
+        }
+      },
+      "categories": [
+        "U14",
+        "Cadete",
+        "Junior"
+      ],
+      "level": "international",
+      "eventType": "WKF - Youth League",
+      "registrationUrl": "https://www.fijlkam.it",
+      "metadata": {
+        "sourceUrl": "https://www.fijlkam.it",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "ES_RFEK_20260516",
+      "source": "ES_RFEK",
+      "title": "Campeonato de España de Goshin y Kobudo",
+      "country": "Espanha",
+      "countryCode": "ESP",
+      "federation": "RFEK",
+      "date": {
+        "start": "2026-05-16T09:00:00Z",
+        "end": "2026-05-16T18:00:00Z"
+      },
+      "location": {
+        "city": "Cieza",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 38.2393,
+          "longitude": -1.4208
+        }
+      },
+      "categories": [
+        "Goshin",
+        "Kobudo"
+      ],
+      "level": "national",
+      "eventType": "Competição Nacional",
+      "registrationUrl": "https://www.rfek.es",
+      "metadata": {
+        "sourceUrl": "https://www.rfek.es",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "IT_FIJ_20260517",
+      "source": "IT_FIJLKAM",
+      "title": "Memorial Ciro Bracciante — Trofeo Italia",
+      "country": "Itália",
+      "countryCode": "ITA",
+      "federation": "FIJLKAM",
+      "date": {
+        "start": "2026-05-17T09:00:00Z",
+        "end": "2026-05-17T18:00:00Z"
+      },
+      "location": {
+        "city": "Eboli",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 40.6174,
+          "longitude": 15.0506
+        }
+      },
+      "categories": [
+        "Todos"
+      ],
+      "level": "national",
+      "eventType": "Competição Nacional",
+      "registrationUrl": "https://www.fijlkam.it",
+      "metadata": {
+        "sourceUrl": "https://www.fijlkam.it",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "PT_FNK_20260520",
+      "source": "PT_FNK",
+      "title": "Campeonato da Europa de Seniores",
+      "country": "Alemanha",
+      "countryCode": "DEU",
+      "federation": "EKF",
+      "date": {
+        "start": "2026-05-20T09:00:00Z",
+        "end": "2026-05-24T18:00:00Z"
+      },
+      "location": {
+        "city": "Frankfurt",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 50.1109,
+          "longitude": 8.6821
+        }
+      },
+      "categories": [
+        "Senior"
+      ],
+      "level": "international",
+      "eventType": "EKF - Championships",
+      "registrationUrl": "https://www.fnkp.pt",
+      "metadata": {
+        "sourceUrl": "https://www.fnkp.pt",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "ES_RFEK_20260520",
+      "source": "ES_RFEK",
+      "title": "Campeonato de Europa Absoluto + Para-Karate",
+      "country": "Alemanha",
+      "countryCode": "DEU",
+      "federation": "EKF",
+      "date": {
+        "start": "2026-05-20T09:00:00Z",
+        "end": "2026-05-24T18:00:00Z"
+      },
+      "location": {
+        "city": "Frankfurt",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 50.1109,
+          "longitude": 8.6821
+        }
+      },
+      "categories": [
+        "Senior",
+        "Para-Karate"
+      ],
+      "level": "international",
+      "eventType": "EKF - Championships",
+      "registrationUrl": "https://www.rfek.es",
+      "metadata": {
+        "sourceUrl": "https://www.rfek.es",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "IT_FIJ_20260520",
+      "source": "IT_FIJLKAM",
+      "title": "EKF Senior Championships",
+      "country": "Alemanha",
+      "countryCode": "DEU",
+      "federation": "EKF",
+      "date": {
+        "start": "2026-05-20T09:00:00Z",
+        "end": "2026-05-24T18:00:00Z"
+      },
+      "location": {
+        "city": "Francoforte",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 50.1109,
+          "longitude": 8.6821
+        }
+      },
+      "categories": [
+        "Senior"
+      ],
+      "level": "international",
+      "eventType": "EKF - Championships",
+      "registrationUrl": "https://www.fijlkam.it",
+      "metadata": {
+        "sourceUrl": "https://www.fijlkam.it",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "IT_FIJ_20260522",
+      "source": "IT_FIJLKAM",
+      "title": "Campionato Italiano Cadetti (Kumite/Kata)",
+      "country": "Itália",
+      "countryCode": "ITA",
+      "federation": "FIJLKAM",
+      "date": {
+        "start": "2026-05-22T09:00:00Z",
+        "end": "2026-05-24T18:00:00Z"
+      },
+      "location": {
+        "city": "Lido di Ostia",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 41.7358,
+          "longitude": 12.2483
+        }
+      },
+      "categories": [
+        "Cadete"
+      ],
+      "level": "national",
+      "eventType": "Competição Nacional",
+      "registrationUrl": "https://www.fijlkam.it",
+      "metadata": {
+        "sourceUrl": "https://www.fijlkam.it",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "ES_RFEK_20260529",
+      "source": "ES_RFEK",
+      "title": "VI Copa de España de Estilos Internacional",
+      "country": "Espanha",
+      "countryCode": "ESP",
+      "federation": "RFEK",
+      "date": {
+        "start": "2026-05-29T09:00:00Z",
+        "end": "2026-05-31T18:00:00Z"
+      },
+      "location": {
+        "city": "Alovera",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 40.5714,
+          "longitude": -3.238
+        }
+      },
+      "categories": [
+        "Todos"
+      ],
+      "level": "national",
+      "eventType": "Copa/Taça",
+      "registrationUrl": "https://www.rfek.es",
+      "metadata": {
+        "sourceUrl": "https://www.rfek.es",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "PT_FNK_20260530",
+      "source": "PT_FNK",
+      "title": "Liga de Karate (Juv, Cad, Jun e Sub21)",
+      "country": "Portugal",
+      "countryCode": "PT",
+      "federation": "Federação Nacional de Karaté - Portugal",
+      "date": {
+        "start": "2026-05-30T09:00:00Z",
+        "end": "2026-05-31T18:00:00Z"
+      },
+      "location": {
+        "city": "A definir",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 38.7223,
+          "longitude": -9.1393
+        }
+      },
+      "categories": [
+        "Juvenil",
+        "Cadete",
+        "Junior",
+        "Sub21"
+      ],
+      "level": "national",
+      "eventType": "Liga Nacional",
+      "registrationUrl": "https://www.fnkp.pt",
+      "metadata": {
+        "sourceUrl": "https://www.fnkp.pt",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "IT_FIJ_20260530",
+      "source": "IT_FIJLKAM",
+      "title": "Campionato Nazionale Universitario",
+      "country": "Itália",
+      "countryCode": "ITA",
+      "federation": "FIJLKAM",
+      "date": {
+        "start": "2026-05-30T09:00:00Z",
+        "end": "2026-05-31T18:00:00Z"
+      },
+      "location": {
+        "city": "Alessandria",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 44.9136,
+          "longitude": 8.6147
+        }
+      },
+      "categories": [
+        "Universitário"
+      ],
+      "level": "national",
+      "eventType": "Competição Nacional",
+      "registrationUrl": "https://www.fijlkam.it",
+      "metadata": {
+        "sourceUrl": "https://www.fijlkam.it",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "IT_FIJ_20260602",
+      "source": "IT_FIJLKAM",
+      "title": "CTR Games",
+      "country": "Itália",
+      "countryCode": "ITA",
+      "federation": "FIJLKAM",
+      "date": {
+        "start": "2026-06-02T09:00:00Z",
+        "end": "2026-06-02T18:00:00Z"
+      },
+      "location": {
+        "city": "Lido di Ostia",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 41.7358,
+          "longitude": 12.2483
+        }
+      },
+      "categories": [
+        "Todos"
+      ],
+      "level": "national",
+      "eventType": "Competição Nacional",
+      "registrationUrl": "https://www.fijlkam.it",
+      "metadata": {
+        "sourceUrl": "https://www.fijlkam.it",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "ES_RFEK_20260606",
+      "source": "ES_RFEK",
+      "title": "IV Copa de España Internacional de Karate Playa",
+      "country": "Espanha",
+      "countryCode": "ESP",
+      "federation": "RFEK",
+      "date": {
+        "start": "2026-06-06T09:00:00Z",
+        "end": "2026-06-07T18:00:00Z"
+      },
+      "location": {
+        "city": "Jaráiz de la Vera",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 40.0623,
+          "longitude": -5.7547
+        }
+      },
+      "categories": [
+        "Senior"
+      ],
+      "level": "national",
+      "eventType": "Copa/Taça",
+      "registrationUrl": "https://www.rfek.es",
+      "metadata": {
+        "sourceUrl": "https://www.rfek.es",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "IT_FIJ_20260606",
+      "source": "IT_FIJLKAM",
+      "title": "Open League",
+      "country": "Itália",
+      "countryCode": "ITA",
+      "federation": "FIJLKAM",
+      "date": {
+        "start": "2026-06-06T09:00:00Z",
+        "end": "2026-06-07T18:00:00Z"
+      },
+      "location": {
+        "city": "Messina",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 38.1938,
+          "longitude": 15.554
+        }
+      },
+      "categories": [
+        "Senior"
+      ],
+      "level": "national",
+      "eventType": "Competição Nacional",
+      "registrationUrl": "https://www.fijlkam.it",
+      "metadata": {
+        "sourceUrl": "https://www.fijlkam.it",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "PT_FNK_20260608",
       "source": "PT_FNK",
       "title": "FISU WUC Combat Sports",
-      "country": "Portugal",
-      "countryCode": "PT",
-      "federation": "Federação Nacional de Karaté - Portugal",
-      "date": { "start": "2026-06-08T09:00:00Z", "end": "2026-06-13T18:00:00Z" },
-      "location": { "city": "Portugal", "venue": "A confirmar", "address": "", "coordinates": { "latitude": 38.7223, "longitude": -9.1393 } },
-      "categories": ["Senior"],
+      "country": "Brasil",
+      "countryCode": "BRA",
+      "federation": "WKF",
+      "date": {
+        "start": "2026-06-08T09:00:00Z",
+        "end": "2026-06-13T18:00:00Z"
+      },
+      "location": {
+        "city": "Brasília",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": -15.8267,
+          "longitude": -47.9218
+        }
+      },
+      "categories": [
+        "Senior"
+      ],
       "level": "international",
-      "registrationUrl": "https://www.fnkp.pt/calendario",
-      "metadata": { "sourceUrl": "https://www.fnkp.pt/calendario", "scrapedAt": "2026-06-24T23:00:00Z", "quality": 1.0 }
+      "eventType": "Competição Internacional",
+      "registrationUrl": "https://www.fnkp.pt",
+      "metadata": {
+        "sourceUrl": "https://www.fnkp.pt",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
     },
     {
-      "id": "PT_FNK_20260612_001",
+      "id": "ES_RFEK_20260608",
+      "source": "ES_RFEK",
+      "title": "FISU WUC Combat Sports",
+      "country": "Brasil",
+      "countryCode": "BRA",
+      "federation": "FISU",
+      "date": {
+        "start": "2026-06-08T09:00:00Z",
+        "end": "2026-06-11T18:00:00Z"
+      },
+      "location": {
+        "city": "Brasília",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": -15.8267,
+          "longitude": -47.9218
+        }
+      },
+      "categories": [
+        "Senior"
+      ],
+      "level": "international",
+      "eventType": "Competição Internacional",
+      "registrationUrl": "https://www.rfek.es",
+      "metadata": {
+        "sourceUrl": "https://www.rfek.es",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "IT_FIJ_20260608",
+      "source": "IT_FIJLKAM",
+      "title": "FISU WUC Combat Sports",
+      "country": "Brasil",
+      "countryCode": "BRA",
+      "federation": "FISU",
+      "date": {
+        "start": "2026-06-08T09:00:00Z",
+        "end": "2026-06-09T18:00:00Z"
+      },
+      "location": {
+        "city": "Brasilia",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": -15.8267,
+          "longitude": -47.9218
+        }
+      },
+      "categories": [
+        "Senior"
+      ],
+      "level": "international",
+      "eventType": "Competição Internacional",
+      "registrationUrl": "https://www.fijlkam.it",
+      "metadata": {
+        "sourceUrl": "https://www.fijlkam.it",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "PT_FNK_20260612",
       "source": "PT_FNK",
-      "title": "Karate 1 – Premier League",
-      "country": "Portugal",
-      "countryCode": "PT",
-      "federation": "Federação Nacional de Karaté - Portugal",
-      "date": { "start": "2026-06-12T09:00:00Z", "end": "2026-06-14T18:00:00Z" },
-      "location": { "city": "Portugal", "venue": "A confirmar", "address": "", "coordinates": { "latitude": 38.7223, "longitude": -9.1393 } },
-      "categories": ["Senior Men", "Senior Women"],
+      "title": "Karate 1 - Premier League",
+      "country": "Marrocos",
+      "countryCode": "MAR",
+      "federation": "WKF",
+      "date": {
+        "start": "2026-06-12T09:00:00Z",
+        "end": "2026-06-14T18:00:00Z"
+      },
+      "location": {
+        "city": "Rabat",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 34.0209,
+          "longitude": -6.8416
+        }
+      },
+      "categories": [
+        "Senior"
+      ],
       "level": "international",
-      "registrationUrl": "https://www.fnkp.pt/calendario",
-      "metadata": { "sourceUrl": "https://www.fnkp.pt/calendario", "scrapedAt": "2026-06-24T23:00:00Z", "quality": 1.0 }
+      "eventType": "WKF - Premier League",
+      "registrationUrl": "https://www.fnkp.pt",
+      "metadata": {
+        "sourceUrl": "https://www.fnkp.pt",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
     },
     {
-      "id": "PT_FNK_20260616_001",
+      "id": "ES_RFEK_20260612",
+      "source": "ES_RFEK",
+      "title": "Karate 1 Premier League",
+      "country": "Marrocos",
+      "countryCode": "MAR",
+      "federation": "WKF",
+      "date": {
+        "start": "2026-06-12T09:00:00Z",
+        "end": "2026-06-14T18:00:00Z"
+      },
+      "location": {
+        "city": "Rabat",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 34.0209,
+          "longitude": -6.8416
+        }
+      },
+      "categories": [
+        "Senior"
+      ],
+      "level": "international",
+      "eventType": "WKF - Premier League",
+      "registrationUrl": "https://www.rfek.es",
+      "metadata": {
+        "sourceUrl": "https://www.rfek.es",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "IT_FIJ_20260612",
+      "source": "IT_FIJLKAM",
+      "title": "WKF K1 Premier League",
+      "country": "Marrocos",
+      "countryCode": "MAR",
+      "federation": "WKF",
+      "date": {
+        "start": "2026-06-12T09:00:00Z",
+        "end": "2026-06-14T18:00:00Z"
+      },
+      "location": {
+        "city": "Rabat",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 34.0209,
+          "longitude": -6.8416
+        }
+      },
+      "categories": [
+        "Senior"
+      ],
+      "level": "international",
+      "eventType": "WKF - Premier League",
+      "registrationUrl": "https://www.fijlkam.it",
+      "metadata": {
+        "sourceUrl": "https://www.fijlkam.it",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "PT_FNK_20260616",
       "source": "PT_FNK",
       "title": "Campeonato dos Países do Mediterrâneo",
+      "country": "Egipto",
+      "countryCode": "EGY",
+      "federation": "MKFU",
+      "date": {
+        "start": "2026-06-16T09:00:00Z",
+        "end": "2026-06-21T18:00:00Z"
+      },
+      "location": {
+        "city": "Alexandria",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 31.2001,
+          "longitude": 29.9187
+        }
+      },
+      "categories": [
+        "Senior"
+      ],
+      "level": "international",
+      "eventType": "Competição Internacional",
+      "registrationUrl": "https://www.fnkp.pt",
+      "metadata": {
+        "sourceUrl": "https://www.fnkp.pt",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "ES_RFEK_20260619a",
+      "source": "ES_RFEK",
+      "title": "Campeonato Mediterráneo",
+      "country": "Egipto",
+      "countryCode": "EGY",
+      "federation": "WKF",
+      "date": {
+        "start": "2026-06-19T09:00:00Z",
+        "end": "2026-06-21T18:00:00Z"
+      },
+      "location": {
+        "city": "Alejandría",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 31.2001,
+          "longitude": 29.9187
+        }
+      },
+      "categories": [
+        "Senior"
+      ],
+      "level": "international",
+      "eventType": "Competição Internacional",
+      "registrationUrl": "https://www.rfek.es",
+      "metadata": {
+        "sourceUrl": "https://www.rfek.es",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "ES_RFEK_20260619b",
+      "source": "ES_RFEK",
+      "title": "Campeonato de España de Clubes",
+      "country": "Espanha",
+      "countryCode": "ESP",
+      "federation": "RFEK",
+      "date": {
+        "start": "2026-06-19T09:00:00Z",
+        "end": "2026-06-21T18:00:00Z"
+      },
+      "location": {
+        "city": "Tarragona",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 41.1189,
+          "longitude": 1.2445
+        }
+      },
+      "categories": [
+        "Todos"
+      ],
+      "level": "national",
+      "eventType": "Competição Nacional",
+      "registrationUrl": "https://www.rfek.es",
+      "metadata": {
+        "sourceUrl": "https://www.rfek.es",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "IT_FIJ_20260619",
+      "source": "IT_FIJLKAM",
+      "title": "Campionato Italiano Juniores (Kumite/Kata)",
+      "country": "Itália",
+      "countryCode": "ITA",
+      "federation": "FIJLKAM",
+      "date": {
+        "start": "2026-06-19T09:00:00Z",
+        "end": "2026-06-21T18:00:00Z"
+      },
+      "location": {
+        "city": "Lido di Ostia",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 41.7358,
+          "longitude": 12.2483
+        }
+      },
+      "categories": [
+        "Junior"
+      ],
+      "level": "national",
+      "eventType": "Competição Nacional",
+      "registrationUrl": "https://www.fijlkam.it",
+      "metadata": {
+        "sourceUrl": "https://www.fijlkam.it",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "PT_FNK_20260702",
+      "source": "PT_FNK",
+      "title": "Karate 1 - Youth League",
+      "country": "Croácia",
+      "countryCode": "HRV",
+      "federation": "WKF",
+      "date": {
+        "start": "2026-07-02T09:00:00Z",
+        "end": "2026-07-05T18:00:00Z"
+      },
+      "location": {
+        "city": "Porec",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 45.2267,
+          "longitude": 13.5942
+        }
+      },
+      "categories": [
+        "U14",
+        "Cadete",
+        "Junior"
+      ],
+      "level": "international",
+      "eventType": "WKF - Youth League",
+      "registrationUrl": "https://www.fnkp.pt",
+      "metadata": {
+        "sourceUrl": "https://www.fnkp.pt",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "ES_RFEK_20260702",
+      "source": "ES_RFEK",
+      "title": "Karate 1 Youth League",
+      "country": "Croácia",
+      "countryCode": "HRV",
+      "federation": "WKF",
+      "date": {
+        "start": "2026-07-02T09:00:00Z",
+        "end": "2026-07-05T18:00:00Z"
+      },
+      "location": {
+        "city": "Porec",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 45.2267,
+          "longitude": 13.5942
+        }
+      },
+      "categories": [
+        "U14",
+        "Cadete",
+        "Junior"
+      ],
+      "level": "international",
+      "eventType": "WKF - Youth League",
+      "registrationUrl": "https://www.rfek.es",
+      "metadata": {
+        "sourceUrl": "https://www.rfek.es",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "IT_FIJ_20260702",
+      "source": "IT_FIJLKAM",
+      "title": "WKF K1 Youth League",
+      "country": "Croácia",
+      "countryCode": "HRV",
+      "federation": "WKF",
+      "date": {
+        "start": "2026-07-02T09:00:00Z",
+        "end": "2026-07-05T18:00:00Z"
+      },
+      "location": {
+        "city": "Porec",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 45.2267,
+          "longitude": 13.5942
+        }
+      },
+      "categories": [
+        "U14",
+        "Cadete",
+        "Junior"
+      ],
+      "level": "international",
+      "eventType": "WKF - Youth League",
+      "registrationUrl": "https://www.fijlkam.it",
+      "metadata": {
+        "sourceUrl": "https://www.fijlkam.it",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "PT_FNK_20260716a",
+      "source": "PT_FNK",
+      "title": "FNK-P Karate Camp",
       "country": "Portugal",
       "countryCode": "PT",
       "federation": "Federação Nacional de Karaté - Portugal",
-      "date": { "start": "2026-06-16T09:00:00Z", "end": "2026-06-21T18:00:00Z" },
-      "location": { "city": "Portugal", "venue": "A confirmar", "address": "", "coordinates": { "latitude": 38.7223, "longitude": -9.1393 } },
-      "categories": ["Senior Men", "Senior Women"],
+      "date": {
+        "start": "2026-07-16T09:00:00Z",
+        "end": "2026-07-19T18:00:00Z"
+      },
+      "location": {
+        "city": "A definir",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 38.7223,
+          "longitude": -9.1393
+        }
+      },
+      "categories": [
+        "Seleções"
+      ],
+      "level": "national",
+      "eventType": "Estágio de Seleção",
+      "registrationUrl": "https://www.fnkp.pt",
+      "metadata": {
+        "sourceUrl": "https://www.fnkp.pt",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "PT_FNK_20260716b",
+      "source": "PT_FNK",
+      "title": "Karate 1 - Series A",
+      "country": "México",
+      "countryCode": "MEX",
+      "federation": "WKF",
+      "date": {
+        "start": "2026-07-16T09:00:00Z",
+        "end": "2026-07-19T18:00:00Z"
+      },
+      "location": {
+        "city": "Guadalajara",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 20.6597,
+          "longitude": -103.3496
+        }
+      },
+      "categories": [
+        "Senior"
+      ],
       "level": "international",
-      "registrationUrl": "https://www.fnkp.pt/calendario",
-      "metadata": { "sourceUrl": "https://www.fnkp.pt/calendario", "scrapedAt": "2026-06-24T23:00:00Z", "quality": 1.0 }
+      "eventType": "WKF - Series A",
+      "registrationUrl": "https://www.fnkp.pt",
+      "metadata": {
+        "sourceUrl": "https://www.fnkp.pt",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "ES_RFEK_20260716",
+      "source": "ES_RFEK",
+      "title": "Karate 1 Series A",
+      "country": "México",
+      "countryCode": "MEX",
+      "federation": "WKF",
+      "date": {
+        "start": "2026-07-16T09:00:00Z",
+        "end": "2026-07-19T18:00:00Z"
+      },
+      "location": {
+        "city": "Guadalajara",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 20.6597,
+          "longitude": -103.3496
+        }
+      },
+      "categories": [
+        "Senior"
+      ],
+      "level": "international",
+      "eventType": "WKF - Series A",
+      "registrationUrl": "https://www.rfek.es",
+      "metadata": {
+        "sourceUrl": "https://www.rfek.es",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "IT_FIJ_20260717",
+      "source": "IT_FIJLKAM",
+      "title": "WKF K1 Series A",
+      "country": "Colômbia",
+      "countryCode": "COL",
+      "federation": "WKF",
+      "date": {
+        "start": "2026-07-17T09:00:00Z",
+        "end": "2026-07-19T18:00:00Z"
+      },
+      "location": {
+        "city": "A definir (Colombia)",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 4.5709,
+          "longitude": -74.2973
+        }
+      },
+      "categories": [
+        "Senior"
+      ],
+      "level": "international",
+      "eventType": "WKF - Series A",
+      "registrationUrl": "https://www.fijlkam.it",
+      "metadata": {
+        "sourceUrl": "https://www.fijlkam.it",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "IT_FIJ_20260722",
+      "source": "IT_FIJLKAM",
+      "title": "37° Internazionali di Karate di Lignano — Trofeo Alpe Adria",
+      "country": "Itália",
+      "countryCode": "ITA",
+      "federation": "FIJLKAM",
+      "date": {
+        "start": "2026-07-22T09:00:00Z",
+        "end": "2026-07-23T18:00:00Z"
+      },
+      "location": {
+        "city": "Lignano Sabbiadoro",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 45.6833,
+          "longitude": 13.1167
+        }
+      },
+      "categories": [
+        "Todos"
+      ],
+      "level": "international",
+      "eventType": "Competição Internacional",
+      "registrationUrl": "https://www.fijlkam.it",
+      "metadata": {
+        "sourceUrl": "https://www.fijlkam.it",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "ES_RFEK_20260819",
+      "source": "ES_RFEK",
+      "title": "Triangular Internacional Equipos Kumite Femenino",
+      "country": "Itália",
+      "countryCode": "ITA",
+      "federation": "RFEK",
+      "date": {
+        "start": "2026-08-19T09:00:00Z",
+        "end": "2026-08-21T18:00:00Z"
+      },
+      "location": {
+        "city": "Lignano",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 45.6833,
+          "longitude": 13.1167
+        }
+      },
+      "categories": [
+        "Senior Feminino"
+      ],
+      "level": "international",
+      "eventType": "Competição Internacional",
+      "registrationUrl": "https://www.rfek.es",
+      "metadata": {
+        "sourceUrl": "https://www.rfek.es",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "PT_FNK_20260901",
+      "source": "PT_FNK",
+      "title": "Jogos do Mediterrâneo",
+      "country": "Itália",
+      "countryCode": "ITA",
+      "federation": "COI/WKF",
+      "date": {
+        "start": "2026-09-01T09:00:00Z",
+        "end": "2026-09-02T18:00:00Z"
+      },
+      "location": {
+        "city": "Taranto",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 40.4644,
+          "longitude": 17.247
+        }
+      },
+      "categories": [
+        "Senior"
+      ],
+      "level": "international",
+      "eventType": "Jogos",
+      "registrationUrl": "https://www.fnkp.pt",
+      "metadata": {
+        "sourceUrl": "https://www.fnkp.pt",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "ES_RFEK_20260901",
+      "source": "ES_RFEK",
+      "title": "Mediterranean Games",
+      "country": "Itália",
+      "countryCode": "ITA",
+      "federation": "COI",
+      "date": {
+        "start": "2026-09-01T09:00:00Z",
+        "end": "2026-09-02T18:00:00Z"
+      },
+      "location": {
+        "city": "Taranto",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 40.4644,
+          "longitude": 17.247
+        }
+      },
+      "categories": [
+        "Senior"
+      ],
+      "level": "international",
+      "eventType": "Jogos",
+      "registrationUrl": "https://www.rfek.es",
+      "metadata": {
+        "sourceUrl": "https://www.rfek.es",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "IT_FIJ_20260901",
+      "source": "IT_FIJLKAM",
+      "title": "Mediterranean Games",
+      "country": "Itália",
+      "countryCode": "ITA",
+      "federation": "COI/WKF",
+      "date": {
+        "start": "2026-09-01T09:00:00Z",
+        "end": "2026-09-02T18:00:00Z"
+      },
+      "location": {
+        "city": "Taranto",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 40.4644,
+          "longitude": 17.247
+        }
+      },
+      "categories": [
+        "Senior"
+      ],
+      "level": "international",
+      "eventType": "Jogos",
+      "registrationUrl": "https://www.fijlkam.it",
+      "metadata": {
+        "sourceUrl": "https://www.fijlkam.it",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "IT_FIJ_20260905",
+      "source": "IT_FIJLKAM",
+      "title": "Campionato Nazionale Beach Kata e Parakarate Beach",
+      "country": "Itália",
+      "countryCode": "ITA",
+      "federation": "FIJLKAM",
+      "date": {
+        "start": "2026-09-05T09:00:00Z",
+        "end": "2026-09-06T18:00:00Z"
+      },
+      "location": {
+        "city": "Arzaghena",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 41.0833,
+          "longitude": 9.3833
+        }
+      },
+      "categories": [
+        "Beach Kata",
+        "Para-Karate"
+      ],
+      "level": "national",
+      "eventType": "Competição Nacional",
+      "registrationUrl": "https://www.fijlkam.it",
+      "metadata": {
+        "sourceUrl": "https://www.fijlkam.it",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "IT_FIJ_20260912",
+      "source": "IT_FIJLKAM",
+      "title": "Campionato Italiano a Squadre Sociali (Kumite/Kata)",
+      "country": "Itália",
+      "countryCode": "ITA",
+      "federation": "FIJLKAM",
+      "date": {
+        "start": "2026-09-12T09:00:00Z",
+        "end": "2026-09-13T18:00:00Z"
+      },
+      "location": {
+        "city": "Lido di Ostia",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 41.7358,
+          "longitude": 12.2483
+        }
+      },
+      "categories": [
+        "Equipas"
+      ],
+      "level": "national",
+      "eventType": "Competição Nacional",
+      "registrationUrl": "https://www.fijlkam.it",
+      "metadata": {
+        "sourceUrl": "https://www.fijlkam.it",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "IT_FIJ_20260913",
+      "source": "IT_FIJLKAM",
+      "title": "Campionato Italiano Parakarate",
+      "country": "Itália",
+      "countryCode": "ITA",
+      "federation": "FIJLKAM",
+      "date": {
+        "start": "2026-09-13T09:00:00Z",
+        "end": "2026-09-13T18:00:00Z"
+      },
+      "location": {
+        "city": "Lido di Ostia",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 41.7358,
+          "longitude": 12.2483
+        }
+      },
+      "categories": [
+        "Para-Karate"
+      ],
+      "level": "national",
+      "eventType": "Competição Nacional",
+      "registrationUrl": "https://www.fijlkam.it",
+      "metadata": {
+        "sourceUrl": "https://www.fijlkam.it",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "PT_FNK_20260917",
+      "source": "PT_FNK",
+      "title": "Karate 1 - Youth League",
+      "country": "México",
+      "countryCode": "MEX",
+      "federation": "EKF",
+      "date": {
+        "start": "2026-09-17T09:00:00Z",
+        "end": "2026-09-20T18:00:00Z"
+      },
+      "location": {
+        "city": "Guadalajara",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 20.6597,
+          "longitude": -103.3496
+        }
+      },
+      "categories": [
+        "U14",
+        "Cadete",
+        "Junior"
+      ],
+      "level": "international",
+      "eventType": "WKF - Youth League",
+      "registrationUrl": "https://www.fnkp.pt",
+      "metadata": {
+        "sourceUrl": "https://www.fnkp.pt",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "ES_RFEK_20260917",
+      "source": "ES_RFEK",
+      "title": "Karate 1 Youth League",
+      "country": "México",
+      "countryCode": "MEX",
+      "federation": "WKF",
+      "date": {
+        "start": "2026-09-17T09:00:00Z",
+        "end": "2026-09-20T18:00:00Z"
+      },
+      "location": {
+        "city": "Guadalajara",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 20.6597,
+          "longitude": -103.3496
+        }
+      },
+      "categories": [
+        "U14",
+        "Cadete",
+        "Junior"
+      ],
+      "level": "international",
+      "eventType": "WKF - Youth League",
+      "registrationUrl": "https://www.rfek.es",
+      "metadata": {
+        "sourceUrl": "https://www.rfek.es",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "IT_FIJ_20260917",
+      "source": "IT_FIJLKAM",
+      "title": "WKF K1 Youth League",
+      "country": "México",
+      "countryCode": "MEX",
+      "federation": "WKF",
+      "date": {
+        "start": "2026-09-17T09:00:00Z",
+        "end": "2026-09-20T18:00:00Z"
+      },
+      "location": {
+        "city": "A definir (Mexico)",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 20.6597,
+          "longitude": -103.3496
+        }
+      },
+      "categories": [
+        "U14",
+        "Cadete",
+        "Junior"
+      ],
+      "level": "international",
+      "eventType": "WKF - Youth League",
+      "registrationUrl": "https://www.fijlkam.it",
+      "metadata": {
+        "sourceUrl": "https://www.fijlkam.it",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "IT_FIJ_20260919",
+      "source": "IT_FIJLKAM",
+      "title": "Memorial Andrea Nekoofar",
+      "country": "Itália",
+      "countryCode": "ITA",
+      "federation": "FIJLKAM",
+      "date": {
+        "start": "2026-09-19T09:00:00Z",
+        "end": "2026-09-20T18:00:00Z"
+      },
+      "location": {
+        "city": "Lido di Ostia",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 41.7358,
+          "longitude": 12.2483
+        }
+      },
+      "categories": [
+        "Todos"
+      ],
+      "level": "national",
+      "eventType": "Competição Nacional",
+      "registrationUrl": "https://www.fijlkam.it",
+      "metadata": {
+        "sourceUrl": "https://www.fijlkam.it",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "ES_RFEK_20260926",
+      "source": "ES_RFEK",
+      "title": "2ª Ronda Liga Nacional Junior/Sub21",
+      "country": "Espanha",
+      "countryCode": "ESP",
+      "federation": "RFEK",
+      "date": {
+        "start": "2026-09-26T09:00:00Z",
+        "end": "2026-09-26T18:00:00Z"
+      },
+      "location": {
+        "city": "Albacete",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 38.9942,
+          "longitude": -1.8564
+        }
+      },
+      "categories": [
+        "Junior",
+        "Sub21"
+      ],
+      "level": "national",
+      "eventType": "Liga Nacional",
+      "registrationUrl": "https://www.rfek.es",
+      "metadata": {
+        "sourceUrl": "https://www.rfek.es",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "ES_RFEK_20260927",
+      "source": "ES_RFEK",
+      "title": "2ª Ronda Liga Iberdrola Junior/Sub21",
+      "country": "Espanha",
+      "countryCode": "ESP",
+      "federation": "RFEK",
+      "date": {
+        "start": "2026-09-27T09:00:00Z",
+        "end": "2026-09-27T18:00:00Z"
+      },
+      "location": {
+        "city": "Albacete",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 38.9942,
+          "longitude": -1.8564
+        }
+      },
+      "categories": [
+        "Junior",
+        "Sub21"
+      ],
+      "level": "national",
+      "eventType": "Liga Nacional",
+      "registrationUrl": "https://www.rfek.es",
+      "metadata": {
+        "sourceUrl": "https://www.rfek.es",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "PT_FNK_20261002",
+      "source": "PT_FNK",
+      "title": "Karate 1 - Series A",
+      "country": "Áustria",
+      "countryCode": "AUT",
+      "federation": "WKF",
+      "date": {
+        "start": "2026-10-02T09:00:00Z",
+        "end": "2026-10-04T18:00:00Z"
+      },
+      "location": {
+        "city": "Salzburgo",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 47.8095,
+          "longitude": 13.055
+        }
+      },
+      "categories": [
+        "Senior"
+      ],
+      "level": "international",
+      "eventType": "WKF - Series A",
+      "registrationUrl": "https://www.fnkp.pt",
+      "metadata": {
+        "sourceUrl": "https://www.fnkp.pt",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "ES_RFEK_20261002",
+      "source": "ES_RFEK",
+      "title": "Karate 1 Series A",
+      "country": "Áustria",
+      "countryCode": "AUT",
+      "federation": "WKF",
+      "date": {
+        "start": "2026-10-02T09:00:00Z",
+        "end": "2026-10-04T18:00:00Z"
+      },
+      "location": {
+        "city": "Salzburgo",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 47.8095,
+          "longitude": 13.055
+        }
+      },
+      "categories": [
+        "Senior"
+      ],
+      "level": "international",
+      "eventType": "WKF - Series A",
+      "registrationUrl": "https://www.rfek.es",
+      "metadata": {
+        "sourceUrl": "https://www.rfek.es",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "IT_FIJ_20261002",
+      "source": "IT_FIJLKAM",
+      "title": "WKF K1 Series A",
+      "country": "Áustria",
+      "countryCode": "AUT",
+      "federation": "WKF",
+      "date": {
+        "start": "2026-10-02T09:00:00Z",
+        "end": "2026-10-04T18:00:00Z"
+      },
+      "location": {
+        "city": "Salisburgo",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 47.8095,
+          "longitude": 13.055
+        }
+      },
+      "categories": [
+        "Senior"
+      ],
+      "level": "international",
+      "eventType": "WKF - Series A",
+      "registrationUrl": "https://www.fijlkam.it",
+      "metadata": {
+        "sourceUrl": "https://www.fijlkam.it",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "IT_FIJ_20261010",
+      "source": "IT_FIJLKAM",
+      "title": "Coppa Italia Master",
+      "country": "Itália",
+      "countryCode": "ITA",
+      "federation": "FIJLKAM",
+      "date": {
+        "start": "2026-10-10T09:00:00Z",
+        "end": "2026-10-11T18:00:00Z"
+      },
+      "location": {
+        "city": "Roseto degli Abruzzi",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 42.6847,
+          "longitude": 14.0178
+        }
+      },
+      "categories": [
+        "Master"
+      ],
+      "level": "national",
+      "eventType": "Copa/Taça",
+      "registrationUrl": "https://www.fijlkam.it",
+      "metadata": {
+        "sourceUrl": "https://www.fijlkam.it",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "PT_FNK_20261014",
+      "source": "PT_FNK",
+      "title": "Campeonato do Mundo de Cadetes, Juniores e Sub21",
+      "country": "Polónia",
+      "countryCode": "POL",
+      "federation": "WKF",
+      "date": {
+        "start": "2026-10-14T09:00:00Z",
+        "end": "2026-10-18T18:00:00Z"
+      },
+      "location": {
+        "city": "Bielsko-Biala",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 49.8225,
+          "longitude": 19.0444
+        }
+      },
+      "categories": [
+        "Cadete",
+        "Junior",
+        "Sub21"
+      ],
+      "level": "international",
+      "eventType": "WKF - World Championships",
+      "registrationUrl": "https://www.fnkp.pt",
+      "metadata": {
+        "sourceUrl": "https://www.fnkp.pt",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "ES_RFEK_20261014",
+      "source": "ES_RFEK",
+      "title": "Campeonato del Mundo Cad/Jun/Sub21",
+      "country": "Polónia",
+      "countryCode": "POL",
+      "federation": "WKF",
+      "date": {
+        "start": "2026-10-14T09:00:00Z",
+        "end": "2026-10-18T18:00:00Z"
+      },
+      "location": {
+        "city": "Bielsko-Biala",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 49.8225,
+          "longitude": 19.0444
+        }
+      },
+      "categories": [
+        "Cadete",
+        "Junior",
+        "Sub21"
+      ],
+      "level": "international",
+      "eventType": "WKF - World Championships",
+      "registrationUrl": "https://www.rfek.es",
+      "metadata": {
+        "sourceUrl": "https://www.rfek.es",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "IT_FIJ_20261016",
+      "source": "IT_FIJLKAM",
+      "title": "WKF World Cadet Junior & U21 Championships",
+      "country": "Marrocos",
+      "countryCode": "MAR",
+      "federation": "WKF",
+      "date": {
+        "start": "2026-10-16T09:00:00Z",
+        "end": "2026-10-18T18:00:00Z"
+      },
+      "location": {
+        "city": "Rabat",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 34.0209,
+          "longitude": -6.8416
+        }
+      },
+      "categories": [
+        "Cadete",
+        "Junior",
+        "Sub21"
+      ],
+      "level": "international",
+      "eventType": "WKF - World Championships",
+      "registrationUrl": "https://www.fijlkam.it",
+      "metadata": {
+        "sourceUrl": "https://www.fijlkam.it",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "ES_RFEK_20261024",
+      "source": "ES_RFEK",
+      "title": "2ª Ronda Liga Nacional Masculina Absoluto/Cadete",
+      "country": "Espanha",
+      "countryCode": "ESP",
+      "federation": "RFEK",
+      "date": {
+        "start": "2026-10-24T09:00:00Z",
+        "end": "2026-10-24T18:00:00Z"
+      },
+      "location": {
+        "city": "Elche",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 38.2669,
+          "longitude": -0.6981
+        }
+      },
+      "categories": [
+        "Absoluto",
+        "Cadete"
+      ],
+      "level": "national",
+      "eventType": "Liga Nacional",
+      "registrationUrl": "https://www.rfek.es",
+      "metadata": {
+        "sourceUrl": "https://www.rfek.es",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "ES_RFEK_20261025",
+      "source": "ES_RFEK",
+      "title": "2ª Ronda Liga Iberdrola Absoluto/Cadete",
+      "country": "Espanha",
+      "countryCode": "ESP",
+      "federation": "RFEK",
+      "date": {
+        "start": "2026-10-25T09:00:00Z",
+        "end": "2026-10-25T18:00:00Z"
+      },
+      "location": {
+        "city": "Elche",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 38.2669,
+          "longitude": -0.6981
+        }
+      },
+      "categories": [
+        "Absoluto",
+        "Cadete"
+      ],
+      "level": "national",
+      "eventType": "Liga Nacional",
+      "registrationUrl": "https://www.rfek.es",
+      "metadata": {
+        "sourceUrl": "https://www.rfek.es",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "IT_FIJ_20261026",
+      "source": "IT_FIJLKAM",
+      "title": "Open League",
+      "country": "Itália",
+      "countryCode": "ITA",
+      "federation": "FIJLKAM",
+      "date": {
+        "start": "2026-10-26T09:00:00Z",
+        "end": "2026-10-27T18:00:00Z"
+      },
+      "location": {
+        "city": "Taranto",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 40.4644,
+          "longitude": 17.247
+        }
+      },
+      "categories": [
+        "Senior"
+      ],
+      "level": "national",
+      "eventType": "Competição Nacional",
+      "registrationUrl": "https://www.fijlkam.it",
+      "metadata": {
+        "sourceUrl": "https://www.fijlkam.it",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "PT_FNK_20261031a",
+      "source": "PT_FNK",
+      "title": "Taça de Portugal (Cad, Jun e Sub21)",
+      "country": "Portugal",
+      "countryCode": "PT",
+      "federation": "Federação Nacional de Karaté - Portugal",
+      "date": {
+        "start": "2026-10-31T09:00:00Z",
+        "end": "2026-11-01T18:00:00Z"
+      },
+      "location": {
+        "city": "A definir",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 38.7223,
+          "longitude": -9.1393
+        }
+      },
+      "categories": [
+        "Cadete",
+        "Junior",
+        "Sub21"
+      ],
+      "level": "national",
+      "eventType": "Copa/Taça",
+      "registrationUrl": "https://www.fnkp.pt",
+      "metadata": {
+        "sourceUrl": "https://www.fnkp.pt",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "PT_FNK_20261031b",
+      "source": "PT_FNK",
+      "title": "Youth Olympic Games",
+      "country": "Senegal",
+      "countryCode": "SEN",
+      "federation": "WKF",
+      "date": {
+        "start": "2026-10-31T09:00:00Z",
+        "end": "2026-11-13T18:00:00Z"
+      },
+      "location": {
+        "city": "Dakar",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 14.7167,
+          "longitude": -17.4677
+        }
+      },
+      "categories": [
+        "U18"
+      ],
+      "level": "international",
+      "eventType": "Jogos",
+      "registrationUrl": "https://www.fnkp.pt",
+      "metadata": {
+        "sourceUrl": "https://www.fnkp.pt",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "ES_RFEK_20261031a",
+      "source": "ES_RFEK",
+      "title": "2ª Ronda Liga Nacional Equipos",
+      "country": "Espanha",
+      "countryCode": "ESP",
+      "federation": "RFEK",
+      "date": {
+        "start": "2026-10-31T09:00:00Z",
+        "end": "2026-10-31T18:00:00Z"
+      },
+      "location": {
+        "city": "Córdoba",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 37.8882,
+          "longitude": -4.7794
+        }
+      },
+      "categories": [
+        "Equipas"
+      ],
+      "level": "national",
+      "eventType": "Liga Nacional",
+      "registrationUrl": "https://www.rfek.es",
+      "metadata": {
+        "sourceUrl": "https://www.rfek.es",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "ES_RFEK_20261031b",
+      "source": "ES_RFEK",
+      "title": "Youth Olympics Games",
+      "country": "Senegal",
+      "countryCode": "SEN",
+      "federation": "WKF",
+      "date": {
+        "start": "2026-10-31T09:00:00Z",
+        "end": "2026-11-13T18:00:00Z"
+      },
+      "location": {
+        "city": "Dakar",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 14.7167,
+          "longitude": -17.4677
+        }
+      },
+      "categories": [
+        "U18"
+      ],
+      "level": "international",
+      "eventType": "Jogos",
+      "registrationUrl": "https://www.rfek.es",
+      "metadata": {
+        "sourceUrl": "https://www.rfek.es",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "IT_FIJ_20261031",
+      "source": "IT_FIJLKAM",
+      "title": "Campionato Italiano a Rappresentative Regionali (Kumite/Kata)",
+      "country": "Itália",
+      "countryCode": "ITA",
+      "federation": "FIJLKAM",
+      "date": {
+        "start": "2026-10-31T09:00:00Z",
+        "end": "2026-11-01T18:00:00Z"
+      },
+      "location": {
+        "city": "Napoli",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 40.8518,
+          "longitude": 14.2681
+        }
+      },
+      "categories": [
+        "Todos"
+      ],
+      "level": "national",
+      "eventType": "Competição Nacional",
+      "registrationUrl": "https://www.fijlkam.it",
+      "metadata": {
+        "sourceUrl": "https://www.fijlkam.it",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "ES_RFEK_20261101",
+      "source": "ES_RFEK",
+      "title": "2ª Ronda Liga Nacional Master",
+      "country": "Espanha",
+      "countryCode": "ESP",
+      "federation": "RFEK",
+      "date": {
+        "start": "2026-11-01T09:00:00Z",
+        "end": "2026-11-01T18:00:00Z"
+      },
+      "location": {
+        "city": "Córdoba",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 37.8882,
+          "longitude": -4.7794
+        }
+      },
+      "categories": [
+        "Master"
+      ],
+      "level": "national",
+      "eventType": "Liga Nacional",
+      "registrationUrl": "https://www.rfek.es",
+      "metadata": {
+        "sourceUrl": "https://www.rfek.es",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "ES_RFEK_20261107",
+      "source": "ES_RFEK",
+      "title": "2ª Ronda Liga Nacional Masculina Ale/Inf/Juv",
+      "country": "Espanha",
+      "countryCode": "ESP",
+      "federation": "RFEK",
+      "date": {
+        "start": "2026-11-07T09:00:00Z",
+        "end": "2026-11-07T18:00:00Z"
+      },
+      "location": {
+        "city": "Orense",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 42.3364,
+          "longitude": -7.8644
+        }
+      },
+      "categories": [
+        "Alevín",
+        "Infantil",
+        "Juvenil"
+      ],
+      "level": "national",
+      "eventType": "Liga Nacional",
+      "registrationUrl": "https://www.rfek.es",
+      "metadata": {
+        "sourceUrl": "https://www.rfek.es",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "ES_RFEK_20261108",
+      "source": "ES_RFEK",
+      "title": "2ª Ronda Liga Iberdrola Ale/Inf/Juv",
+      "country": "Espanha",
+      "countryCode": "ESP",
+      "federation": "RFEK",
+      "date": {
+        "start": "2026-11-08T09:00:00Z",
+        "end": "2026-11-08T18:00:00Z"
+      },
+      "location": {
+        "city": "Orense",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 42.3364,
+          "longitude": -7.8644
+        }
+      },
+      "categories": [
+        "Alevín",
+        "Infantil",
+        "Juvenil"
+      ],
+      "level": "national",
+      "eventType": "Liga Nacional",
+      "registrationUrl": "https://www.rfek.es",
+      "metadata": {
+        "sourceUrl": "https://www.rfek.es",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "IT_FIJ_20261108",
+      "source": "IT_FIJLKAM",
+      "title": "Kumite/Kata — Fase Regionale Qualificazione Camp. Italiano Esordienti",
+      "country": "Itália",
+      "countryCode": "ITA",
+      "federation": "FIJLKAM",
+      "date": {
+        "start": "2026-11-08T09:00:00Z",
+        "end": "2026-11-08T18:00:00Z"
+      },
+      "location": {
+        "city": "Sedi Regionali",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 41.8719,
+          "longitude": 12.5674
+        }
+      },
+      "categories": [
+        "Esordienti"
+      ],
+      "level": "regional",
+      "eventType": "Competição Nacional",
+      "registrationUrl": "https://www.fijlkam.it",
+      "metadata": {
+        "sourceUrl": "https://www.fijlkam.it",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "IT_FIJ_20261113",
+      "source": "IT_FIJLKAM",
+      "title": "Open League",
+      "country": "Itália",
+      "countryCode": "ITA",
+      "federation": "FIJLKAM",
+      "date": {
+        "start": "2026-11-13T09:00:00Z",
+        "end": "2026-11-15T18:00:00Z"
+      },
+      "location": {
+        "city": "Lido di Ostia",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 41.7358,
+          "longitude": 12.2483
+        }
+      },
+      "categories": [
+        "Senior"
+      ],
+      "level": "national",
+      "eventType": "Competição Nacional",
+      "registrationUrl": "https://www.fijlkam.it",
+      "metadata": {
+        "sourceUrl": "https://www.fijlkam.it",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "PT_FNK_20261120",
+      "source": "PT_FNK",
+      "title": "Campeonato do Mundo por Equipas",
+      "country": "China",
+      "countryCode": "CHN",
+      "federation": "WKF",
+      "date": {
+        "start": "2026-11-20T09:00:00Z",
+        "end": "2026-11-22T18:00:00Z"
+      },
+      "location": {
+        "city": "Hangzhou",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 30.2741,
+          "longitude": 120.1551
+        }
+      },
+      "categories": [
+        "Senior"
+      ],
+      "level": "international",
+      "eventType": "WKF - World Championships",
+      "registrationUrl": "https://www.fnkp.pt",
+      "metadata": {
+        "sourceUrl": "https://www.fnkp.pt",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "ES_RFEK_20261120",
+      "source": "ES_RFEK",
+      "title": "WKF Karate World Cup - National Teams",
+      "country": "China",
+      "countryCode": "CHN",
+      "federation": "WKF",
+      "date": {
+        "start": "2026-11-20T09:00:00Z",
+        "end": "2026-11-22T18:00:00Z"
+      },
+      "location": {
+        "city": "Hangzhou",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 30.2741,
+          "longitude": 120.1551
+        }
+      },
+      "categories": [
+        "Senior"
+      ],
+      "level": "international",
+      "eventType": "WKF - World Championships",
+      "registrationUrl": "https://www.rfek.es",
+      "metadata": {
+        "sourceUrl": "https://www.rfek.es",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "IT_FIJ_20261121",
+      "source": "IT_FIJLKAM",
+      "title": "WKF Karate World Cup",
+      "country": "China",
+      "countryCode": "CHN",
+      "federation": "WKF",
+      "date": {
+        "start": "2026-11-21T09:00:00Z",
+        "end": "2026-11-23T18:00:00Z"
+      },
+      "location": {
+        "city": "Hangzhou",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 30.2741,
+          "longitude": 120.1551
+        }
+      },
+      "categories": [
+        "Senior"
+      ],
+      "level": "international",
+      "eventType": "WKF - World Championships",
+      "registrationUrl": "https://www.fijlkam.it",
+      "metadata": {
+        "sourceUrl": "https://www.fijlkam.it",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "ES_RFEK_20261127",
+      "source": "ES_RFEK",
+      "title": "Campeonato España Cadete, Junior y Sub21",
+      "country": "Espanha",
+      "countryCode": "ESP",
+      "federation": "RFEK",
+      "date": {
+        "start": "2026-11-27T09:00:00Z",
+        "end": "2026-11-29T18:00:00Z"
+      },
+      "location": {
+        "city": "Valencia",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 39.4699,
+          "longitude": -0.3763
+        }
+      },
+      "categories": [
+        "Cadete",
+        "Junior",
+        "Sub21"
+      ],
+      "level": "national",
+      "eventType": "Competição Nacional",
+      "registrationUrl": "https://www.rfek.es",
+      "metadata": {
+        "sourceUrl": "https://www.rfek.es",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "PT_FNK_20261128",
+      "source": "PT_FNK",
+      "title": "Campeonato Nacional de Cad, Jun e Sub21",
+      "country": "Portugal",
+      "countryCode": "PT",
+      "federation": "Federação Nacional de Karaté - Portugal",
+      "date": {
+        "start": "2026-11-28T09:00:00Z",
+        "end": "2026-11-29T18:00:00Z"
+      },
+      "location": {
+        "city": "A definir",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 38.7223,
+          "longitude": -9.1393
+        }
+      },
+      "categories": [
+        "Cadete",
+        "Junior",
+        "Sub21"
+      ],
+      "level": "national",
+      "eventType": "Competição Nacional",
+      "registrationUrl": "https://www.fnkp.pt",
+      "metadata": {
+        "sourceUrl": "https://www.fnkp.pt",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "IT_FIJ_20261128",
+      "source": "IT_FIJLKAM",
+      "title": "Campionato Italiano Esordienti (Kumite/Kata)",
+      "country": "Itália",
+      "countryCode": "ITA",
+      "federation": "FIJLKAM",
+      "date": {
+        "start": "2026-11-28T09:00:00Z",
+        "end": "2026-11-29T18:00:00Z"
+      },
+      "location": {
+        "city": "Vigevano",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 45.3143,
+          "longitude": 8.8559
+        }
+      },
+      "categories": [
+        "Esordienti"
+      ],
+      "level": "national",
+      "eventType": "Competição Nacional",
+      "registrationUrl": "https://www.fijlkam.it",
+      "metadata": {
+        "sourceUrl": "https://www.fijlkam.it",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "PT_FNK_20261205",
+      "source": "PT_FNK",
+      "title": "Taça de Portugal (Senior)",
+      "country": "Portugal",
+      "countryCode": "PT",
+      "federation": "Federação Nacional de Karaté - Portugal",
+      "date": {
+        "start": "2026-12-05T09:00:00Z",
+        "end": "2026-12-06T18:00:00Z"
+      },
+      "location": {
+        "city": "A definir",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 38.7223,
+          "longitude": -9.1393
+        }
+      },
+      "categories": [
+        "Senior"
+      ],
+      "level": "national",
+      "eventType": "Copa/Taça",
+      "registrationUrl": "https://www.fnkp.pt",
+      "metadata": {
+        "sourceUrl": "https://www.fnkp.pt",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "PT_FNK_20261210",
+      "source": "PT_FNK",
+      "title": "Karate 1 - Youth League",
+      "country": "Itália",
+      "countryCode": "ITA",
+      "federation": "WKF",
+      "date": {
+        "start": "2026-12-10T09:00:00Z",
+        "end": "2026-12-13T18:00:00Z"
+      },
+      "location": {
+        "city": "Veneza",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 45.4408,
+          "longitude": 12.3155
+        }
+      },
+      "categories": [
+        "U14",
+        "Cadete",
+        "Junior"
+      ],
+      "level": "international",
+      "eventType": "WKF - Youth League",
+      "registrationUrl": "https://www.fnkp.pt",
+      "metadata": {
+        "sourceUrl": "https://www.fnkp.pt",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "ES_RFEK_20261210",
+      "source": "ES_RFEK",
+      "title": "Karate 1 Youth League",
+      "country": "Itália",
+      "countryCode": "ITA",
+      "federation": "WKF",
+      "date": {
+        "start": "2026-12-10T09:00:00Z",
+        "end": "2026-12-13T18:00:00Z"
+      },
+      "location": {
+        "city": "Venecia",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 45.4408,
+          "longitude": 12.3155
+        }
+      },
+      "categories": [
+        "U14",
+        "Cadete",
+        "Junior"
+      ],
+      "level": "international",
+      "eventType": "WKF - Youth League",
+      "registrationUrl": "https://www.rfek.es",
+      "metadata": {
+        "sourceUrl": "https://www.rfek.es",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "IT_FIJ_20261210",
+      "source": "IT_FIJLKAM",
+      "title": "WKF K1 Youth League",
+      "country": "Itália",
+      "countryCode": "ITA",
+      "federation": "WKF",
+      "date": {
+        "start": "2026-12-10T09:00:00Z",
+        "end": "2026-12-13T18:00:00Z"
+      },
+      "location": {
+        "city": "Jesolo",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 45.5361,
+          "longitude": 12.6397
+        }
+      },
+      "categories": [
+        "U14",
+        "Cadete",
+        "Junior"
+      ],
+      "level": "international",
+      "eventType": "WKF - Youth League",
+      "registrationUrl": "https://www.fijlkam.it",
+      "metadata": {
+        "sourceUrl": "https://www.fijlkam.it",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
+    },
+    {
+      "id": "ES_RFEK_20261217",
+      "source": "ES_RFEK",
+      "title": "Gran Final Liga Iberdrola + Liga Nacional (todas as categorias)",
+      "country": "Espanha",
+      "countryCode": "ESP",
+      "federation": "RFEK",
+      "date": {
+        "start": "2026-12-17T09:00:00Z",
+        "end": "2026-12-20T18:00:00Z"
+      },
+      "location": {
+        "city": "Guadalajara",
+        "venue": "A confirmar",
+        "address": "",
+        "coordinates": {
+          "latitude": 40.6326,
+          "longitude": -3.1624
+        }
+      },
+      "categories": [
+        "Todos"
+      ],
+      "level": "national",
+      "eventType": "Liga Nacional",
+      "registrationUrl": "https://www.rfek.es",
+      "metadata": {
+        "sourceUrl": "https://www.rfek.es",
+        "scrapedAt": "2026-06-24T23:30:00Z",
+        "quality": 1.0,
+        "extractedFromPdf": true
+      }
     }
   ]
 }
