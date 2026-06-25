@@ -13,21 +13,21 @@
             --bg:#f0f2f5;--card:#fff;--border:#e0e0e0;
             --text:#212121;--muted:#757575;
         }
-        body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;}
+        body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);}
 
         /* HEADER */
         header{background:linear-gradient(135deg,var(--sec),var(--pri));color:#fff;
             padding:.9rem 1rem;position:sticky;top:0;z-index:100;
             box-shadow:0 2px 12px rgba(0,0,0,.25);}
-        .hdr{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:.5rem;}
-        .logo{display:flex;align-items:center;gap:.5rem;font-size:1.2rem;font-weight:800;letter-spacing:.5px;}
-        .logo i{color:var(--acc);font-size:1.4rem;}
+        .hdr{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;}
+        .logo{display:flex;align-items:center;gap:.5rem;font-size:1.2rem;font-weight:800;}
+        .logo i{color:var(--acc);}
         .hdr-pills{display:flex;gap:.5rem;}
         .hdr-pill{background:rgba(255,255,255,.18);border-radius:20px;padding:.25rem .7rem;
             font-size:.78rem;font-weight:700;display:flex;align-items:center;gap:.3rem;}
         .hdr-pill b{color:var(--acc);}
 
-        /* CONTENT */
+        /* WRAP */
         .wrap{max-width:1200px;margin:0 auto;padding:.9rem .9rem 2rem;}
 
         /* FILTROS */
@@ -39,12 +39,10 @@
             border-radius:9px;font-size:.9rem;background:#fff;appearance:none;-webkit-appearance:none;}
         select:focus,input:focus{outline:none;border-color:var(--pri);}
         .fbtns{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;}
-        .btn{padding:.7rem;border:none;border-radius:9px;font-weight:700;
-            font-size:.88rem;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:.35rem;}
+        .btn{padding:.7rem;border:none;border-radius:9px;font-weight:700;font-size:.88rem;
+            cursor:pointer;display:flex;align-items:center;justify-content:center;gap:.35rem;}
         .btn-p{background:linear-gradient(135deg,var(--pri),var(--acc));color:#fff;}
-        .btn-p:active{opacity:.85;}
         .btn-g{background:var(--bg);color:var(--muted);border:1.5px solid var(--border);}
-        .btn-g:active{background:var(--border);}
 
         /* TABS */
         .tabs{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.35rem;
@@ -64,7 +62,6 @@
         @media(min-width:580px){.cards{grid-template-columns:1fr 1fr;}}
         @media(min-width:900px){.cards{grid-template-columns:1fr 1fr 1fr;}}
         @media(min-width:1200px){.cards{grid-template-columns:repeat(4,1fr);}}
-
         .card{background:var(--card);border-radius:14px;overflow:hidden;
             box-shadow:0 1px 6px rgba(0,0,0,.09);display:flex;flex-direction:column;}
         .card-top{background:linear-gradient(135deg,var(--sec),var(--pri));color:#fff;
@@ -85,81 +82,75 @@
             display:flex;align-items:center;justify-content:center;gap:.3rem;}
         .cbtn-p{background:linear-gradient(135deg,var(--pri),var(--acc));color:#fff;}
         .cbtn-o{background:#fff;color:var(--pri);border:1.5px solid var(--pri);text-decoration:none;}
-        .cbtn-p:active,.cbtn-o:active{opacity:.8;}
 
         /* CALENDÁRIO */
         .cal-wrap{background:var(--card);border-radius:14px;padding:.9rem;box-shadow:0 1px 6px rgba(0,0,0,.08);}
-        .cal-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:.8rem;gap:.5rem;}
+        .cal-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:.8rem;flex-wrap:wrap;gap:.5rem;}
         .cal-title{font-size:1rem;font-weight:800;color:var(--sec);}
         .cal-nav{display:flex;gap:.35rem;}
-        .cal-nav button{padding:.45rem .7rem;border:1.5px solid var(--border);background:#fff;
+        .cal-nav button{padding:.4rem .7rem;border:1.5px solid var(--border);background:#fff;
             border-radius:8px;font-weight:700;cursor:pointer;font-size:.8rem;}
-        .cal-nav button:active{background:var(--bg);}
-
-        /* Calendário mobile: scroll horizontal */
-        .cal-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;}
-        .cal-inner{min-width:320px;}
-        .cal-wdays{display:grid;grid-template-columns:repeat(7,1fr);gap:2px;margin-bottom:2px;}
-        .cal-wday{text-align:center;font-size:.68rem;font-weight:700;color:var(--sec);
-            padding:.3rem 0;background:#f0f2f5;border-radius:4px;}
-        .cal-days{display:grid;grid-template-columns:repeat(7,1fr);gap:2px;}
-        .cal-day{border:1.5px solid var(--border);border-radius:8px;padding:.3rem;
-            min-height:62px;background:#fff;cursor:pointer;position:relative;}
-        .cal-day.other{background:#fafafa;opacity:.4;}
+        .cal-outer{overflow-x:auto;-webkit-overflow-scrolling:touch;}
+        .cal-inner{min-width:480px;}
+        .cal-wdays,.cal-days{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;}
+        .cal-wdays{margin-bottom:3px;}
+        .cal-wday{text-align:center;font-size:.7rem;font-weight:700;color:var(--sec);
+            padding:.35rem 0;background:#f0f2f5;border-radius:5px;}
+        .cal-day{border:1.5px solid var(--border);border-radius:8px;padding:.3rem .35rem;
+            min-height:72px;background:#fff;overflow:hidden;}
+        .cal-day.other{background:#fafafa;opacity:.35;}
         .cal-day.today{border-color:var(--acc);border-width:2px;background:#fff9f0;}
-        .cal-num{font-weight:700;font-size:.78rem;color:var(--text);margin-bottom:2px;}
+        .cal-num{font-weight:700;font-size:.75rem;color:var(--text);margin-bottom:3px;}
         .cal-day.today .cal-num{color:var(--acc);}
-        .cal-ev{background:linear-gradient(135deg,var(--pri),var(--acc));color:#fff;
-            padding:1px 4px;border-radius:3px;font-size:.55rem;font-weight:700;
-            white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom:1px;cursor:pointer;display:block;}
-        .cal-ev.international{background:linear-gradient(135deg,#6a1b9a,#c0195a);}
-        .cal-ev.regional{background:linear-gradient(135deg,#1565c0,#0097a7);}
-        .cal-more{font-size:.55rem;color:var(--pri);font-weight:700;padding:1px 4px;}
+
+        /* Etiqueta compacta no calendário */
+        .cal-ev{padding:2px 5px;border-radius:4px;font-size:.6rem;font-weight:700;
+            white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+            margin-bottom:2px;cursor:pointer;display:block;color:#fff;}
+        .cal-ev.national     {background:#c0195a;}
+        .cal-ev.international{background:#6a1b9a;}
+        .cal-ev.regional     {background:#1565c0;}
+        .cal-more{font-size:.58rem;color:var(--pri);font-weight:700;padding:1px 4px;cursor:pointer;}
 
         /* MAPA */
         #map{height:60vh;min-height:320px;border-radius:14px;box-shadow:0 1px 6px rgba(0,0,0,.08);}
 
-        /* MODAL — bottom sheet */
-        .modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:500;}
-        .modal-overlay.open{display:block;}
-        .modal-sheet{position:fixed;bottom:0;left:0;right:0;z-index:600;
-            background:var(--card);border-radius:20px 20px 0 0;
-            max-height:90vh;overflow-y:auto;
-            transform:translateY(100%);transition:transform .3s cubic-bezier(.4,0,.2,1);}
-        .modal-sheet.open{transform:translateY(0);}
+        /* MODAL — usa display:none quando fechado para não aparecer no fundo */
+        .modal-wrap{display:none;position:fixed;inset:0;z-index:500;}
+        .modal-wrap.open{display:flex;align-items:flex-end;justify-content:center;}
+        @media(min-width:640px){.modal-wrap.open{align-items:center;padding:1rem;}}
+        .modal-overlay{position:absolute;inset:0;background:rgba(0,0,0,.45);}
+        .modal-sheet{position:relative;z-index:1;background:var(--card);
+            border-radius:20px 20px 0 0;width:100%;max-height:90vh;overflow-y:auto;
+            animation:slideUp .25s ease;}
         @media(min-width:640px){
-            .modal-overlay.open{display:flex;align-items:center;justify-content:center;}
-            .modal-sheet{position:static;border-radius:18px;max-width:560px;width:100%;
-                max-height:85vh;transform:none;transition:none;}
+            .modal-sheet{border-radius:18px;max-width:560px;max-height:85vh;animation:none;}
         }
-        .modal-handle{width:40px;height:4px;background:var(--border);border-radius:2px;
-            margin:.75rem auto .25rem;}
-        .modal-hdr{background:linear-gradient(135deg,var(--sec),var(--pri));color:#fff;
-            padding:1rem 1.1rem 1.1rem;}
-        .modal-htitle{font-size:1.05rem;font-weight:800;line-height:1.3;margin-bottom:.25rem;}
-        .modal-hfed{font-size:.78rem;opacity:.8;}
-        .modal-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.5rem;}
+        @keyframes slideUp{from{transform:translateY(60px);opacity:0}to{transform:translateY(0);opacity:1}}
+        .modal-handle{width:36px;height:4px;background:var(--border);border-radius:2px;
+            margin:.7rem auto .2rem;}
+        @media(min-width:640px){.modal-handle{display:none;}}
+        .modal-hdr{background:linear-gradient(135deg,var(--sec),var(--pri));color:#fff;padding:1rem 1.1rem;}
+        .modal-top{display:flex;justify-content:space-between;align-items:flex-start;gap:.5rem;}
+        .modal-htitle{font-size:1rem;font-weight:800;line-height:1.3;}
+        .modal-hfed{font-size:.75rem;opacity:.8;margin-top:.25rem;}
         .modal-x{background:rgba(255,255,255,.2);border:none;color:#fff;
-            width:32px;height:32px;border-radius:50%;font-size:1.1rem;cursor:pointer;
+            width:30px;height:30px;border-radius:50%;font-size:1rem;cursor:pointer;
             display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-        .modal-x:active{background:rgba(255,255,255,.35);}
         .modal-body{padding:1rem 1.1rem;}
         .mgrid{display:grid;grid-template-columns:1fr 1fr;gap:.85rem;margin-bottom:1rem;}
-        .ml{font-size:.7rem;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:.2rem;}
+        .ml{font-size:.68rem;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:.2rem;}
         .mv{font-size:.88rem;color:var(--text);line-height:1.35;}
-        #evMap{height:200px;border-radius:10px;border:1.5px solid var(--border);margin:.75rem 0;}
+        .sec-title{font-size:.68rem;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin:.75rem 0 .4rem;}
+        #evMap{height:200px;border-radius:10px;border:1.5px solid var(--border);margin-bottom:.6rem;}
         .map-btns{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-bottom:.6rem;}
         .mbtn{display:flex;align-items:center;justify-content:center;gap:.35rem;
             padding:.65rem;border-radius:9px;font-weight:700;font-size:.82rem;text-decoration:none;}
         .mbtn-g{background:#4285f4;color:#fff;}
         .mbtn-w{background:#00c1ff;color:#fff;}
-        .mbtn-g:active,.mbtn-w:active{opacity:.85;}
-        .mbtn-fed{display:flex;align-items:center;justify-content:center;gap:.4rem;
-            padding:.8rem;background:linear-gradient(135deg,var(--pri),var(--acc));
-            color:#fff;text-decoration:none;border-radius:10px;font-weight:800;font-size:.88rem;}
-        .mbtn-fed:active{opacity:.85;}
-        .sec-title{font-size:.7rem;font-weight:800;color:var(--muted);text-transform:uppercase;
-            letter-spacing:.5px;margin:.75rem 0 .4rem;}
+        .mbtn-fed{display:flex;align-items:center;justify-content:center;gap:.4rem;padding:.8rem;
+            background:linear-gradient(135deg,var(--pri),var(--acc));color:#fff;
+            text-decoration:none;border-radius:10px;font-weight:800;font-size:.88rem;margin-bottom:.5rem;}
 
         /* EMPTY */
         .empty{text-align:center;padding:3rem 1.5rem;color:var(--muted);}
@@ -168,7 +159,6 @@
         /* FOOTER */
         footer{background:var(--sec);color:#fff;text-align:center;padding:1rem;font-size:.78rem;}
         footer a{color:rgba(255,255,255,.6);text-decoration:none;margin-left:.5rem;}
-        footer a:hover{color:#fff;}
     </style>
 </head>
 <body>
@@ -177,14 +167,13 @@
     <div class="hdr">
         <div class="logo"><i class="fas fa-crown"></i> Karate Events</div>
         <div class="hdr-pills">
-            <div class="hdr-pill"><i class="fas fa-calendar-check"></i><b id="evCount">0</b></div>
-            <div class="hdr-pill"><i class="fas fa-globe"></i><b id="ctCount">0</b></div>
+            <div class="hdr-pill"><i class="fas fa-calendar-check"></i><b id="evCount">0</b> provas</div>
+            <div class="hdr-pill"><i class="fas fa-globe"></i><b id="ctCount">0</b> países</div>
         </div>
     </div>
 </header>
 
 <div class="wrap">
-
     <!-- FILTROS -->
     <div class="filters">
         <div class="frow">
@@ -200,15 +189,9 @@
 
     <!-- TABS -->
     <div class="tabs">
-        <button class="tab active" id="tab-list" onclick="switchView('list',this)">
-            <i class="fas fa-list"></i> Lista
-        </button>
-        <button class="tab" id="tab-calendar" onclick="switchView('calendar',this)">
-            <i class="fas fa-calendar"></i> Calendário
-        </button>
-        <button class="tab" id="tab-map" onclick="switchView('map',this)">
-            <i class="fas fa-map-marker-alt"></i> Mapa
-        </button>
+        <button class="tab active" onclick="switchView('list',this)"><i class="fas fa-list"></i> Lista</button>
+        <button class="tab" onclick="switchView('calendar',this)"><i class="fas fa-calendar"></i> Calendário</button>
+        <button class="tab" onclick="switchView('map',this)"><i class="fas fa-map-marker-alt"></i> Mapa</button>
     </div>
 
     <!-- LISTA -->
@@ -227,7 +210,7 @@
                     <button onclick="nextMonth()"><i class="fas fa-chevron-right"></i></button>
                 </div>
             </div>
-            <div class="cal-scroll">
+            <div class="cal-outer">
                 <div class="cal-inner">
                     <div class="cal-wdays">
                         <div class="cal-wday">Dom</div><div class="cal-wday">Seg</div>
@@ -245,23 +228,24 @@
     <div class="view" id="view-map">
         <div id="map"></div>
     </div>
-
 </div>
 
-<!-- MODAL -->
-<div class="modal-overlay" id="overlay" onclick="closeModal()"></div>
-<div class="modal-sheet" id="sheet">
-    <div class="modal-handle"></div>
-    <div class="modal-hdr">
-        <div class="modal-top">
-            <div>
-                <div class="modal-htitle" id="mTitle"></div>
-                <div class="modal-hfed" id="mFed"></div>
+<!-- MODAL — completamente oculto quando fechado -->
+<div class="modal-wrap" id="modalWrap">
+    <div class="modal-overlay" onclick="closeModal()"></div>
+    <div class="modal-sheet">
+        <div class="modal-handle"></div>
+        <div class="modal-hdr">
+            <div class="modal-top">
+                <div>
+                    <div class="modal-htitle" id="mTitle"></div>
+                    <div class="modal-hfed" id="mFed"></div>
+                </div>
+                <button class="modal-x" onclick="closeModal()">×</button>
             </div>
-            <button class="modal-x" onclick="closeModal()">×</button>
         </div>
+        <div class="modal-body" id="mBody"></div>
     </div>
-    <div class="modal-body" id="mBody"></div>
 </div>
 
 <footer>
@@ -274,32 +258,37 @@
 let all=[],filtered=[],mapL=null,evMap=null;
 let calDate=new Date(); calDate.setDate(1);
 
-const FEDS={
-    PT_FNK:{w:"https://www.fnkp.pt"},
-    ES_RFEK:{w:"https://www.rfek.es"},
-    IT_FIJLKAM:{w:"https://www.fijlkam.it"},
-    FR_FFKA:{w:"https://www.ffkarate.fr"},
-    WKF:{w:"https://www.wkf.net"}
+// Flags e siglas por source
+const FED_INFO = {
+    PT_FNK:      {flag:'🇵🇹', abbr:'FNK-P',   web:'https://www.fnkp.pt'},
+    ES_RFEK:     {flag:'🇪🇸', abbr:'RFEK',    web:'https://www.rfek.es'},
+    IT_FIJLKAM:  {flag:'🇮🇹', abbr:'FIJLKAM', web:'https://www.fijlkam.it'},
+    FR_FFKA:     {flag:'🇫🇷', abbr:'FFKA',    web:'https://www.ffkarate.fr'},
+    WKF:         {flag:'🌍', abbr:'WKF',     web:'https://www.wkf.net'},
 };
 
-document.addEventListener('DOMContentLoaded',async()=>{
+document.addEventListener('DOMContentLoaded', async()=>{
     await load(); buildFilters(); renderCards(); renderCalendar();
 });
 
 async function load(){
     try{
-        const d=await(await fetch('events.json')).json();
-        all=d.events||[]; filtered=[...all];
-        document.getElementById('evCount').textContent=all.length;
-        document.getElementById('ctCount').textContent=new Set(all.map(e=>e.country)).size;
+        const d = await(await fetch('events.json')).json();
+        all = d.events||[]; filtered=[...all];
+        document.getElementById('evCount').textContent = all.length;
+        document.getElementById('ctCount').textContent = new Set(all.map(e=>e.country)).size;
     }catch(e){console.error(e);}
 }
 
 function buildFilters(){
     const cs=document.getElementById('fCountry');
-    [...new Set(all.map(e=>e.country))].sort().forEach(c=>cs.innerHTML+=`<option value="${c}">${c}</option>`);
+    [...new Set(all.map(e=>e.country))].sort().forEach(c=>{
+        const info = Object.values(FED_INFO).find(f=>f&&false)||null;
+        cs.innerHTML += `<option value="${c}">${c}</option>`;
+    });
     const ts=document.getElementById('fType');
-    [...new Set(all.map(e=>e.eventType).filter(Boolean))].sort().forEach(t=>ts.innerHTML+=`<option value="${t}">${t}</option>`);
+    [...new Set(all.map(e=>e.eventType).filter(Boolean))].sort().forEach(t=>
+        ts.innerHTML+=`<option value="${t}">${t}</option>`);
 }
 
 function applyFilters(){
@@ -319,32 +308,45 @@ function clearFilters(){
 function switchView(n,btn){
     document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
     document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
-    document.getElementById('view-'+n).classList.add('active'); btn.classList.add('active');
+    document.getElementById('view-'+n).classList.add('active');
+    btn.classList.add('active');
     if(n==='map'&&!mapL)initMap();
     else if(n==='map'&&mapL){mapL.invalidateSize();updateMapMarkers();}
 }
 
 function lvLabel(l){return{national:'Nacional',regional:'Regional',international:'Internacional'}[l]||l;}
 
+// Etiqueta curta para o calendário: flag + sigla da federação
+function calLabel(ev){
+    const fi = FED_INFO[ev.source];
+    if(fi) return `${fi.flag} ${fi.abbr}`;
+    return ev.source || '—';
+}
+
 function renderCards(){
     const g=document.getElementById('cardGrid');
     const sorted=[...filtered].sort((a,b)=>new Date(a.date.start)-new Date(b.date.start));
-    if(!sorted.length){g.innerHTML=`<div class="empty" style="grid-column:1/-1"><i class="fas fa-search"></i><p>Nenhuma prova encontrada.</p></div>`;return;}
+    if(!sorted.length){
+        g.innerHTML=`<div class="empty" style="grid-column:1/-1"><i class="fas fa-search"></i><p>Nenhuma prova encontrada.</p></div>`;
+        return;
+    }
     g.innerHTML=sorted.map(ev=>{
         const d=new Date(ev.date.start);
+        const fi=FED_INFO[ev.source]||{flag:'🏳️',abbr:ev.source};
         const idx=all.indexOf(ev);
-        const fed=FEDS[ev.source]||{};
         return `<div class="card">
             <div class="card-top">
-                <div><div class="card-day">${d.getDate()}</div>
-                <div class="card-month">${d.toLocaleDateString('pt-PT',{month:'short',year:'numeric'}).replace('.','')} </div></div>
+                <div>
+                    <div class="card-day">${d.getDate()}</div>
+                    <div class="card-month">${d.toLocaleDateString('pt-PT',{month:'short',year:'numeric'}).replace('.','')} </div>
+                </div>
                 <span class="card-lv">${lvLabel(ev.level)}</span>
             </div>
             <div class="card-body">
                 <div class="card-title">${ev.title}</div>
                 <div class="card-meta"><i class="fas fa-map-marker-alt"></i>${ev.location.city}</div>
                 <div class="card-meta"><i class="fas fa-flag"></i>${ev.country}</div>
-                <div class="card-meta"><i class="fas fa-building"></i>${ev.federation}</div>
+                <div class="card-meta"><i class="fas fa-building"></i>${fi.flag} ${fi.abbr} — ${ev.federation}</div>
                 <div class="card-tags">
                     ${ev.eventType?`<span class="tag tag-type">${ev.eventType}</span>`:''}
                     ${(ev.categories||[]).slice(0,2).map(c=>`<span class="tag">${c}</span>`).join('')}
@@ -352,7 +354,7 @@ function renderCards(){
             </div>
             <div class="card-foot">
                 <button class="cbtn cbtn-p" onclick="showModal(${idx})"><i class="fas fa-map-marker-alt"></i> Detalhes</button>
-                ${fed.w?`<a href="${fed.w}" target="_blank" rel="noopener" class="cbtn cbtn-o"><i class="fas fa-external-link-alt"></i> Fed.</a>`:''}
+                ${fi.web?`<a href="${fi.web}" target="_blank" rel="noopener" class="cbtn cbtn-o"><i class="fas fa-external-link-alt"></i> Fed.</a>`:''}
             </div>
         </div>`;
     }).join('');
@@ -360,19 +362,18 @@ function renderCards(){
 
 function showModal(idx){
     const ev=all[idx];
-    const fed=FEDS[ev.source]||{};
+    const fi=FED_INFO[ev.source]||{flag:'🏳️',abbr:ev.source,web:null};
     const d=new Date(ev.date.start);
     const dE=ev.date.end?new Date(ev.date.end):null;
     const ds=d.toLocaleDateString('pt-PT',{weekday:'short',year:'numeric',month:'short',day:'numeric'});
     const de=dE&&dE.toDateString()!==d.toDateString()?` → ${dE.toLocaleDateString('pt-PT',{day:'numeric',month:'short'})}`:'';
     const coords=ev.location?.coordinates;
-    const lat=coords?.latitude||48.8;
-    const lng=coords?.longitude||2.35;
-    const mapsUrl=coords?`https://www.google.com/maps/search/?api=1&query=${lat},${lng}`:`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(ev.location.city)}`;
-    const wazeUrl=coords?`https://waze.com/ul?ll=${lat},${lng}&navigate=yes`:`https://waze.com/ul?q=${encodeURIComponent(ev.location.city)}`;
+    const lat=coords?.latitude||48.8, lng=coords?.longitude||2.35;
+    const mapsUrl=`https://www.google.com/maps/search/?api=1&query=${lat},${lng}`;
+    const wazeUrl=`https://waze.com/ul?ll=${lat},${lng}&navigate=yes`;
 
     document.getElementById('mTitle').textContent=ev.title;
-    document.getElementById('mFed').textContent=`${ev.federation} · ${ev.country}`;
+    document.getElementById('mFed').textContent=`${fi.flag} ${fi.abbr} — ${ev.country}`;
     document.getElementById('mBody').innerHTML=`
         <div class="mgrid">
             <div><div class="ml">Data</div><div class="mv">${ds}${de}</div></div>
@@ -380,34 +381,32 @@ function showModal(idx){
             <div><div class="ml">Cidade</div><div class="mv">${ev.location.city}</div></div>
             <div><div class="ml">Local</div><div class="mv">${ev.location.venue&&ev.location.venue!=='A confirmar'?ev.location.venue:'—'}</div></div>
         </div>
-        ${ev.categories?.length?`<div class="ml">Categorias</div><div class="card-tags" style="margin:.35rem 0 .75rem">${ev.categories.map(c=>`<span class="tag">${c}</span>`).join('')}</div>`:''}
+        ${ev.categories?.length?`<div class="ml">Categorias</div><div class="card-tags" style="margin:.3rem 0 .75rem">${ev.categories.map(c=>`<span class="tag">${c}</span>`).join('')}</div>`:''}
         <div class="sec-title"><i class="fas fa-map-marked-alt"></i> Localização</div>
         <div id="evMap"></div>
         <div class="map-btns">
             <a href="${mapsUrl}" target="_blank" rel="noopener" class="mbtn mbtn-g"><i class="fas fa-map"></i> Google Maps</a>
             <a href="${wazeUrl}" target="_blank" rel="noopener" class="mbtn mbtn-w"><i class="fas fa-car"></i> Waze</a>
         </div>
-        ${fed.w?`<a href="${fed.w}" target="_blank" rel="noopener" class="mbtn-fed"><i class="fas fa-external-link-alt"></i> Página Oficial da Federação</a>`:''}
+        ${fi.web?`<a href="${fi.web}" target="_blank" rel="noopener" class="mbtn-fed"><i class="fas fa-external-link-alt"></i> Página Oficial da Federação</a>`:''}
         <div style="height:.5rem"></div>
     `;
 
-    document.getElementById('overlay').classList.add('open');
-    document.getElementById('sheet').classList.add('open');
+    document.getElementById('modalWrap').classList.add('open');
     document.body.style.overflow='hidden';
 
     setTimeout(()=>{
         if(evMap){evMap.remove();evMap=null;}
         evMap=L.map('evMap').setView([lat,lng],13);
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'© OpenStreetMap'}).addTo(evMap);
-        const icon=L.divIcon({html:`<div style="background:linear-gradient(135deg,#c0195a,#ff6f00);width:28px;height:28px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);border:3px solid white;box-shadow:0 2px 8px rgba(0,0,0,.4)"></div>`,iconSize:[28,28],iconAnchor:[14,28],className:''});
+        const icon=L.divIcon({html:`<div style="background:linear-gradient(135deg,#c0195a,#ff6f00);width:26px;height:26px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);border:3px solid white;box-shadow:0 2px 8px rgba(0,0,0,.4)"></div>`,iconSize:[26,26],iconAnchor:[13,26],className:''});
         L.marker([lat,lng],{icon}).addTo(evMap).bindPopup(`<strong>${ev.title}</strong><br>${ev.location.city}`).openPopup();
     },200);
 }
 
 function closeModal(){
     if(evMap){evMap.remove();evMap=null;}
-    document.getElementById('overlay').classList.remove('open');
-    document.getElementById('sheet').classList.remove('open');
+    document.getElementById('modalWrap').classList.remove('open');
     document.body.style.overflow='';
 }
 
@@ -428,23 +427,26 @@ function renderCalendar(){
     }
     for(let day=1;day<=days;day++){
         const d=document.createElement('div');d.className='cal-day';
-        const dt=new Date(yr,mo,day);
-        if(dt.toDateString()===today.toDateString())d.classList.add('today');
+        if(new Date(yr,mo,day).toDateString()===today.toDateString())d.classList.add('today');
         d.innerHTML=`<div class="cal-num">${day}</div>`;
         const evs=filtered.filter(ev=>{
             const ed=new Date(ev.date.start);
             return ed.getFullYear()===yr&&ed.getMonth()===mo&&ed.getDate()===day;
         });
-        evs.slice(0,2).forEach(ev=>{
+        // Mostrar máximo 3 eventos com etiqueta curta: flag + sigla
+        evs.slice(0,3).forEach(ev=>{
             const b=document.createElement('div');
             b.className=`cal-ev ${ev.level}`;
-            b.textContent=ev.title;b.title=ev.title;
+            b.textContent=calLabel(ev);   // "🇵🇹 FNK-P" em vez do nome completo
+            b.title=ev.title;             // nome completo no hover
             b.onclick=()=>showModal(all.indexOf(ev));
             d.appendChild(b);
         });
-        if(evs.length>2){
+        if(evs.length>3){
             const m=document.createElement('div');
-            m.className='cal-more';m.textContent=`+${evs.length-2} mais`;
+            m.className='cal-more';
+            m.textContent=`+${evs.length-3} mais`;
+            m.onclick=()=>showModal(all.indexOf(evs[3]));
             d.appendChild(m);
         }
         c.appendChild(d);
@@ -471,11 +473,12 @@ function updateMapMarkers(){
     filtered.forEach(ev=>{
         const co=ev.location?.coordinates;
         if(!co)return;
+        const fi=FED_INFO[ev.source]||{flag:'🏳️'};
         L.circleMarker([co.latitude,co.longitude],{
             radius:7,
             fillColor:ev.level==='international'?'#7b1fa2':ev.level==='regional'?'#1565c0':'#c0195a',
             color:'#fff',weight:2,fillOpacity:.85
-        }).bindPopup(`<strong>${ev.title}</strong><br>${ev.location.city}`)
+        }).bindPopup(`${fi.flag} <strong>${ev.title}</strong><br>${ev.location.city}`)
         .on('click',()=>showModal(all.indexOf(ev))).addTo(mapL);
     });
 }
