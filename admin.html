@@ -15,6 +15,38 @@
         }
         body { font-family: 'Segoe UI', sans-serif; background: #f0f2f5; color: var(--text); }
 
+        /* LOGIN */
+        #loginScreen {
+            position: fixed; inset: 0; z-index: 9999;
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            display: flex; align-items: center; justify-content: center; padding: 1rem;
+        }
+        .login-box {
+            background: white; border-radius: 16px; padding: 2.5rem 2rem;
+            width: 100%; max-width: 380px; text-align: center;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+        }
+        .login-box i { font-size: 3rem; color: var(--primary); margin-bottom: 1rem; display: block; }
+        .login-box h2 { color: var(--secondary); margin-bottom: .35rem; font-size: 1.4rem; }
+        .login-box p { color: var(--text-light); font-size: .9rem; margin-bottom: 1.5rem; }
+        .login-input {
+            width: 100%; padding: .85rem 1rem; border: 2px solid var(--border);
+            border-radius: 10px; font-size: 1rem; text-align: center;
+            letter-spacing: .2rem; margin-bottom: 1rem; transition: border-color .2s;
+        }
+        .login-input:focus { outline: none; border-color: var(--primary); }
+        .login-btn {
+            width: 100%; padding: .85rem; border: none; border-radius: 10px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white; font-size: 1rem; font-weight: 700; cursor: pointer; transition: opacity .2s;
+        }
+        .login-btn:hover { opacity: .9; }
+        .login-error {
+            color: var(--error); font-size: .85rem; margin-top: .75rem;
+            display: none; background: #ffebee; padding: .5rem; border-radius: 6px;
+        }
+        #adminContent { display: none; }
+
         header {
             background: linear-gradient(135deg, var(--secondary), var(--primary));
             color: white; padding: 1.5rem 2rem;
@@ -128,6 +160,27 @@
     </style>
 </head>
 <body>
+
+<!-- ECRÃ DE LOGIN -->
+<div id="loginScreen">
+    <div class="login-box">
+        <i class="fas fa-shield-alt"></i>
+        <h2>Área Restrita</h2>
+        <p>Karate Events Hub — Administração</p>
+        <input type="password" class="login-input" id="loginPwd"
+               placeholder="Password" autocomplete="current-password"
+               onkeydown="if(event.key==='Enter')checkLogin()">
+        <button class="login-btn" onclick="checkLogin()">
+            <i class="fas fa-unlock"></i> Entrar
+        </button>
+        <div class="login-error" id="loginError">
+            <i class="fas fa-times-circle"></i> Password incorreta. Tenta novamente.
+        </div>
+    </div>
+</div>
+
+<!-- CONTEÚDO ADMIN (oculto até login) -->
+<div id="adminContent">
 <header>
     <div class="header-content">
         <div class="logo"><i class="fas fa-shield-alt"></i> Karate Events — Admin</div>
@@ -252,6 +305,30 @@
 
 </div>
 <footer><strong>Karate Events Hub</strong> — Painel de Administração 🔒</footer>
+</div><!-- /adminContent -->
+
+<script>
+// Verificar se já está autenticado
+if(sessionStorage.getItem('keh_auth')==='ok'){
+    document.getElementById('loginScreen').style.display='none';
+    document.getElementById('adminContent').style.display='block';
+}
+
+function checkLogin(){
+    const pwd = document.getElementById('loginPwd').value;
+    if(pwd === 'wado'){
+        sessionStorage.setItem('keh_auth','ok');
+        document.getElementById('loginScreen').style.display='none';
+        document.getElementById('adminContent').style.display='block';
+    } else {
+        const err = document.getElementById('loginError');
+        err.style.display='block';
+        document.getElementById('loginPwd').value='';
+        document.getElementById('loginPwd').focus();
+        setTimeout(()=>err.style.display='none', 3000);
+    }
+}
+</script>
 
 <script>
 let pdfB64 = null, pdfName = '', extracted = [];
