@@ -11,7 +11,10 @@
       "wkfAffiliation": true,
       "language": "pt",
       "timezone": "Europe/Lisbon",
-      "status": "active"
+      "status": "active",
+      "email": "",
+      "phone": "",
+      "notes": ""
     },
     {
       "id": "ES_RFEK",
@@ -24,7 +27,10 @@
       "wkfAffiliation": true,
       "language": "es",
       "timezone": "Europe/Madrid",
-      "status": "active"
+      "status": "active",
+      "email": "",
+      "phone": "",
+      "notes": ""
     },
     {
       "id": "IT_FIJLKAM",
@@ -37,7 +43,10 @@
       "wkfAffiliation": true,
       "language": "it",
       "timezone": "Europe/Rome",
-      "status": "active"
+      "status": "active",
+      "email": "",
+      "phone": "",
+      "notes": ""
     },
     {
       "id": "FR_FFKA",
@@ -50,7 +59,10 @@
       "wkfAffiliation": true,
       "language": "fr",
       "timezone": "Europe/Paris",
-      "status": "active"
+      "status": "active",
+      "email": "",
+      "phone": "",
+      "notes": ""
     },
     {
       "id": "DE_DKV",
@@ -63,7 +75,10 @@
       "wkfAffiliation": true,
       "language": "de",
       "timezone": "Europe/Berlin",
-      "status": "active"
+      "status": "active",
+      "email": "",
+      "phone": "",
+      "notes": ""
     },
     {
       "id": "GB_EK",
@@ -76,7 +91,10 @@
       "wkfAffiliation": true,
       "language": "en",
       "timezone": "Europe/London",
-      "status": "active"
+      "status": "active",
+      "email": "",
+      "phone": "",
+      "notes": ""
     },
     {
       "id": "NL_KBN",
@@ -89,7 +107,10 @@
       "wkfAffiliation": true,
       "language": "nl",
       "timezone": "Europe/Amsterdam",
-      "status": "active"
+      "status": "active",
+      "email": "",
+      "phone": "",
+      "notes": ""
     },
     {
       "id": "CH_SKV",
@@ -102,7 +123,10 @@
       "wkfAffiliation": true,
       "language": "de",
       "timezone": "Europe/Zurich",
-      "status": "active"
+      "status": "active",
+      "email": "",
+      "phone": "",
+      "notes": ""
     },
     {
       "id": "AT_OKV",
@@ -115,7 +139,10 @@
       "wkfAffiliation": true,
       "language": "de",
       "timezone": "Europe/Vienna",
-      "status": "active"
+      "status": "active",
+      "email": "",
+      "phone": "",
+      "notes": ""
     },
     {
       "id": "BE_VEKAF",
@@ -128,7 +155,10 @@
       "wkfAffiliation": true,
       "language": "nl",
       "timezone": "Europe/Brussels",
-      "status": "active"
+      "status": "active",
+      "email": "",
+      "phone": "",
+      "notes": ""
     },
     {
       "id": "WKF",
@@ -141,7 +171,10 @@
       "wkfAffiliation": true,
       "language": "en",
       "timezone": "UTC",
-      "status": "active"
+      "status": "active",
+      "email": "",
+      "phone": "",
+      "notes": ""
     }
   ]
 }

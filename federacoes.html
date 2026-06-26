@@ -7,100 +7,57 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
-        :root{
-            --pri:#c0195a;--sec:#1a237e;--acc:#ff6f00;
-            --bg:#f0f2f5;--card:#fff;--border:#e0e0e0;
-            --text:#212121;--muted:#757575;
-        }
+        :root{--pri:#c0195a;--sec:#1a237e;--acc:#ff6f00;--bg:#f0f2f5;--card:#fff;--border:#e0e0e0;--text:#212121;--muted:#757575;}
         body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);}
-
-        header{background:linear-gradient(135deg,var(--sec),var(--pri));color:#fff;
-            padding:.9rem 1rem;position:sticky;top:0;z-index:100;
-            box-shadow:0 2px 12px rgba(0,0,0,.25);}
+        header{background:linear-gradient(135deg,var(--sec),var(--pri));color:#fff;padding:.9rem 1rem;position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,.25);}
         .hdr{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:.75rem;}
         .logo{display:flex;align-items:center;gap:.5rem;font-size:1.2rem;font-weight:800;}
         .logo i{color:var(--acc);}
-        .back{padding:.4rem .9rem;background:rgba(255,255,255,.18);color:#fff;
-            border:1px solid rgba(255,255,255,.3);border-radius:8px;
-            text-decoration:none;font-size:.82rem;font-weight:600;
-            display:flex;align-items:center;gap:.35rem;}
-
+        .back{padding:.4rem .9rem;background:rgba(255,255,255,.18);color:#fff;border:1px solid rgba(255,255,255,.3);border-radius:8px;text-decoration:none;font-size:.82rem;font-weight:600;display:flex;align-items:center;gap:.35rem;}
         .wrap{max-width:1100px;margin:0 auto;padding:1.25rem 1rem 3rem;}
-
         .page-title{font-size:1.4rem;font-weight:800;color:var(--sec);margin-bottom:.35rem;}
         .page-sub{color:var(--muted);font-size:.9rem;margin-bottom:1.5rem;}
-
-        /* FILTRO RÁPIDO */
-        .search-bar{background:var(--card);border-radius:12px;padding:.85rem 1rem;
-            box-shadow:0 1px 6px rgba(0,0,0,.08);margin-bottom:1.25rem;
-            display:flex;gap:.75rem;align-items:center;}
+        .search-bar{background:var(--card);border-radius:12px;padding:.85rem 1rem;box-shadow:0 1px 6px rgba(0,0,0,.08);margin-bottom:1.25rem;display:flex;gap:.75rem;align-items:center;}
         .search-bar i{color:var(--muted);}
         .search-bar input{flex:1;border:none;font-size:.95rem;outline:none;background:transparent;}
-
-        /* SECÇÃO / REGIÃO */
         .region{margin-bottom:2rem;}
-        .region-title{font-size:.72rem;font-weight:800;color:var(--muted);text-transform:uppercase;
-            letter-spacing:1px;margin-bottom:.75rem;padding-bottom:.4rem;
-            border-bottom:2px solid var(--border);display:flex;align-items:center;gap:.5rem;}
-        .region-title span{background:var(--sec);color:#fff;padding:.15rem .6rem;
-            border-radius:12px;font-size:.68rem;}
-
-        /* CARDS DE FEDERAÇÃO */
+        .region-title{font-size:.72rem;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:.75rem;padding-bottom:.4rem;border-bottom:2px solid var(--border);display:flex;align-items:center;gap:.5rem;}
+        .region-title .cnt{background:var(--sec);color:#fff;padding:.1rem .55rem;border-radius:12px;font-size:.65rem;}
         .fed-grid{display:grid;gap:.75rem;grid-template-columns:1fr;}
         @media(min-width:580px){.fed-grid{grid-template-columns:1fr 1fr;}}
         @media(min-width:900px){.fed-grid{grid-template-columns:1fr 1fr 1fr;}}
-
-        .fed-card{background:var(--card);border-radius:14px;padding:1.25rem;
-            box-shadow:0 1px 6px rgba(0,0,0,.08);
-            border-left:4px solid var(--pri);
-            display:flex;flex-direction:column;gap:.6rem;
-            transition:box-shadow .2s;}
-        .fed-card:hover{box-shadow:0 4px 16px rgba(192,25,90,.15);}
-        .fed-card.international{border-left-color:#7b1fa2;}
+        .fed-card{background:var(--card);border-radius:14px;padding:1.1rem;box-shadow:0 1px 6px rgba(0,0,0,.08);border-left:4px solid var(--pri);display:flex;flex-direction:column;gap:.55rem;}
+        .fed-card.intl{border-left-color:#7b1fa2;}
         .fed-card.europe{border-left-color:var(--sec);}
-
         .fed-header{display:flex;align-items:flex-start;gap:.75rem;}
         .fed-flag{font-size:2rem;line-height:1;flex-shrink:0;}
-        .fed-name-wrap{}
-        .fed-country{font-size:.72rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;}
-        .fed-name{font-size:.95rem;font-weight:800;color:var(--sec);line-height:1.3;}
-
-        .fed-abbr{display:inline-block;background:var(--pri);color:#fff;
-            padding:.15rem .55rem;border-radius:8px;font-size:.7rem;font-weight:800;
-            margin-top:.25rem;}
-        .fed-card.international .fed-abbr{background:#7b1fa2;}
+        .fed-country{font-size:.68rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;}
+        .fed-name{font-size:.92rem;font-weight:800;color:var(--sec);line-height:1.3;}
+        .fed-abbr{display:inline-block;background:var(--pri);color:#fff;padding:.12rem .5rem;border-radius:7px;font-size:.68rem;font-weight:800;margin-top:.2rem;}
+        .fed-card.intl .fed-abbr{background:#7b1fa2;}
         .fed-card.europe .fed-abbr{background:var(--sec);}
-
-        .fed-links{display:flex;flex-direction:column;gap:.4rem;margin-top:.25rem;}
-        .fed-link{display:flex;align-items:center;gap:.5rem;font-size:.82rem;
-            color:var(--muted);text-decoration:none;padding:.3rem .5rem;
-            border-radius:7px;transition:background .15s;}
+        .fed-links{display:flex;flex-direction:column;gap:.3rem;}
+        .fed-link{display:flex;align-items:center;gap:.5rem;font-size:.8rem;color:var(--muted);text-decoration:none;padding:.25rem .4rem;border-radius:6px;transition:background .15s;}
         .fed-link:hover{background:var(--bg);color:var(--text);}
         .fed-link i{width:14px;text-align:center;color:var(--pri);flex-shrink:0;}
-        .fed-card.international .fed-link i{color:#7b1fa2;}
+        .fed-card.intl .fed-link i{color:#7b1fa2;}
         .fed-card.europe .fed-link i{color:var(--sec);}
         .fed-link span{word-break:break-all;}
-
-        .fed-btn-row{display:flex;gap:.5rem;margin-top:.25rem;}
-        .fed-btn{flex:1;padding:.55rem;border-radius:8px;font-weight:700;font-size:.78rem;
-            text-decoration:none;text-align:center;display:flex;align-items:center;
-            justify-content:center;gap:.3rem;border:none;cursor:pointer;}
+        .fed-empty{font-size:.75rem;color:#bbb;font-style:italic;display:flex;align-items:center;gap:.35rem;}
+        .fed-empty i{color:#ddd;}
+        .fed-wkf{font-size:.68rem;color:#f59e0b;display:flex;align-items:center;gap:.3rem;font-weight:600;}
+        .fed-btns{display:flex;gap:.4rem;margin-top:.1rem;}
+        .fed-btn{flex:1;padding:.5rem;border-radius:8px;font-weight:700;font-size:.76rem;text-decoration:none;text-align:center;display:flex;align-items:center;justify-content:center;gap:.25rem;border:none;cursor:pointer;}
         .fed-btn-p{background:linear-gradient(135deg,var(--pri),var(--acc));color:#fff;}
         .fed-btn-s{background:var(--bg);color:var(--sec);border:1.5px solid var(--border);}
-        .fed-card.international .fed-btn-p{background:linear-gradient(135deg,#7b1fa2,#c0195a);}
-        .fed-card.europe .fed-btn-p{background:linear-gradient(135deg,var(--sec),#283593);}
-
-        .fed-wkf{font-size:.68rem;color:var(--muted);display:flex;align-items:center;gap:.3rem;}
-        .fed-wkf i{color:#f59e0b;}
-
+        .fed-card.intl .fed-btn-p{background:linear-gradient(135deg,#7b1fa2,#c0195a);}
+        .fed-card.europe .fed-btn-p{background:linear-gradient(135deg,var(--sec),#3949ab);}
         .hidden{display:none!important;}
-
         footer{background:var(--sec);color:#fff;text-align:center;padding:1rem;font-size:.78rem;}
         footer a{color:rgba(255,255,255,.6);text-decoration:none;margin-left:.5rem;}
     </style>
 </head>
 <body>
-
 <header>
     <div class="hdr">
         <div class="logo"><i class="fas fa-crown"></i> Karate Events</div>
@@ -110,248 +67,136 @@
 
 <div class="wrap">
     <div class="page-title"><i class="fas fa-building"></i> Federações de Karaté</div>
-    <div class="page-sub">Diretório de federações nacionais e internacionais com links oficiais e contactos públicos.</div>
+    <div class="page-sub">Diretório de federações. Dados em branco podem ser completados no painel <a href="admin.html" style="color:var(--pri);font-weight:600;">Admin</a>.</div>
 
     <div class="search-bar">
         <i class="fas fa-search"></i>
         <input type="text" id="search" placeholder="Procurar federação ou país..." oninput="filterFeds()">
     </div>
 
-    <!-- MUNDIAL -->
-    <div class="region" id="region-mundial">
-        <div class="region-title"><i class="fas fa-globe"></i> Mundial <span>2</span></div>
-        <div class="fed-grid" id="grid-mundial"></div>
-    </div>
-
-    <!-- EUROPA -->
-    <div class="region" id="region-europa">
-        <div class="region-title"><i class="fas fa-star"></i> Europa — Continente <span>1</span></div>
-        <div class="fed-grid" id="grid-europa"></div>
-    </div>
-
-    <!-- IBÉRICA -->
-    <div class="region" id="region-iberica">
-        <div class="region-title"><i class="fas fa-map-marker-alt"></i> Península Ibérica <span>2</span></div>
-        <div class="fed-grid" id="grid-iberica"></div>
-    </div>
-
-    <!-- EUROPA OCIDENTAL -->
-    <div class="region" id="region-ocidental">
-        <div class="region-title"><i class="fas fa-map-marker-alt"></i> Europa Ocidental <span>5</span></div>
-        <div class="fed-grid" id="grid-ocidental"></div>
-    </div>
-
-    <!-- EUROPA CENTRAL -->
-    <div class="region" id="region-central">
-        <div class="region-title"><i class="fas fa-map-marker-alt"></i> Europa Central <span>3</span></div>
-        <div class="fed-grid" id="grid-central"></div>
-    </div>
-
-    <!-- EUROPA DO SUL -->
-    <div class="region" id="region-sul">
-        <div class="region-title"><i class="fas fa-map-marker-alt"></i> Europa do Sul <span>2</span></div>
-        <div class="fed-grid" id="grid-sul"></div>
-    </div>
-
+    <div id="fedContainer"></div>
 </div>
 
 <footer>
-    🥋 <strong>Karate Events Hub</strong> — Diretório de Federações
+    🥋 <strong>Karate Events Hub</strong>
     <a href="admin.html"><i class="fas fa-shield-alt"></i> Admin</a>
 </footer>
 
 <script>
-const FEDS = [
-    // ── MUNDIAL
-    {
-        region:'mundial', type:'international', flag:'🌍', country:'Mundial',
-        abbr:'WKF', name:'World Karate Federation',
-        website:'https://www.wkf.net',
-        calendar:'https://www.wkf.net/events',
-        email:'wkf@wkf.net',
-        phone:'+34 91 547 07 46',
-        wkf:false, note:'Federação internacional máxima — reconhecida pelo COI'
-    },
-    {
-        region:'mundial', type:'international', flag:'🎓', country:'Mundial',
-        abbr:'WUKF', name:'World Union of Karate-Do Federations',
-        website:'https://www.wukf.org',
-        calendar:'https://www.wukf.org/events',
-        email:'office@wukf.org',
-        phone:'',
-        wkf:false, note:'Federação mundial independente'
-    },
-    // ── EUROPA
-    {
-        region:'europa', type:'europe', flag:'🇪🇺', country:'Europa',
-        abbr:'EKF', name:'European Karate Federation',
-        website:'https://www.europeankarate.com',
-        calendar:'https://www.europeankarate.com/events',
-        email:'info@europeankarate.com',
-        phone:'',
-        wkf:true, note:'Federação europeia — organiza Campeonatos da Europa'
-    },
-    // ── IBÉRICA
-    {
-        region:'iberica', type:'national', flag:'🇵🇹', country:'Portugal',
-        abbr:'FNK-P', name:'Federação Nacional de Karaté - Portugal',
-        website:'https://www.fnkp.pt',
-        calendar:'https://www.fnkp.pt/calendario',
-        email:'geral@fnkp.pt',
-        phone:'+351 217 969 751',
-        wkf:true, note:''
-    },
-    {
-        region:'iberica', type:'national', flag:'🇪🇸', country:'Espanha',
-        abbr:'RFEK', name:'Real Federación Española de Karate',
-        website:'https://www.rfek.es',
-        calendar:'https://www.rfek.es/calendario',
-        email:'rfek@rfek.es',
-        phone:'+34 91 547 07 46',
-        wkf:true, note:''
-    },
-    // ── OCIDENTAL
-    {
-        region:'ocidental', type:'national', flag:'🇫🇷', country:'França',
-        abbr:'FFKA', name:'Fédération Française de Karaté',
-        website:'https://www.ffkarate.fr',
-        calendar:'https://www.ffkarate.fr/calendrier',
-        email:'contact@ffkarate.fr',
-        phone:'+33 1 80 06 17 50',
-        wkf:true, note:''
-    },
-    {
-        region:'ocidental', type:'national', flag:'🇬🇧', country:'Reino Unido',
-        abbr:'EK', name:'England Karate',
-        website:'https://www.englandkarate.com',
-        calendar:'https://www.englandkarate.com/events',
-        email:'info@englandkarate.com',
-        phone:'',
-        wkf:true, note:''
-    },
-    {
-        region:'ocidental', type:'national', flag:'🇮🇪', country:'Irlanda',
-        abbr:'IKF', name:'Irish Karate Federation',
-        website:'https://www.irishkaratefederation.ie',
-        calendar:'https://www.irishkaratefederation.ie/events',
-        email:'info@irishkaratefederation.ie',
-        phone:'',
-        wkf:true, note:''
-    },
-    {
-        region:'ocidental', type:'national', flag:'🇧🇪', country:'Bélgica',
-        abbr:'VEKAF', name:'Vlaamse Karate Federatie',
-        website:'https://www.vekaf.be',
-        calendar:'https://www.vekaf.be/kalender',
-        email:'info@vekaf.be',
-        phone:'',
-        wkf:true, note:''
-    },
-    {
-        region:'ocidental', type:'national', flag:'🇳🇱', country:'Países Baixos',
-        abbr:'KBN', name:'Koninklijke Nederlandse Karatebond',
-        website:'https://www.karatebond.nl',
-        calendar:'https://www.karatebond.nl/agenda',
-        email:'info@karatebond.nl',
-        phone:'+31 343 499 300',
-        wkf:true, note:''
-    },
-    // ── CENTRAL
-    {
-        region:'central', type:'national', flag:'🇩🇪', country:'Alemanha',
-        abbr:'DKV', name:'Deutscher Karate Verband',
-        website:'https://www.dkv.de',
-        calendar:'https://www.dkv.de/termine',
-        email:'info@dkv.de',
-        phone:'+49 89 544 23 70',
-        wkf:true, note:''
-    },
-    {
-        region:'central', type:'national', flag:'🇨🇭', country:'Suíça',
-        abbr:'SKV', name:'Schweizer Karate Verband',
-        website:'https://www.karate.ch',
-        calendar:'https://www.karate.ch/kalender',
-        email:'info@karate.ch',
-        phone:'+41 31 359 72 20',
-        wkf:true, note:''
-    },
-    {
-        region:'central', type:'national', flag:'🇦🇹', country:'Áustria',
-        abbr:'OKV', name:'Österreichischer Karate Verband',
-        website:'https://www.karate.at',
-        calendar:'https://www.karate.at/termine',
-        email:'office@karate.at',
-        phone:'+43 1 504 44 64',
-        wkf:true, note:''
-    },
-    // ── SUL
-    {
-        region:'sul', type:'national', flag:'🇮🇹', country:'Itália',
-        abbr:'FIJLKAM', name:'Federazione Italiana Judo Lotta Karate Arti Marziali',
-        website:'https://www.fijlkam.it',
-        calendar:'https://www.fijlkam.it/karate',
-        email:'karate@fijlkam.it',
-        phone:'+39 06 368 581',
-        wkf:true, note:''
-    },
-    {
-        region:'sul', type:'national', flag:'🇬🇷', country:'Grécia',
-        abbr:'HKF', name:'Hellenic Karate Federation',
-        website:'https://www.karate.gr',
-        calendar:'https://www.karate.gr/nea',
-        email:'info@karate.gr',
-        phone:'',
-        wkf:true, note:''
-    },
-];
+// Dados carregados do federations.json + dados extra da página de federações
+// Os dados em branco (email, phone) são para o admin completar
+const EXTRA = {
+    PT_FNK:     { flag:'🇵🇹', region:'iberica',  type:'national', calUrl:'https://www.fnkp.pt/calendario',  email:'', phone:'' },
+    ES_RFEK:    { flag:'🇪🇸', region:'iberica',  type:'national', calUrl:'https://www.rfek.es/calendario',  email:'', phone:'' },
+    IT_FIJLKAM: { flag:'🇮🇹', region:'sul',      type:'national', calUrl:'https://www.fijlkam.it/karate',   email:'', phone:'' },
+    FR_FFKA:    { flag:'🇫🇷', region:'ocidental',type:'national', calUrl:'https://www.ffkarate.fr/calendrier/', email:'', phone:'' },
+    DE_DKV:     { flag:'🇩🇪', region:'central',  type:'national', calUrl:'https://www.dkv.de/termine',      email:'', phone:'' },
+    GB_EK:      { flag:'🇬🇧', region:'ocidental',type:'national', calUrl:'https://www.englandkarate.com/events', email:'', phone:'' },
+    NL_KBN:     { flag:'🇳🇱', region:'ocidental',type:'national', calUrl:'https://www.karatebond.nl/agenda', email:'', phone:'' },
+    CH_SKV:     { flag:'🇨🇭', region:'central',  type:'national', calUrl:'https://www.karate.ch/kalender',  email:'', phone:'' },
+    AT_OKV:     { flag:'🇦🇹', region:'central',  type:'national', calUrl:'https://www.karate.at/termine',   email:'', phone:'' },
+    WKF:        { flag:'🌍', region:'mundial',   type:'intl',     calUrl:'https://www.wkf.net/events',      email:'', phone:'' },
+    BE_VEKAF:   { flag:'🇧🇪', region:'ocidental',type:'national', calUrl:'', email:'', phone:'' },
+};
 
-function buildCards(){
-    const regions = {};
-    FEDS.forEach(f=>{
-        if(!regions[f.region]) regions[f.region]=[];
-        regions[f.region].push(f);
+const REGIONS = {
+    mundial:  { label:'Mundial',           icon:'fa-globe' },
+    iberica:  { label:'Península Ibérica', icon:'fa-map-marker-alt' },
+    ocidental:{ label:'Europa Ocidental',  icon:'fa-map-marker-alt' },
+    central:  { label:'Europa Central',    icon:'fa-map-marker-alt' },
+    sul:      { label:'Europa do Sul',     icon:'fa-map-marker-alt' },
+};
+
+let allFeds = [];
+
+async function loadAndBuild(){
+    try {
+        const d = await (await fetch('federations.json')).json();
+        allFeds = d.federations.map(f => {
+            const ex = EXTRA[f.id] || { flag:'🏳️', region:'outras', type:'national', calUrl:'', email:'', phone:'' };
+            return { ...f, ...ex };
+        });
+        buildPage();
+    } catch(e) { console.error(e); }
+}
+
+function buildPage(){
+    const container = document.getElementById('fedContainer');
+    container.innerHTML = '';
+
+    const grouped = {};
+    allFeds.forEach(f => {
+        const r = f.region || 'outras';
+        if(!grouped[r]) grouped[r] = [];
+        grouped[r].push(f);
     });
 
-    Object.entries(regions).forEach(([region, feds])=>{
-        const grid = document.getElementById(`grid-${region}`);
-        if(!grid) return;
-        feds.forEach(f=>{
+    Object.entries(REGIONS).forEach(([key, info]) => {
+        const feds = grouped[key];
+        if(!feds || !feds.length) return;
+
+        const section = document.createElement('div');
+        section.className = 'region';
+        section.id = `region-${key}`;
+        section.innerHTML = `
+            <div class="region-title">
+                <i class="fas ${info.icon}"></i> ${info.label}
+                <span class="cnt">${feds.length}</span>
+            </div>
+            <div class="fed-grid" id="grid-${key}"></div>
+        `;
+        container.appendChild(section);
+
+        const grid = section.querySelector('.fed-grid');
+        feds.forEach(f => {
             const card = document.createElement('div');
             card.className = `fed-card ${f.type}`;
-            card.dataset.search = `${f.country} ${f.name} ${f.abbr} ${f.email}`.toLowerCase();
+            card.dataset.search = `${f.country} ${f.name} ${f.id}`.toLowerCase();
+
+            const siteLink = f.website
+                ? `<a href="${f.website}" target="_blank" rel="noopener" class="fed-link"><i class="fas fa-globe"></i><span>${f.website.replace('https://www.','').replace('https://','')}</span></a>`
+                : `<div class="fed-empty"><i class="fas fa-globe"></i> Site não disponível</div>`;
+
+            const calLink = f.calUrl
+                ? `<a href="${f.calUrl}" target="_blank" rel="noopener" class="fed-link"><i class="fas fa-calendar-alt"></i><span>Calendário oficial</span></a>`
+                : `<div class="fed-empty"><i class="fas fa-calendar-alt"></i> Calendário não disponível</div>`;
+
+            const emailLink = f.email
+                ? `<a href="mailto:${f.email}" class="fed-link"><i class="fas fa-envelope"></i><span>${f.email}</span></a>`
+                : `<div class="fed-empty"><i class="fas fa-envelope"></i> Email não disponível</div>`;
+
+            const phoneEl = f.phone
+                ? `<div class="fed-link"><i class="fas fa-phone"></i><span>${f.phone}</span></div>`
+                : '';
+
+            const wkfEl = f.wkfAffiliation
+                ? `<div class="fed-wkf"><i class="fas fa-star"></i> Membro WKF</div>` : '';
+
+            const siteBtn = f.website
+                ? `<a href="${f.website}" target="_blank" rel="noopener" class="fed-btn fed-btn-p"><i class="fas fa-external-link-alt"></i> Site</a>`
+                : `<span class="fed-btn fed-btn-p" style="opacity:.4;cursor:default"><i class="fas fa-external-link-alt"></i> Site</span>`;
+
+            const calBtn = f.calUrl
+                ? `<a href="${f.calUrl}" target="_blank" rel="noopener" class="fed-btn fed-btn-s"><i class="fas fa-calendar"></i> Calendário</a>`
+                : `<span class="fed-btn fed-btn-s" style="opacity:.4;cursor:default"><i class="fas fa-calendar"></i> Calendário</span>`;
+
             card.innerHTML = `
                 <div class="fed-header">
                     <div class="fed-flag">${f.flag}</div>
-                    <div class="fed-name-wrap">
+                    <div>
                         <div class="fed-country">${f.country}</div>
                         <div class="fed-name">${f.name}</div>
-                        <div class="fed-abbr">${f.abbr}</div>
+                        <div class="fed-abbr">${f.id.replace(/^[A-Z]+_/,'')}</div>
                     </div>
                 </div>
                 <div class="fed-links">
-                    <a href="${f.website}" target="_blank" rel="noopener" class="fed-link">
-                        <i class="fas fa-globe"></i><span>${f.website.replace('https://','')}</span>
-                    </a>
-                    <a href="${f.calendar}" target="_blank" rel="noopener" class="fed-link">
-                        <i class="fas fa-calendar-alt"></i><span>Calendário oficial</span>
-                    </a>
-                    ${f.email?`<a href="mailto:${f.email}" class="fed-link">
-                        <i class="fas fa-envelope"></i><span>${f.email}</span>
-                    </a>`:''}
-                    ${f.phone?`<div class="fed-link">
-                        <i class="fas fa-phone"></i><span>${f.phone}</span>
-                    </div>`:''}
+                    ${siteLink}
+                    ${calLink}
+                    ${emailLink}
+                    ${phoneEl}
                 </div>
-                ${f.note?`<div class="fed-wkf"><i class="fas fa-info-circle"></i>${f.note}</div>`:''}
-                ${f.wkf?`<div class="fed-wkf"><i class="fas fa-star"></i>Membro WKF</div>`:''}
-                <div class="fed-btn-row">
-                    <a href="${f.website}" target="_blank" rel="noopener" class="fed-btn fed-btn-p">
-                        <i class="fas fa-external-link-alt"></i> Site Oficial
-                    </a>
-                    <a href="${f.calendar}" target="_blank" rel="noopener" class="fed-btn fed-btn-s">
-                        <i class="fas fa-calendar"></i> Calendário
-                    </a>
-                </div>
+                ${wkfEl}
+                <div class="fed-btns">${siteBtn}${calBtn}</div>
             `;
             grid.appendChild(card);
         });
@@ -360,17 +205,16 @@ function buildCards(){
 
 function filterFeds(){
     const q = document.getElementById('search').value.toLowerCase().trim();
-    document.querySelectorAll('.fed-card').forEach(card=>{
-        card.classList.toggle('hidden', q && !card.dataset.search.includes(q));
+    document.querySelectorAll('.fed-card').forEach(c=>{
+        c.classList.toggle('hidden', !!q && !c.dataset.search.includes(q));
     });
-    // Esconder regiões vazias
-    document.querySelectorAll('.region').forEach(region=>{
-        const visible = [...region.querySelectorAll('.fed-card')].some(c=>!c.classList.contains('hidden'));
-        region.classList.toggle('hidden', !visible);
+    document.querySelectorAll('.region').forEach(r=>{
+        const vis = [...r.querySelectorAll('.fed-card')].some(c=>!c.classList.contains('hidden'));
+        r.classList.toggle('hidden', !vis);
     });
 }
 
-buildCards();
+loadAndBuild();
 </script>
 </body>
 </html>
